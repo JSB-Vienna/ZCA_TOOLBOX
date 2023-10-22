@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_CA_C_FCODES</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>CA-TBX: Function code constants (with suggested icons)</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>AREA_COLLAPSE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fct. code: Collapse area (ICON_DATA_AREA_COLLAPSE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>AREA_EXPAND</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fct. code: Expand area (ICON_DATA_AREA_EXPAND)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Back</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Cancel (ICON_CANCEL)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Change (ICON_CHANGE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Check / proof (ICON_CHECK)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COMPLETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Complete (ICON_COMPLETE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COPY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Copy ( ICON_COPY_OBJECT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Create (ICON_CREATE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Delete (ICON_DELETE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DESELECT_ALL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Select all (ICON_DESELECT_ALL)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DETAIL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Pickup / show detail (ICON_SELECT_DETAIL)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Display (ICON_DISPLAY)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENTER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Continue / enter (ICON_OKAY)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXIT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Exit</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get instance</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBJ_FIRST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: First object (ICON_TOTAL_LEFT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBJ_LAST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Last object (ICON_TOTAL_RIGHT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBJ_NEXT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Next object (ICON_COLUMN_RIGHT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>OBJ_PREV</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Previous object (ICON_COLUMN_LEFT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PAGE_FIRST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: First page (ICON_FIRST_PAGE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PAGE_LAST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Last page (ICON_LAST_PAGE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PAGE_NEXT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Next page (ICON_NEXT_PAGE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PAGE_PREV</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Previous page (ICON_PREVIOUS_PAGE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PERSONAL_SETTINGS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Personnel settings (ICON_PERSONAL_SETTINGS)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PRINT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Print (ICON_PRINT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REDO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Redo / Repeat (ICON_SYSTEM_REDO)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REFRESH</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Refresh view (ICON_REFRESH)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ROW_ADD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Add row (ICON_CREATE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ROW_DEL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Delete row (ICON_DELETE_ROW)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ROW_INS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Insert row (ICON_INSERT_ROW)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Save / change data (ICON_SYSTEM_SAVE)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEARCH</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Search / find (ICON_SEARCH)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEARCH_NEXT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Search / find next (ICON_SEARCH_NEXT)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SELECT_ALL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Select all (ICON_SELECT_ALL)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SINGLETON_INSTANCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance of the class itself</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TOGGLE_DISP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Switch between views (ICON_TOGGLE_DISPLAY)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TOGGLE_DISP_CHG</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Switch between disp+chng mode (ICON_TOGGLE_*)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TOGGLE_FUNC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Switch mode / function (ICON_TOGGLE_FUNCTION)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UNDO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Function code: Undo (ICON_SYSTEM_UNDO)</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class instance</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
