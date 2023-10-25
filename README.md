@@ -1,11 +1,17 @@
-# toolbox_template
-Pattern for new Toolbox Development Packages or others including an adapted Bug report and feature request.
+# Library with reusable objects
+This is the empty main package that is to contain every other ZCA_TBX_*-package. As an initial import, the two packages [ZCA_TBX_BASE (Basic objects)](https://github.com/JSB-Vienna/ZCA_TBX_BASE.git) and [ZCA_TBX_BASE_EXCEPTIONS (Basic exceptions)](https://github.com/JSB-Vienna/ZCA_TBX_BASE_EXCEPTIONS.git) are always required to be able to import one of the other packages.
+
+## Please always start with the import of this package!!!
 
 ## Purpose / Objective
-What is the purpose?
+This package is intended as brackets for all the tools. Each of these tools should make a developer's life better and/or bring in a uniform codebase.
 
 ## Required packages
-Which packages are required -> is automatically imported if ABABGit for ADTs are used -> hint to APACK with a link to abapGit
+This package requires the following packages, which have to be imported in the order shown below:
+* [ZCA_TBX_BASE (Basic objects)](https://github.com/JSB-Vienna/ZCA_TBX_BASE.git)
+* [ZCA_TBX_BASE_EXCEPTIONS (Basic exceptions)](https://github.com/JSB-Vienna/ZCA_TBX_BASE_EXCEPTIONS.git)
+
+Currently, the APACK information is not as resolved as I expected. May I have misunderstood something, but the required packages should be imported automatically if ABABGit is used and APM classes are defined for the sub-packages. Have a [look here](https://docs.abapgit.org/user-guide/reference/apack.html) for more details.
 
 ### Smaller heading (up to 6 hashes possible)
 
