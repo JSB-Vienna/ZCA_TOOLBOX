@@ -3,6 +3,8 @@ This package contains the base components for any of the ZCA_TBX_*-packages. It 
 
 ***Please always start with the import of this package or update it before you install another ZCA_TBX_*-package!!!***
 
+If you create the new repository with ***ABABGit*** (either online or offline) in your system, it is important that you ***mark for this package*** the checkbox ***'Ignore subpackages'*** to avoid that you find all subpackages in another stage of usage in this package. Furthermore, choose for the ***folder logic*** the option ***'FULL'***.
+
 ## Purpose / Objective
 Each of the ZCA_TBX_*-tools should make a developer's life better and/or bring in a uniform codebase. Here is a rough list of the included objects in this package:
 * ***DDIC elements***
