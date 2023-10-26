@@ -6,7 +6,7 @@ This package contains the base components for any of the ZCA_TBX_*-packages. It 
 ## Purpose / Objective
 Each of the ZCA_TBX_*-tools should make a developer's life better and/or bring in a uniform codebase. Here is a rough list of the included objects in this package:
 * ***DDIC elements***
-  * Transparent table for "GUID to Business Object" relations. Some object keys are longer than 32 characters. To use them e.g. in workflows, they can be converted into a persistent GUID using the class ZCL_CA_MAP_BO_KEY_2_GUID of this package.
+  * Transparent table for "GUID to Business Object" relations. Some object keys are longer than 32 characters. To use them e.g. in workflows, they can be converted into a persistent GUID using the class _ZCL_CA_MAP_BO_KEY_2_GUID_ of this package.
   * Some structures to include them in transparent tables to persist there who and when has something created or changed in different combinations.
 
 * ***Message class*** that contains all messages of all ZCA_TBX_*-packages
@@ -20,7 +20,7 @@ Each of the ZCA_TBX_*-tools should make a developer's life better and/or bring i
  
 * ***Interfaces***
   * _ZIF_APACK_MANIFEST_ is still included since I tried to use the APACK techniques to make it more convenient to provide the packages to you. But unfortunately, it does not work as I expected.
-  * The others are relics of older days, but I have still to check if they are still in use. You can find more details about (APACK together with ABAPGit here)[https://docs.abapgit.org/user-guide/reference/apack.html].
+  * The others are relics of older days, but I have still to check if they are still in use. You can find more details about [APACK together with ABAPGit here](https://docs.abapgit.org/user-guide/reference/apack.html).
 
 * ***Exception hierarchy***
   * I've created a personnel exception hierarchy with the purpose of providing recurring messages by inheritance and, furthermore, methods to convert results from different sources into an exception instance of choice. This choice has either to be an inheritor of the 2nd ERROR hierarchy level or an inheritor of the INTERN error class.
@@ -38,7 +38,7 @@ Each of the ZCA_TBX_*-tools should make a developer's life better and/or bring i
         * _ZCX_CA_PARAM_ for any kind of exception that does not fit into the range of the two classes before. ***This is the class you should inherit from in nearly all cases.***
      
 * ***Hint to the creation of a class to this model***
-  * Since I like very much to use code templates, all my exception classes have a constant with the name and the value of its own class name, e.g. C_ZCX_CA_PARAM TYPE seoclsname VALUE 'ZCX_CA_PARAM'. Like a lot of my classes, they follow the Hungarian notation, and so do the constants. If you follow the Hungarian notation, too, take care that the name of a new exception class has only 27 (= CV_) or 28 (= C_) characters. These constants are used in my code template '*creexc' to implement the method _CREATE_EXCEPTION_ of either the class _ZCA_CA_ERROR or _ZCX_CA_INTERN_, e.g. behind a return code comparison or CATCH statement.
+  * Since I like very much to use code templates, all my exception classes have a constant with the name and the value of its own class name, e.g. C_ZCX_CA_PARAM TYPE seoclsname VALUE 'ZCX_CA_PARAM'. Like a lot of my classes, they follow the Hungarian notation, and so do the constants. If you follow the Hungarian notation, too, take care that the name of a new exception class has only 27 (= CV_) or 28 (= C_) characters. These constants are used in my code template '*creexc' to implement the method _CREATE_EXCEPTION_ of either the class _ZCA_CA_ERROR or _ZCX_CA_INTERN_, e.g. behind a return code comparison or CATCH statement. You can find more details on [code templates in SAP here](https://github.com/JSB-Vienna/code_templates.git).
      
 ## Required packages
 This package is the requirement for any ZCA_TBX_*-package.
