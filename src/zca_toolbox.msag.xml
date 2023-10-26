@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCA_TOOLBOX</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>CA-TBX: Messages to common objects of the toolbox</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>An error occurred</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Exception raised in unknown component (&amp;1) (RC/exception name = &amp;2)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Exception raised in class-&gt;method &amp;1 (RC/exception name = &amp;2)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Exception raised in function module &amp;1 (RC/exception name = &amp;2)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Exception raised in subroutine &amp;1 &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>An internal error occurred</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>An parameter error occurred</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>At least one of the following parameters must be passed: &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>An error occurred while accessing a database table</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Deleting entry from table &amp;1 with key &amp;2&amp;3 failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Inserting entry into table &amp;1 with key &amp;2&amp;3 failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Updating entry in table &amp;1 with key &amp;2&amp;3 failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>A message / an error occurred while using UI</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Marked/selected row not found -&gt; Action not possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>This function is (currently) not supported</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Error while preparing / executing SALV wrapper</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>List type &apos;&amp;1&apos; is not supported by ALV GRID - result not provided</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>SALV adapter is not supplied before method SALV-&gt;DISPLAY was called</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>An error occurred while handling the application log</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Currently no log opened</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Passed deletion date &amp;1 is initial or before today</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Insufficient data to display source position</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Error during text module preparation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Move of inbound value into global structure &amp;1 was not possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Value to table parameter &amp;1 is not a table</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Link (name = &amp;1) is too long (&amp;2) for text line (&amp;3)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Program &amp;1 could not be locked - please try again later</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Description for &amp;1 &amp;2 is too long (&amp;3) for text line (&amp;4)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Predefined statement &apos;&amp;1&apos; not found in source</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Symbol / place holder &quot;&amp;1&quot; not found - no replacement possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Data conversion failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Parameter &amp;1 is not typed as elementary type</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Conversion via WRITE statement failed for &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Error occurred while creating a data object</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Object (in parameter) &amp;1 is neither a structure nor a table</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Object (in parameter) &amp;1 is not defined in DDIC</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Object (in parameter) &amp;1 has no fixed values - is no/has no domain</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Mail creation or distribution failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Setting attributes to mail request failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Setting mail document into send request failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Distribution of mail failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>No recipients denoted</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Creation of send request failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Setting recipient or sender failed - check inbound data</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Creating mail document failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Adding an attachment failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Max. size of &amp;1 for a mail is exceeded</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Error occurred while handling ArchiveLink object</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>SAP business object &amp;1 does not exist or is not activated</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>No active link definition in table &amp;1 for &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Error during execution of a workflow macro</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>MIME-/Doc.class of document (&amp;1) does not correspond for doc.type (&amp;2/&amp;3)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Passed doc.class &amp;1 does not corresp. to doc.class &amp;2 of doc.type &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>No docuemnts found for &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>No or more then one workitems found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Error while handling approval history</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Wrong next level (&apos;&amp;1&apos;) after rejection - must be lower than curr. (&apos;&amp;2&apos;)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Currently are no entries available to display</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>An error occurred during this action =&gt; for details see appl. log &amp;1 &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>No approval history available</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Last approval is already achieved (level &apos;&amp;1&apos;) - only rejection possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>Errors while selecting attachments to BO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>Class &amp;1 has not implemented interface &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>Error when creating consumer &amp;1 -&gt; see previous exception</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>Attachment has a file size of &amp;1MB, but only such up to &amp;2MB are allowed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Due to validity or release reasons documents were ignored</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>No valid or released document version found for &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>No value/search help set - request not possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>Field &amp;1 is not defined in value/search help &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Fatal error occurred while calling value/search help &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>070</MSGNR>
+     <TEXT>Error while executing value/search help tool</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>071</MSGNR>
+     <TEXT>Error during file access</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>072</MSGNR>
+     <TEXT>Please enter a path and filename</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>073</MSGNR>
+     <TEXT>Directory name &amp;1 is empty or does not exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>074</MSGNR>
+     <TEXT>File &amp;1&amp;2&amp;3 could not be opened or does not exist</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>075</MSGNR>
+     <TEXT>File &amp;1&amp;2&amp;3 could not be deleted from file system</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>076</MSGNR>
+     <TEXT>DMS can not e read client independent!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>077</MSGNR>
+     <TEXT>Error occured in a workflow service method</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>078</MSGNR>
+     <TEXT>No active workitem found to workflow id &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>079</MSGNR>
+     <TEXT>Found no unique result to workflow id &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Found active workitem is in status &apos;ERROR&apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>Error while enhancing screen/dynpro by a docking container</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>082</MSGNR>
+     <TEXT>Environment or current process type is not proper for use of controls</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>083</MSGNR>
+     <TEXT>Currently no workitem is executed or is called by a side method</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>084</MSGNR>
+     <TEXT>The marked columns are not supported for this function</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>085</MSGNR>
+     <TEXT>Screen field &amp;1 is (still) not registered</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>086</MSGNR>
+     <TEXT>Error during file processing</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>087</MSGNR>
+     <TEXT>Error in batch input utility</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>088</MSGNR>
+     <TEXT>Error in ABAP unit test double loader</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>089</MSGNR>
+     <TEXT>Approval entry to level &amp;1 (cycle &amp;2) / sequence no. &amp;3 not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>090</MSGNR>
+     <TEXT>Key/value &amp;1 is not unique in table &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>091</MSGNR>
+     <TEXT>The passed SAP codepage &amp;1 is no UTF-8 codepage</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>092</MSGNR>
+     <TEXT>Method &amp;1 is not allowed at the client/PC</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>093</MSGNR>
+     <TEXT>File &amp;1 stored in directory &amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>094</MSGNR>
+     <TEXT>An error occurred while reading the document from the archive</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>095</MSGNR>
+     <TEXT>No authority accessing file &apos;&amp;1&amp;2&amp;3&amp;4&apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>096</MSGNR>
+     <TEXT>The execution of program &amp;1 was successfully finished</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>097</MSGNR>
+     <TEXT>Errors occurred during the execution of program &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>098</MSGNR>
+     <TEXT>Finish workflow due to user action or programmed result</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>099</MSGNR>
+     <TEXT>Error during determination in HR org. management</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>Selected cell has no value - function not possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>Due to erroneous data the function &apos;&amp;1&apos; was not executed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>Error during status handling</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>External status &amp;1 is not supported in language &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>Changing a system status (&amp;1) with this method is not allowed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>Configuration incomplete to generate host URL</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>106</MSGNR>
+     <TEXT>No active workflows / workitems found to object &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>107</MSGNR>
+     <TEXT>An technical workflow error occurred</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>108</MSGNR>
+     <TEXT>Server location could not be determined / assembled</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>109</MSGNR>
+     <TEXT>Data updated!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>110</MSGNR>
+     <TEXT>DDIC determination failed</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>111</MSGNR>
+     <TEXT>This method is only allowed for elementary, structured or table objects</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>112</MSGNR>
+     <TEXT>Name must be supplied for non-elementary objects</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>113</MSGNR>
+     <TEXT>Provide either a text module or text lines first before using preparation</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>115</MSGNR>
+     <TEXT>Process &amp;1 is in state ERROR. Action is currently not possible.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>116</MSGNR>
+     <TEXT>Class &amp;1 does not inherit from class &amp;2 or object has not expected type</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>117</MSGNR>
+     <TEXT>Determination of document type via document class &amp;1 is not unique</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>118</MSGNR>
+     <TEXT>No document types found for BO &amp;1 and document class &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>119</MSGNR>
+     <TEXT>Error while processing a note</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>120</MSGNR>
+     <TEXT>It is obligatory to enter a note</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZCA_TOOLBOX113</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0003</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00003</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZCA_TOOLBOX113</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00003</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>No text lines are available.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Execute method USE_TEXT_FROM before calling method</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>REPLACE_AND_TRANSFORM.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <STEXT>CA-TBX: Nachrichten zu allgemeinen Objekten der Toolbox</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>Es trat ein Fehler auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Ausnahme in unbek. Komponente (&amp;1) ausgelöst (RC/Ausnahmename = &amp;2)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Ausnahme in Klasse-&gt;Methode &amp;1 ausgelöst (RC/Ausnahmename = &amp;2)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Ausnahme in Funktionsbaustein &amp;1 ausgelöst (RC/Ausnahmename = &amp;2)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Ausnahme in Unterprogramm &amp;1 &amp;2 ausgelöst</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Es trat ein interner Fehler auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Es trat ein Parameterfehler auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>Einer der folgenden Parameter muss übergeben werden: &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>Es trat während eine Datenbankzugriffs ein Fehler auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>Löschen des Eintrags &amp;2&amp;3 in Tabelle &amp;1 scheiterte</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Einfügen des Eintrags &amp;2&amp;3 in Tabelle &amp;1 scheiterte</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Ändern des Eintrags &amp;2&amp;3 in Tabelle &amp;1 scheiterte</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>Eine Nachricht / ein Fehler trat während der Nutzung der Oberfläche auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>Markierte/gewählte Zeile nicht gefunden -&gt; Aktion nicht möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>Diese Funktion ist (momentan) nicht unterstützt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Fehler während der Vorbereitung / Ausführung des SALV-Wrappers</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>Listtyp &apos;&amp;1&apos; ist nicht von ALV GRID unterstützt - Ergebnis nicht versorgt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>SALV-Adapter ist vor Aufruf der Methode SALV-&gt;DISPLAY nicht versorgt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>Es trat ein Fehler während der Nutzung des Applikationsprotokolls auf</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Momentan ist kein Protokoll geöffnet</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>020</MSGNR>
+     <TEXT>Übergebenes Löschdatum &amp;1 ist initial oder vor heute</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>021</MSGNR>
+     <TEXT>Unzureichende Daten um Quellcode-Position anzuzeigen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>022</MSGNR>
+     <TEXT>Fehler während der Aufbereitung eines Textbausteins</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>023</MSGNR>
+     <TEXT>Übertragung d. Eingangswerts in globale Struktur &amp;1 war nicht möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>024</MSGNR>
+     <TEXT>Wert für Tabellenparameter &amp;1 ist keine Tabelle</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>025</MSGNR>
+     <TEXT>Link (Name = &amp;1) ist zu lang (&amp;2) für eine Textzeile (&amp;3)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>026</MSGNR>
+     <TEXT>Programm &amp;1 kann nicht gesperrt werden - bitte später nochmal versuchen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>027</MSGNR>
+     <TEXT>Beschreibung zu &amp;1 &amp;2 ist zu lang (&amp;3) für eine Textzeile (&amp;4)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>028</MSGNR>
+     <TEXT>Vordefinierter Platzhalter &apos;&amp;1&apos; nicht in Quelle gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>029</MSGNR>
+     <TEXT>Symbol/Platzhalter &apos;&amp;1&apos; nicht gefunden - keine Ersetzung möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>030</MSGNR>
+     <TEXT>Datenkonvertierung gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>031</MSGNR>
+     <TEXT>Parameter &amp;1 ist nicht von elementarem Typ</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>032</MSGNR>
+     <TEXT>Konvertierung via WRITE-Befehl für &amp;1 ist gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>033</MSGNR>
+     <TEXT>Es ist ein Fehler während der Erzeugung eines Datenobjekts aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>034</MSGNR>
+     <TEXT>Objekt (in Parameter) &amp;1 ist weder eine Struktur noch eine Tabelle</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>035</MSGNR>
+     <TEXT>Objekt (in Parameter) &amp;1 ist nicht im DDIC definiert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>036</MSGNR>
+     <TEXT>Objekt (in Parameter) &amp;1 hat keine Festwerte - ist keine/hat keine Domäne</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>037</MSGNR>
+     <TEXT>Die Mailerzeugung oder der Mailversand ist gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>038</MSGNR>
+     <TEXT>Einsetzen der Mailattribute ist gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>039</MSGNR>
+     <TEXT>Das einsetzen des Dokumenttextes in den Sendeauftrag ist gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>040</MSGNR>
+     <TEXT>Mailversand ist fehlgeschlagen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>041</MSGNR>
+     <TEXT>Keine Empfänger vorhanden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>042</MSGNR>
+     <TEXT>Die Erzeugung des Sendeauftrags ist gescheitert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>043</MSGNR>
+     <TEXT>Übergabe des Empfängers oder Absender nicht möglich - Daten prüfen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>044</MSGNR>
+     <TEXT>Erzeugung des Maildokuments ist fehlgeschlagen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>045</MSGNR>
+     <TEXT>Anhängen eines Anhang ist fehlgeschlagen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>046</MSGNR>
+     <TEXT>Die max. Größe von &amp;1 für eine Mail wurde überschritten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>047</MSGNR>
+     <TEXT>Fehler aufgetreten während der Verarbeitung eines ArchiveLink-Objekts</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>048</MSGNR>
+     <TEXT>SAP Business Objekt &amp;1 existiert nicht oder ist nicht aktiviert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>049</MSGNR>
+     <TEXT>Keine aktiven Verknüpfungsdefinitionen in Tabelle &amp;1 für &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>050</MSGNR>
+     <TEXT>Fehler während Ausführung eines Workflow-Makros</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>051</MSGNR>
+     <TEXT>MIME-/Dok.Typ von Dokument (&amp;1) passt nicht zur Dokumentart (&amp;2/&amp;3)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>052</MSGNR>
+     <TEXT>Übergebener Dok.Typ &amp;1 passt nicht zu Dok.Typ &amp;2 der Dok.art &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>053</MSGNR>
+     <TEXT>Keine Dokumente zu &amp;1 &amp;2 &amp;3 gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>054</MSGNR>
+     <TEXT>Keine oder mehr als ein Workitem gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>055</MSGNR>
+     <TEXT>Fehler während Behandlung der Freigabehistorie</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>056</MSGNR>
+     <TEXT>Falsche nächste Stufe (&apos;&amp;1&apos;) nach Ablehnung - muss kleiner als akt (&apos;&amp;2&apos;)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>057</MSGNR>
+     <TEXT>Zur Zeit sind noch keine Einträge zur Anzeige verzeichnet</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>058</MSGNR>
+     <TEXT>Bei dieser Aktion trat ein Fehler auf =&gt; für Details siehe ApplProt &amp;1 &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>059</MSGNR>
+     <TEXT>Keine Freigabehistorie verfügbar</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>060</MSGNR>
+     <TEXT>Letzte Freigabe ist bereits erreicht (Stufe &apos;&amp;1&apos;) - nur Ablehnung möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>061</MSGNR>
+     <TEXT>Fehler während der Ermittlung von Anhängen zum BO</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>062</MSGNR>
+     <TEXT>Klasse &amp;1 hat nicht das Interface &amp;2 implementiert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>063</MSGNR>
+     <TEXT>Fehler bei Verbrauchererzeugung &amp;1 -&gt; siehe vorhergehende Ausnahme</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>064</MSGNR>
+     <TEXT>Anhang hat eine Größe von &amp;1MB, es sind aber nur solche bis &amp;2MB erlaubt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>065</MSGNR>
+     <TEXT>Aus Gültigkeits- oder Freigabegründen wurden Dokumente ignoriert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>066</MSGNR>
+     <TEXT>Keine gültige oder freigegebene Dokumentversion gefunden zu &amp;1 &amp;2 &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>067</MSGNR>
+     <TEXT>Keine Werte-/Suchhilfe gesetzt - Vorgang ist nicht möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>068</MSGNR>
+     <TEXT>Feld &amp;1 ist nicht in Werte-/Suchhilfe &amp;2 definiert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>069</MSGNR>
+     <TEXT>Fataler Fehler während Aufruf der Werte-/Suchhilfe &amp;1 aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>070</MSGNR>
+     <TEXT>Fehler bei Ausführung des Werte-/Suchhilfe-Tools</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>071</MSGNR>
+     <TEXT>Fehler bei Dateizugriff</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>072</MSGNR>
+     <TEXT>Bitte einen Pfad und Dateinamen angeben</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>073</MSGNR>
+     <TEXT>Verzeichnisname &amp;1 ist leer oder existiert nicht</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>074</MSGNR>
+     <TEXT>Datei &amp;1&amp;2&amp;3 konnte nicht geöffnet werden oder ist nicht vorhanden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>075</MSGNR>
+     <TEXT>Datei &amp;1&amp;2&amp;3 konnte nicht aus Dateisystem gelöscht werden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>076</MSGNR>
+     <TEXT>DMS kann nicht mandantenunabhängig gelesen werden!</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>077</MSGNR>
+     <TEXT>Fehler in Workflow Servicemethode aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>078</MSGNR>
+     <TEXT>Kein aktive Workflowaufgabe zu Workflow Id &amp;1 gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>079</MSGNR>
+     <TEXT>Kein eindeutiges Ergebnis zu Workflow Id &amp;1 gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>080</MSGNR>
+     <TEXT>Gefundene aktive Aufgabe ist in Status &apos;FEHLER&apos;</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>081</MSGNR>
+     <TEXT>Fehler während der Erweiterung eines Dynpros mit einen Docking Container</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>082</MSGNR>
+     <TEXT>Ungeeignete Umgebung oder Prozesstyp für die Verwendung von Controls</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>083</MSGNR>
+     <TEXT>Aktuell wird kein Workitem ausgeführt oder Aufruf aus einer Nebenmethode</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>084</MSGNR>
+     <TEXT>Die markierten Spalten sind für diesen Vorgang nicht unterstützt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>085</MSGNR>
+     <TEXT>Dynprofeld &amp;1 ist (noch) nicht registriert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>086</MSGNR>
+     <TEXT>Fehler während Dateiverarbeitung</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>087</MSGNR>
+     <TEXT>Fehler in Batch-Input-Utility</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>088</MSGNR>
+     <TEXT>Fehler in ABAP unit test double loader</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>089</MSGNR>
+     <TEXT>Freigabeeintrag zu Stufe &amp;1 (Zyklus &amp;2) / lfd. Nr. &amp;3 nicht gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>090</MSGNR>
+     <TEXT>Schlüssel/Wert &amp;1 ist nicht eindeutig in Tabelle &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>091</MSGNR>
+     <TEXT>Die angegebene SAP-Codepage &amp;1 ist keine UTF-8-Codepage</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>092</MSGNR>
+     <TEXT>Methode &amp;1 ist nicht zulässig am Client/PC</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>093</MSGNR>
+     <TEXT>Datei &amp;1 wurde im Verzeichnis &amp;2&amp;3&amp;4 gespeichert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>094</MSGNR>
+     <TEXT>Beim Auslesen des Dokuments aus Archiv ist ein Fehler aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>095</MSGNR>
+     <TEXT>Keine Berechtigung für Zugriff auf Datei &apos;&amp;1&amp;2&amp;3&amp;4&apos;</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>096</MSGNR>
+     <TEXT>Die Ausführung von Programm &amp;1 wurde erfolgreich beendet</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>097</MSGNR>
+     <TEXT>Während der Ausführung von Programm &amp;1 sind Fehler aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>098</MSGNR>
+     <TEXT>Workflow beenden aufgrund Benutzeraktion oder programmiertem Ergebnis</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>099</MSGNR>
+     <TEXT>Fehler während Ermittlung in HR-Org.management</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>100</MSGNR>
+     <TEXT>Gewählte Zelle hat keinen Wert - Funktion nicht möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>101</MSGNR>
+     <TEXT>Funktion &apos;&amp;1&apos; wurde wegen fehlerhafter Daten nicht ausgeführt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>102</MSGNR>
+     <TEXT>Fehler bei der Statusbehandlung</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>103</MSGNR>
+     <TEXT>Externer Status &amp;1 ist nicht in Sprache &amp;2 unterstützt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>104</MSGNR>
+     <TEXT>Einen Systemstatus (&amp;1) zu ändern ist nicht mit dieser Methode erlaubt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>105</MSGNR>
+     <TEXT>Konfiguration ist unvollständig um Host-URL zu generieren</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>106</MSGNR>
+     <TEXT>Keine aktiven Workflows / Workitems zu Objekt &amp;1 vorhanden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>107</MSGNR>
+     <TEXT>Es ist ein technischer Workflowfehler aufgetreten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>108</MSGNR>
+     <TEXT>Server Lokation konnte nicht ermittelt / zusammengesetzt werden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>110</MSGNR>
+     <TEXT>DDIC-Ermittlung fehlgeschlagen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>111</MSGNR>
+     <TEXT>Für diese Methode sind nur elementare, strukt. o. tabell. Objekte erlaubt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>112</MSGNR>
+     <TEXT>Name muss für nicht-elementare Objekte versorgt sein</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>113</MSGNR>
+     <TEXT>Vor der Preparierung erst das Textmodule oder die Textzeilen versorgen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>115</MSGNR>
+     <TEXT>Prozess &amp;1 ist im Status ERROR. Funktion ist im Moment nicht möglich.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>116</MSGNR>
+     <TEXT>Klasse &amp;1 erbt nicht von Klasse &amp;2 oder Objekt hat nicht erwarteten Typ</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>117</MSGNR>
+     <TEXT>Ermittlung der Dokumentart über Dokumenttyp &amp;1 ist nicht eindeutig</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>118</MSGNR>
+     <TEXT>Keine Dokumentart zu BO &amp;1 und Dokumenttyp &amp;2 gefunden</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

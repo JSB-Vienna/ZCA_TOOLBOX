@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_CA_UTILS</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>CA-TBX: Wrapped functions for easier use</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>PU1</KEY>
+     <ENTRY>There are unsaved changes!</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>PU2</KEY>
+     <ENTRY>Do you like to save these changes?</ENTRY>
+     <LENGTH>120</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>PU3</KEY>
+     <ENTRY>Save</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>PU4</KEY>
+     <ENTRY>Cancel</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>PU1</KEY>
+       <ENTRY>Es gibt ungesicherte Änderungen!</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU2</KEY>
+       <ENTRY>Sollen die Änderungen gespeichert werden?</ENTRY>
+       <LENGTH>120</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU3</KEY>
+       <ENTRY>Sichern</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU4</KEY>
+       <ENTRY>Abbrechen</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>W</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>PU1</KEY>
+       <ENTRY>Има незапазени промени!</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU2</KEY>
+       <ENTRY>Искате ли да запазите тези промени?</ENTRY>
+       <LENGTH>120</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU3</KEY>
+       <ENTRY>Запазете</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU4</KEY>
+       <ENTRY>Отмяна</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>d</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>PU1</KEY>
+       <ENTRY>Ima nezačuvani promeni!</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU2</KEY>
+       <ENTRY>Dali sakate da gi začuvate ovie promeni?</ENTRY>
+       <LENGTH>120</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU3</KEY>
+       <ENTRY>Začuvaj</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>PU4</KEY>
+       <ENTRY>Otkaži</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Compose name / description and technical id for output</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Execute COMMIT WORK</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Determine base transaction code of a transaction variant</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create icon (by corresponding FM)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Checks whether the GUI is currently available</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check if a  HTML client (Fiori/Business client) is running</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check whether the update task is active</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_BOOLEAN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constants for boolean flags</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_COMMIT_MODES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constants for commit mode</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_POPUP_ANSWERS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constants for answers after popup usage</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_DEFAULT_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Type conform default values for method parameters</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Standard popup to confirm loss of data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ROLLBACK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Execute ROLLBACK WORK</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <SCONAME>IV_DESCR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Name / description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <SCONAME>IV_TECHN_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Technical Id prepared for output (except ALPHA conversion)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
+     <SCONAME>IV_COMMIT_MODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Type of commit (0=by caller; 1=asynch; 2=synch/wait)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
+     <SCONAME>IV_FOR_BAPI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Use BAPI function module (includes buffer refresh)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <SCONAME>IV_TA_VARIANT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Current transaction variant</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <SCONAME>RV_ACTUAL_TA_CODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Actual base transaction code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_ADD_QINFO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Attach standard quickinfo; 0 = Suppress any quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_ICON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Icon name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_QUICKINFO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_TEXT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Text (behind icon)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>RV_ICON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Carrier field for icons</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
+     <SCONAME>RV_IS_GUI_AVAILABLE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = GUI is available</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
+     <SCONAME>RV_HTML_CLIENT_IS_RUNNING</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = HTML / Business client / Fiori client</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
+     <SCONAME>RV_IS_IN_UPDATE_TASK</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Update task is active</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_ICON_1</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Icon for button 1 (default = ICON_SYSTEM_SAVE)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_ICON_2</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Icon for button 2 (default = ICON_CANCEL -&gt; see comment)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_TEXT_1</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Text for button 1 (default = &apos;Save&apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_TEXT_2</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Text for button 2 (default = &apos;Cancel&apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_DEFULT_BUTTON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Cursor is positioned on the first (=1) / second (=2) button</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_QUESTION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Question text (default = see in method)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_REQUEST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Request / theme / what is it about (default = see in method)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_USE_CANCEL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Display cancel button</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>RV_ANSWER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>1 = Yes, save; 2 = No, ignore changs; A = Cancel action</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ROLLBACK</CMPNAME>
+     <SCONAME>IV_FOR_BAPI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Use BAPI function module (includes buffer refresh)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
