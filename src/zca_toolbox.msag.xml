@@ -728,6 +728,12 @@
      <MSGNR>120</MSGNR>
      <TEXT>It is obligatory to enter a note</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>121</MSGNR>
+     <TEXT>The combination of &amp;1 and &amp;2 will result in no output - adapt parameters</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>
@@ -1382,6 +1388,11 @@
      <SPRSL>D</SPRSL>
      <MSGNR>118</MSGNR>
      <TEXT>Keine Dokumentart zu BO &amp;1 und Dokumenttyp &amp;2 gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>121</MSGNR>
+     <TEXT>Die Kombination von &amp;1 und &amp;2 führt zu keiner Ausgabe - Parameter ändern</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>
