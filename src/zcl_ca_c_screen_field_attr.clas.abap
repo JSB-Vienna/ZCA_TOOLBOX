@@ -116,7 +116,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
       create_range_entry_for_fname
         IMPORTING
           incl_or_excl      TYPE ddsign DEFAULT zcl_ca_c_sel_options=>sign-incl
-          screen_field_name TYPE dynfnam OPTIONAL
+          screen_field_name TYPE dynfnam
         RETURNING
           VALUE(result)     TYPE ty_s_requested_scr_field_name,
 
@@ -128,7 +128,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
       create_range_entry_for_mod_grp
         IMPORTING
           incl_or_excl       TYPE ddsign DEFAULT zcl_ca_c_sel_options=>sign-incl
-          screen_modif_group TYPE char3 OPTIONAL
+          screen_modif_group TYPE char3  OPTIONAL
         RETURNING
           VALUE(result)      TYPE ty_s_requested_scr_modif_group,
 
@@ -175,7 +175,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
       "! @parameter attribute_value         | <p class="shorttext synchronized" lang="en">Switch value -&gt; use SWITCH-*</p>
       modify_attributes
         IMPORTING
-          req_screen_field_names  TYPE ty_requested_scr_field_names OPTIONAL
+          req_screen_field_names  TYPE ty_requested_scr_field_names  OPTIONAL
           req_screen_modif_groups TYPE ty_requested_scr_modif_groups OPTIONAL
           boolean_operator        TYPE num1 DEFAULT boolean_operator-or
           attribute_name          TYPE fieldname

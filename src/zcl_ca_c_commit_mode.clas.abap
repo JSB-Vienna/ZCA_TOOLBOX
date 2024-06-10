@@ -26,13 +26,10 @@ CLASS zcl_ca_c_commit_mode DEFINITION PUBLIC
     METHODS:
       "! <p class="shorttext synchronized" lang="en">Is it a valid commmit mode?</p>
       "!
-      "! @parameter commit_mode   | <p class="shorttext synchronized" lang="en">Commit mode</p>
-      "! @raising   zcx_ca_intern | <p class="shorttext synchronized" lang="en">Common exception: Internal exceptions</p>
+      "! @parameter commit_mode | <p class="shorttext synchronized" lang="en">Commit mode</p>
       is_valid
         IMPORTING
-          commit_mode TYPE zca_d_commit_mode
-        RAISING
-          zcx_ca_intern.
+          commit_mode TYPE zca_d_commit_mode.
 
 
 * P R I V A T E   S E C T I O N
@@ -43,12 +40,10 @@ CLASS zcl_ca_c_commit_mode DEFINITION PUBLIC
       "! <p class="shorttext synchronized" lang="en">Instance of the class itself</p>
       singleton_instance     TYPE REF TO zcl_ca_c_commit_mode.
 
-ENDCLASS.
+ENDCLASS.                     "zcl_ca_c_commit  DEFINITION
 
 
-
-CLASS ZCL_CA_C_COMMIT_MODE IMPLEMENTATION.
-
+CLASS zcl_ca_c_commit_mode IMPLEMENTATION.
 
   METHOD get_instance.
     "-----------------------------------------------------------------*
@@ -77,4 +72,6 @@ CLASS ZCL_CA_C_COMMIT_MODE IMPLEMENTATION.
           mv_msgv2 = CONV #( commit_mode ).
     ENDIF.
   ENDMETHOD.                    "is_valid
-ENDCLASS.
+
+ENDCLASS.                     "zcl_ca_c_commit  IMPLEMENTATION
+

@@ -171,7 +171,9 @@ CLASS zcl_ca_utils IMPLEMENTATION.
 
     ELSE.
       result = |{ iv_descr } | &
-               |({ condense( |{ iv_techn_id ALPHA = OUT }| ) })|.
+               |({ condense( COND string( WHEN iv_techn_id CO '0123456789'
+                                            THEN |{ iv_techn_id ALPHA = OUT }|
+                                            ELSE iv_techn_id ) ) })| ##no_text.
     ENDIF.
   ENDMETHOD.                    "compose_name_n_techn_id
 

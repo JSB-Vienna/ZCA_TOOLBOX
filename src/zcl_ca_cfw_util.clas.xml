@@ -98,6 +98,16 @@
      <DESCRIPT>Visibility of a control / container</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>REGISTER_EVENT_RIGHT_CLICK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Control: (Un-)Register event for right click at control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REGISTER_EVENT_SIZE_CONTROL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Control: (Un-)Register event for size control</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>SET_COLUMN_MODE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Splitter: Set column mode</DESCRIPT>
@@ -577,6 +587,30 @@
      <SCONAME>IV_TO_CONTAINER</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of target container (in scr painter or set by SET_NAME)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTER_EVENT_RIGHT_CLICK</CMPNAME>
+     <SCONAME>IO_CONTROL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance of control / container</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTER_EVENT_RIGHT_CLICK</CMPNAME>
+     <SCONAME>IV_REGISTER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>1 = Register event / 0 = Unregister event</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTER_EVENT_SIZE_CONTROL</CMPNAME>
+     <SCONAME>IO_CONTROL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance of control / container</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTER_EVENT_SIZE_CONTROL</CMPNAME>
+     <SCONAME>IV_REGISTER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>1 = Register event / 0 = Unregister event</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_COLUMN_MODE</CMPNAME>

@@ -734,6 +734,12 @@
      <MSGNR>121</MSGNR>
      <TEXT>The combination of &amp;1 and &amp;2 will result in no output - adapt parameters</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>122</MSGNR>
+     <TEXT>Find the detailed logging in TA SLG1 to object &amp;1 / subobject &amp;2</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>
@@ -1393,6 +1399,11 @@
      <SPRSL>D</SPRSL>
      <MSGNR>121</MSGNR>
      <TEXT>Die Kombination von &amp;1 und &amp;2 führt zu keiner Ausgabe - Parameter ändern</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>122</MSGNR>
+     <TEXT>In TA SLG1 zu Objekt &amp;1 / Unterobjekt &amp;2 sind weitere Details zu finden</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

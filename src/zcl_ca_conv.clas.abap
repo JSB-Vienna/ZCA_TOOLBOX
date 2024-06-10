@@ -147,7 +147,6 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
 
 
 * P R I V A T E   S E C T I O N
-protected section.
   PRIVATE SECTION.
 *   a l i a s e s
     ALIASES:
@@ -168,71 +167,11 @@ protected section.
       "! <p class="shorttext synchronized" lang="en">Default settings of user</p>
       user_default_settings TYPE usdefaults.
 
-ENDCLASS.
+ENDCLASS.                     "zcl_ca_conv  DEFINITION
 
 
 
-CLASS ZCL_CA_CONV IMPLEMENTATION.
-
-
-  METHOD class_constructor.
-    "-----------------------------------------------------------------*
-    "   Class constructor
-    "-----------------------------------------------------------------*
-    boolean     = zcl_ca_c_boolean=>get_instance( ).
-    num_boolean = zcl_ca_c_numeric_boolean=>get_instance( ).
-
-    "Get current user and its defaults of user master
-    DATA(_active_sap_user_id) = cl_abap_syst=>get_user_name( ).
-    CALL FUNCTION 'SUSR_USER_DEFAULTS_GET'
-      EXPORTING
-        user_name     = _active_sap_user_id
-      IMPORTING
-        user_defaults = user_default_settings.
-  ENDMETHOD.                    "class_constructor
-
-
-  METHOD flag_2_boolean.
-    "-----------------------------------------------------------------*
-    "   Conversion of a flag (blank/X) into a boolean value (0/1).
-    "   Input for TRUE can be: X, x, Y, J, j. Anything else is
-    "   returned as FALSE.
-    "-----------------------------------------------------------------*
-    IF flag CA 'XxYJj' ##no_text.
-      result = num_boolean->true.
-    ELSE.
-      result = num_boolean->false.
-    ENDIF.
-  ENDMETHOD.                    "flag_2_boolean
-
-
-  METHOD internal_amount_2_external.
-    "-----------------------------------------------------------------*
-    "   Conversion of an internal amount into an external appearance
-    "-----------------------------------------------------------------*
-    CLEAR external_amount.
-    IF currency IS INITIAL.
-      WRITE internal_amount TO external_amount.             "#EC *
-
-    ELSE.
-      "Check existence of the currency
-      SELECT COUNT( * ) FROM  tcurc                      "#EC CI_BYPASS
-                        WHERE waers EQ currency.
-      IF sy-dbcnt NE 1.
-        "Parameter '&1' has invalid value '&2'
-        RAISE EXCEPTION TYPE zcx_ca_conv
-          EXPORTING
-            textid   = zcx_ca_conv=>param_invalid
-            mv_msgty = c_msgty_e
-            mv_msgv1 = 'CURRENCY' ##no_text
-            mv_msgv2 = CONV #( currency ).
-
-      ELSE.
-        WRITE internal_amount CURRENCY currency TO external_amount.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "internal_amount_2_external
-
+CLASS zcl_ca_conv IMPLEMENTATION.
 
   METHOD bapi_amount_2_internal.
     "-----------------------------------------------------------------*
@@ -281,6 +220,23 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
   ENDMETHOD.                    "boolean_2_flag
 
 
+  METHOD class_constructor.
+    "-----------------------------------------------------------------*
+    "   Class constructor
+    "-----------------------------------------------------------------*
+    boolean     = zcl_ca_c_boolean=>get_instance( ).
+    num_boolean = zcl_ca_c_numeric_boolean=>get_instance( ).
+
+    "Get current user and its defaults of user master
+    DATA(_active_sap_user_id) = cl_abap_syst=>get_user_name( ).
+    CALL FUNCTION 'SUSR_USER_DEFAULTS_GET'
+      EXPORTING
+        user_name     = _active_sap_user_id
+      IMPORTING
+        user_defaults = user_default_settings.
+  ENDMETHOD.                    "class_constructor
+
+
   METHOD convert_via_conversion_exit.
     "-----------------------------------------------------------------*
     "   Dynamic execution of standard conversion exits
@@ -305,7 +261,7 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
       CATCH cx_root INTO _exception.
         _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls = zcx_ca_conv=>c_zcx_ca_conv
                                                                         iv_class    = 'ZCL_CA_CONV'
-                                                                        iv_method   = 'CONV_EXIT'
+                                                                        iv_method   = 'CONVERT_VIA_CONVERSION_EXIT'
                                                                         ix_error    = _exception ) ) ##no_text.
         IF _conversion_exception IS BOUND.
           RAISE EXCEPTION _conversion_exception.
@@ -451,7 +407,7 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
         CATCH cx_sy_create_data_error INTO _exception.
           _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls = zcx_ca_conv=>c_zcx_ca_conv
                                                                           iv_class    = 'ZCL_CA_CONV'
-                                                                          iv_method   = 'EXT_2_INT' ##no_text
+                                                                          iv_method   = 'EXTERNAL_2_INTERNAL' ##no_text
                                                                           ix_error    = _exception ) ).
           IF _conversion_exception IS BOUND.
             RAISE EXCEPTION _conversion_exception.
@@ -556,7 +512,7 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
             cx_abap_timefm_invalid       INTO _exception.
         _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls = zcx_ca_conv=>c_zcx_ca_conv
                                                                         iv_class    = 'ZCL_CA_CONV'
-                                                                        iv_method   = 'EXT_2_INT' ##no_text
+                                                                        iv_method   = 'EXTERNAL_2_INTERNAL' ##no_text
                                                                         ix_error    = _exception ) ).
         IF _conversion_exception IS BOUND.
           RAISE EXCEPTION _conversion_exception.
@@ -755,7 +711,8 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
             MESSAGE s755(db) INTO _message_text.
         ENDCASE.
 
-        _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_function   = 'RSDYNSS0'
+        _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls   = zcx_ca_conv=>c_zcx_ca_conv
+                                                                        iv_function   = 'RSDYNSS0'
                                                                         iv_subroutine = 'CONVERT_EX_2_IN' ##no_text
                                                                         iv_subrc      = _return_code ) ).
         IF _conversion_exception IS BOUND.
@@ -764,6 +721,20 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.                    "external_2_internal
+
+
+  METHOD flag_2_boolean.
+    "-----------------------------------------------------------------*
+    "   Conversion of a flag (blank/X) into a boolean value (0/1).
+    "   Input for TRUE can be: X, x, Y, J, j. Anything else is
+    "   returned as FALSE.
+    "-----------------------------------------------------------------*
+    IF flag CA 'XxYJj' ##no_text.
+      result = num_boolean->true.
+    ELSE.
+      result = num_boolean->false.
+    ENDIF.
+  ENDMETHOD.                    "flag_2_boolean
 
 
   METHOD internal_2_external.
@@ -817,7 +788,7 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
            _element_descr_int_value->type_kind NE _element_descr_int_value->typekind_date AND
            _element_descr_int_value->type_kind NE _element_descr_int_value->typekind_time.
       WRITE internal_value USING EDIT MASK _element_descr_int_value->edit_mask
-                                      TO external_value.
+                                        TO external_value.
       _return_code_of_write = sy-subrc.
 
     ELSE.
@@ -840,10 +811,10 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
             TRY.
                 cl_abap_datfm=>conv_date_int_to_ext(
                                               EXPORTING
-                                                im_datint    = internal_value
-                                                im_datfmdes  = _date_format
+                                                im_datint   = internal_value
+                                                im_datfmdes = _date_format
                                               IMPORTING
-                                                ex_datext    = external_value ).
+                                                ex_datext   = external_value ).
                 "There is a problem, didn't know what but the method before
                 "returns no value. So we do this workaround.
                 IF external_value IS INITIAL.
@@ -856,7 +827,8 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
                 _return_code_of_write = sy-subrc.
 
               CATCH cx_abap_datfm_format_unknown INTO _exception.
-                _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_class    = 'CL_ABAP_DATFM'
+                _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls = zcx_ca_conv=>c_zcx_ca_conv
+                                                                                iv_class    = 'CL_ABAP_DATFM'
                                                                                 iv_method   = 'CONV_DATE_INT_TO_EXT'
                                                                                 ix_error    = _exception ) ) ##no_text.
                 IF _conversion_exception IS BOUND.
@@ -876,16 +848,17 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
                 "environment TIME FORMAT.
                 "format_according_to = cl_abap_timefm=>user  is defined, but not allowed
                 cl_abap_timefm=>conv_time_int_to_ext(
-                                EXPORTING
-                                  time_int            = internal_value
-                                  without_seconds     = without_seconds
-                                  format_according_to = cl_abap_timefm=>environment
-                                IMPORTING
-                                  time_ext            = DATA(_converted_time) ).
+                                                EXPORTING
+                                                  time_int            = internal_value
+                                                  without_seconds     = without_seconds
+                                                  format_according_to = cl_abap_timefm=>environment
+                                                IMPORTING
+                                                  time_ext            = DATA(_converted_time) ).
                 external_value = _converted_time.
 
               CATCH cx_parameter_invalid_range INTO _exception.
-                _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_class    = 'CL_ABAP_TIMEFM'
+                _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls = zcx_ca_conv=>c_zcx_ca_conv
+                                                                                iv_class    = 'CL_ABAP_TIMEFM'
                                                                                 iv_method   = 'CONV_TIME_INT_TO_EXT'
                                                                                 ix_error    = _exception ) ) ##no_text.
                 IF _conversion_exception IS BOUND.
@@ -948,7 +921,7 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
                 WHEN abap_false.
                   IF _element_descr_int_value->decimals IS NOT INITIAL.
                     WRITE internal_value DECIMALS _element_descr_int_value->decimals
-                                             TO _external_value.
+                                               TO _external_value.
                   ELSE.
                     WRITE internal_value TO _external_value. "#EC *
                   ENDIF.
@@ -1055,4 +1028,34 @@ CLASS ZCL_CA_CONV IMPLEMENTATION.
     "Delete leading spaces
     SHIFT external_value LEFT DELETING LEADING space.
   ENDMETHOD.                    "internal_2_external
-ENDCLASS.
+
+
+  METHOD internal_amount_2_external.
+    "-----------------------------------------------------------------*
+    "   Conversion of an internal amount into an external appearance
+    "-----------------------------------------------------------------*
+    CLEAR external_amount.
+    IF currency IS INITIAL.
+      WRITE internal_amount TO external_amount.             "#EC *
+
+    ELSE.
+      "Check existence of the currency
+      SELECT COUNT( * ) FROM  tcurc                      "#EC CI_BYPASS
+                        WHERE waers EQ currency.
+      IF sy-dbcnt NE 1.
+        "Parameter '&1' has invalid value '&2'
+        RAISE EXCEPTION TYPE zcx_ca_conv
+          EXPORTING
+            textid   = zcx_ca_conv=>param_invalid
+            mv_msgty = c_msgty_e
+            mv_msgv1 = 'CURRENCY' ##no_text
+            mv_msgv2 = CONV #( currency ).
+
+      ELSE.
+        WRITE internal_amount CURRENCY currency TO external_amount.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "internal_amount_2_external
+
+ENDCLASS.                     "zcl_ca_conv  IMPLEMENTATION
+

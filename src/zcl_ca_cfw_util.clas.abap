@@ -235,6 +235,24 @@ CLASS zcl_ca_cfw_util DEFINITION PUBLIC
           VALUE(iv_dynnr)   TYPE sydynnr   OPTIONAL
           iv_to_container   TYPE csequence OPTIONAL,
 
+      "! <p class="shorttext synchronized" lang="en">Control: (Un-)Register event for size control</p>
+      "!
+      "! @parameter io_control  | <p class="shorttext synchronized" lang="en">Instance of control / container</p>
+      "! @parameter iv_register | <p class="shorttext synchronized" lang="en">1 = Register event / 0 = Unregister event</p>
+      register_event_size_control
+        IMPORTING
+          io_control  TYPE REF TO cl_gui_control
+          iv_register TYPE i DEFAULT 1,
+
+      "! <p class="shorttext synchronized" lang="en">Control: (Un-)Register event for right click at control</p>
+      "!
+      "! @parameter io_control  | <p class="shorttext synchronized" lang="en">Instance of control / container</p>
+      "! @parameter iv_register | <p class="shorttext synchronized" lang="en">1 = Register event / 0 = Unregister event</p>
+      register_event_right_click
+        IMPORTING
+          io_control  TYPE REF TO cl_gui_control
+          iv_register TYPE i DEFAULT 1,
+
       "! <p class="shorttext synchronized" lang="en">Splitter: Set column mode</p>
       "!
       "! @parameter io_splitter | <p class="shorttext synchronized" lang="en">Instance of splitter control / container</p>
@@ -361,7 +379,6 @@ CLASS zcl_ca_cfw_util DEFINITION PUBLIC
           iv_visible TYPE abap_bool DEFAULT abap_true.
 
 * P R I V A T E   S E C T I O N
-protected section.
   PRIVATE SECTION.
 *   s t a t i c   a t t r i b u t e s
     CLASS-DATA:
@@ -376,8 +393,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
-
+CLASS zcl_ca_cfw_util IMPLEMENTATION.
 
   METHOD alv_refresh_table_display.
     "-----------------------------------------------------------------*
@@ -391,11 +407,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                                     finished       = 1
                                     OTHERS         = 2 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_ALV_GRID'
-                                        iv_method   = 'REFRESH_TABLE_DISPLAY'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_ALV_GRID'
+                                                         iv_method   = 'REFRESH_TABLE_DISPLAY'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -414,11 +429,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                                     error      = 1
                                     OTHERS     = 2 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_ALV_GRID'
-                                        iv_method   = 'REGISTER_EDIT_EVENT'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_ALV_GRID'
+                                                         iv_method   = 'REGISTER_EDIT_EVENT'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -426,364 +440,68 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
   ENDMETHOD.                    "alv_register_edit_event
 
 
-  METHOD set_column_mode.
+  METHOD create_alv_grid_control.
     "-----------------------------------------------------------------*
-    "   Splitter: Set mode for the columns
+    "   Create ALV grid table control
     "-----------------------------------------------------------------*
-    io_splitter->set_column_mode(
-                          EXPORTING
-                            mode              = iv_mode
-                          EXCEPTIONS
-                            cntl_error        = 1
-                            cntl_system_error = 2
-                            OTHERS            = 3 ).
+    IF ro_alv_grid IS NOT SUPPLIED.
+      "Parameter '&1' ist nicht angegeben
+      RAISE EXCEPTION TYPE zcx_ca_intern
+        EXPORTING
+          textid   = zcx_ca_intern=>param_not_supplied
+          mv_msgty = c_msgty_e
+          mv_msgv1 = 'RO_ALV_GRID' ##no_text.
+    ENDIF.
+
+    "Create custom container control
+    CREATE OBJECT ro_alv_grid
+      EXPORTING
+        i_parent          = io_parent
+        i_applogparent    = io_applog_parent
+      EXCEPTIONS
+        error_cntl_create = 1
+        error_cntl_init   = 2
+        error_cntl_link   = 3
+        error_dp_create   = 4
+        OTHERS            = 5.
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_COLUMN_MODE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_ALV_GRID'
+                                                         iv_method   = 'CONSTRUCTOR'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
     ENDIF.
-  ENDMETHOD.                    "set_column_mode
 
-
-  METHOD set_column_sash_fix.
-    "-----------------------------------------------------------------*
-    "   Splitter: Freeze a column sash
-    "-----------------------------------------------------------------*
-    io_splitter->set_column_sash(
-                            EXPORTING
-                              id                = iv_id
-                              type              = io_splitter->type_movable
-                              value             = iv_value
-                            EXCEPTIONS
-                              cntl_error        = 1
-                              cntl_system_error = 2
-                              OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_COLUMN_SASH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
+    "Set name explicitly because super constructors don't do it.
+    IF iv_cnt_name IS NOT INITIAL.
+      set_name( io_control  = ro_alv_grid
+                iv_cnt_name = iv_cnt_name ).
     ENDIF.
-  ENDMETHOD.                    "set_column_sash_fix
+  ENDMETHOD.                    "create_alv_grid_control
 
 
-  METHOD set_column_sash_visible.
+  METHOD create_custom_container.
     "-----------------------------------------------------------------*
-    "   Splitter: Set visibility of a column sash
+    "   Create custom container
     "-----------------------------------------------------------------*
-    io_splitter->set_column_sash(
-                            EXPORTING
-                              id                = iv_id
-                              type              = io_splitter->type_sashvisible
-                              value             = iv_value
-                            EXCEPTIONS
-                              cntl_error        = 1
-                              cntl_system_error = 2
-                              OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_COLUMN_SASH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_column_sash_visible
-
-
-  METHOD set_column_width.
-    "-----------------------------------------------------------------*
-    "   Splitter: Set column width
-    "-----------------------------------------------------------------*
-    io_splitter->set_column_width(
-                            EXPORTING
-                              id                = iv_id
-                              width             = iv_width
-                            EXCEPTIONS
-                              cntl_error        = 1
-                              cntl_system_error = 2
-                              OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_COLUMN_WIDTH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_column_width
-
-
-  METHOD set_focus.
-    "-----------------------------------------------------------------*
-    "   Control: Set focus at passed control
-    "-----------------------------------------------------------------*
-    cl_gui_control=>set_focus(
-                          EXPORTING
-                            control           = io_control
-                          EXCEPTIONS
-                            cntl_error        = 1
-                            cntl_system_error = 2
-                            OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTROL'
-                                        iv_method   = 'SET_FOCUS'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_focus
-
-
-  METHOD set_name.
-    "-----------------------------------------------------------------*
-    "   Control: Set name for control/container
-    "-----------------------------------------------------------------*
-    IF iv_cnt_name IS INITIAL.
-      RETURN.
-    ENDIF.
-
-    io_control->set_name(
-                    EXPORTING
-                      name           = CONV string( iv_cnt_name )
-                    EXCEPTIONS
-                      cntl_error     = 1
-                      parent_no_name = 2
-                      illegal_name   = 3
-                      OTHERS         = 4 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTROL'
-                                        iv_method   = 'SET_NAME'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_name
-
-
-  METHOD set_new_ok_code.
-    "-----------------------------------------------------------------*
-    "   CFW: Set a new FCode in Eventhandler for PAI
-    "-----------------------------------------------------------------*
-    cl_gui_cfw=>set_new_ok_code(
-                           EXPORTING
-                             new_code = iv_new_fcode
-                           IMPORTING
-                             rc       = DATA(lv_rc) ).
-    IF lv_rc NE cl_gui_cfw=>rc_posted.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CFW'
-                                        iv_method   = 'SET_NEW_OK_CODE'
-                                        iv_subrc    = lv_rc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_new_ok_code
-
-
-  METHOD set_registered_events.
-    "-----------------------------------------------------------------*
-    "   Control: Set application events for Control
-    "-----------------------------------------------------------------*
-    io_control->set_registered_events(
-                                EXPORTING
-                                  events                    = it_appl_events
-                                EXCEPTIONS
-                                  cntl_error                = 1
-                                  cntl_system_error         = 2
-                                  illegal_event_combination = 3
-                                  OTHERS                    = 4 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTROL'
-                                        iv_method   = 'SET_REGISTERED_EVENTS'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_registered_events
-
-
-  METHOD set_row_height.
-    "-----------------------------------------------------------------*
-    "   Splitter: Set height of a row
-    "-----------------------------------------------------------------*
-    io_splitter->set_row_height(
-                            EXPORTING
-                              id                = iv_id
-                              height            = iv_height
-                            EXCEPTIONS
-                              cntl_error        = 1
-                              cntl_system_error = 2
-                              OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_ROW_HEIGHT'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_row_height
-
-
-  METHOD set_row_mode.
-    "-----------------------------------------------------------------*
-    "   Splitter: Set mode for the rows
-    "-----------------------------------------------------------------*
-    io_splitter->set_row_mode(
-                          EXPORTING
-                            mode              = iv_mode
-                          EXCEPTIONS
-                            cntl_error        = 1
-                            cntl_system_error = 2
-                            OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_ROW_MODE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_row_mode
-
-
-  METHOD set_row_sash_fix.
-    "-----------------------------------------------------------------*
-    "   Splitter: Freeze a row sash
-    "-----------------------------------------------------------------*
-    io_splitter->set_row_sash(
-                          EXPORTING
-                            id                = iv_id
-                            type              = io_splitter->type_movable
-                            value             = iv_value
-                          EXCEPTIONS
-                            cntl_error        = 1
-                            cntl_system_error = 2
-                            OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_ROW_SASH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_row_sash_fix
-
-
-  METHOD set_row_sash_visible.
-    "-----------------------------------------------------------------*
-    "   Splitter: Set visibility of a row sash
-    "-----------------------------------------------------------------*
-    io_splitter->set_row_sash(
-                          EXPORTING
-                            id                = iv_id
-                            type              = io_splitter->type_sashvisible
-                            value             = iv_value
-                          EXCEPTIONS
-                            cntl_error        = 1
-                            cntl_system_error = 2
-                            OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'SET_ROW_SASH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_row_sash_visible
-
-
-  METHOD set_visible.
-    "-----------------------------------------------------------------*
-    "   Control: Hide or display a control/container
-    "-----------------------------------------------------------------*
-    io_control->set_visible(
-                        EXPORTING
-                          visible           = iv_visible
-                        EXCEPTIONS
-                          cntl_error        = 1
-                          cntl_system_error = 2
-                          OTHERS            = 3 ).
-    IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTROL'
-                                        iv_method   = 'SET_VISIBLE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "set_visible
-
-
-  METHOD create_docking_container.
-    "-----------------------------------------------------------------*
-    "   Create docking container
-    "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern            TYPE REF TO zcx_ca_intern.
-
-    IF ro_dockcont IS NOT SUPPLIED.
+    IF ro_custcont IS NOT SUPPLIED.
       "Parameter '&1' is not specified
       RAISE EXCEPTION TYPE zcx_ca_intern
         EXPORTING
           textid   = zcx_ca_intern=>param_not_supplied
           mv_msgty = c_msgty_e
-          mv_msgv1 = 'RO_DOCKCONT' ##no_text.
+          mv_msgv1 = 'RO_CUSTCONT' ##no_text.
     ENDIF.
 
     "Create custom container control
-    CREATE OBJECT ro_dockcont
+    CREATE OBJECT ro_custcont
       EXPORTING
         parent                      = io_parent
         repid                       = iv_repid
         dynnr                       = iv_dynnr
-        side                        = iv_side
-        extension                   = iv_extension
-        metric                      = iv_metric
-        ratio                       = iv_ratio
-        no_autodef_progid_dynnr     = xsdbool( iv_repid IS NOT INITIAL AND
-                                               iv_dynnr IS NOT INITIAL )
-        caption                     = CONV text80( iv_caption )
-        lifetime                    = iv_lifetime
-        style                       = iv_style
+        container_name              = CONV char30( iv_cnt_name )
       EXCEPTIONS
         cntl_error                  = 1
         cntl_system_error           = 2
@@ -792,22 +510,15 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
         lifetime_dynpro_dynpro_link = 5
         OTHERS                      = 6.
     IF sy-subrc NE 0.
-      lx_intern = zcx_ca_intern=>create_exception(
-                            iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                            iv_class    = 'CL_GUI_DOCKING_CONTAINER'
-                            iv_method   = 'CONSTRUCTOR'
-                            iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CUSTOM_CONTAINER'
+                                                         iv_method   = 'CONSTRUCTOR'
+                                                         iv_subrc    = sy-subrc )  ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
     ENDIF.
-
-    "Set name explicitly because super constructors don't do it.
-    IF iv_cnt_name IS NOT INITIAL.
-      set_name( io_control  = ro_dockcont
-                iv_cnt_name = iv_cnt_name ).
-    ENDIF.
-  ENDMETHOD.                    "create_docking_container
+  ENDMETHOD.                    "create_custom_container
 
 
   METHOD create_dialogbox_container.
@@ -816,10 +527,6 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
     "   This container needs a handler for event CLOSE of the
     "   container class
     "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern            TYPE REF TO zcx_ca_intern.
-
     IF ro_diaboxcont IS NOT SUPPLIED.
       "Parameter '&1' is not specified
       RAISE EXCEPTION TYPE zcx_ca_intern
@@ -853,11 +560,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
         lifetime_dynpro_dynpro_link = 5
         OTHERS                      = 6.
     IF sy-subrc NE 0.
-      lx_intern = zcx_ca_intern=>create_exception(
-                            iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                            iv_class    = 'CL_GUI_DIALOG_BOX_CONTAINER'
-                            iv_method   = 'CONSTRUCTOR'
-                            iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_DIALOG_BOX_CONTAINER'
+                                                         iv_method   = 'CONSTRUCTOR'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -871,151 +577,34 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
   ENDMETHOD.                    "create_dialogbox_container
 
 
-  METHOD create_text_edit_control.
+  METHOD create_docking_container.
     "-----------------------------------------------------------------*
-    "   Create textedit control
+    "   Create docking container
     "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern TYPE REF TO zcx_ca_intern,
-      lv_mode   TYPE i.
-
-    "Create text edit control
-    CREATE OBJECT ro_text_edit
-      EXPORTING
-        max_number_chars           = iv_max_chars
-        style                      = iv_style
-        wordwrap_mode              = iv_wordwrap_mode
-        wordwrap_position          = iv_wordwrap_position
-        wordwrap_to_linebreak_mode = iv_wordwrap_to_linebreak_mode
-        filedrop_mode              = iv_filedrop_mode
-        parent                     = io_parent
-        lifetime                   = iv_lifetime
-      EXCEPTIONS
-        error_cntl_create          = 1
-        error_cntl_init            = 2
-        error_cntl_link            = 3
-        error_dp_create            = 4
-        gui_type_not_supported     = 5
-        OTHERS                     = 6.
-    IF sy-subrc NE 0.
-      lx_intern ?= zcx_ca_intern=>create_exception(
-                                            iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                            iv_class    = 'CL_GUI_TEXTEDIT'
-                                            iv_method   = 'CONSTRUCTOR'
-                                            iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-
-    "Set name explicitly because super constructors don't do it.
-    IF iv_cnt_name IS NOT INITIAL.
-      set_name( io_control  = ro_text_edit
-                iv_cnt_name = iv_cnt_name ).
-    ENDIF.
-
-    "Set to display only
-    CASE iv_display_only.
-      WHEN abap_true.
-        lv_mode = ro_text_edit->true.
-      WHEN OTHERS.
-        lv_mode = ro_text_edit->false.
-    ENDCASE.
-    ro_text_edit->set_readonly_mode(
-                                EXPORTING
-                                  readonly_mode          = lv_mode
-                                EXCEPTIONS
-                                  error_cntl_call_method = 1
-                                  invalid_parameter      = 2
-                                  OTHERS                 = 3 ).
-    IF sy-subrc NE 0.
-      lx_intern ?= zcx_ca_intern=>create_exception(
-                                    iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                    iv_class    = 'CL_GUI_TEXTEDIT'
-                                    iv_method   = 'SET_READONLY_MODE'
-                                    iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-
-    "Hide status bar
-    CASE iv_hide_statusbar.
-      WHEN abap_true.
-        lv_mode = ro_text_edit->false.
-      WHEN OTHERS.
-        lv_mode = ro_text_edit->true.
-    ENDCASE.
-    ro_text_edit->set_statusbar_mode(
-                              EXPORTING
-                                statusbar_mode         = lv_mode
-                              EXCEPTIONS
-                                error_cntl_call_method = 1
-                                invalid_parameter      = 2
-                                OTHERS                 = 3 ).
-    IF sy-subrc NE 0.
-      lx_intern ?= zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_TEXTEDIT'
-                                        iv_method   = 'SET_STATUSBAR_MODE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-
-    "Hide tool bar
-    CASE iv_hide_toolbar.
-      WHEN abap_true.
-        lv_mode = ro_text_edit->false.
-      WHEN OTHERS.
-        lv_mode = ro_text_edit->true.
-    ENDCASE.
-    ro_text_edit->set_toolbar_mode(
-                              EXPORTING
-                                toolbar_mode           = lv_mode
-                              EXCEPTIONS
-                                error_cntl_call_method = 1
-                                invalid_parameter      = 2
-                                OTHERS                 = 3 ).
-    IF sy-subrc NE 0.
-      lx_intern ?= zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_TEXTEDIT'
-                                        iv_method   = 'SET_TOOLBAR_MODE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "create_text_edit_control
-
-
-  METHOD create_custom_container.
-    "-----------------------------------------------------------------*
-    "   Create custom container
-    "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern            TYPE REF TO zcx_ca_intern.
-
-    IF ro_custcont IS NOT SUPPLIED.
+    IF ro_dockcont IS NOT SUPPLIED.
       "Parameter '&1' is not specified
       RAISE EXCEPTION TYPE zcx_ca_intern
         EXPORTING
           textid   = zcx_ca_intern=>param_not_supplied
           mv_msgty = c_msgty_e
-          mv_msgv1 = 'RO_CUSTCONT' ##no_text.
+          mv_msgv1 = 'RO_DOCKCONT' ##no_text.
     ENDIF.
 
     "Create custom container control
-    CREATE OBJECT ro_custcont
+    CREATE OBJECT ro_dockcont
       EXPORTING
         parent                      = io_parent
         repid                       = iv_repid
         dynnr                       = iv_dynnr
-        container_name              = CONV char30( iv_cnt_name )
+        side                        = iv_side
+        extension                   = iv_extension
+        metric                      = iv_metric
+        ratio                       = iv_ratio
+        no_autodef_progid_dynnr     = xsdbool( iv_repid IS NOT INITIAL AND
+                                               iv_dynnr IS NOT INITIAL )
+        caption                     = CONV text80( iv_caption )
+        lifetime                    = iv_lifetime
+        style                       = iv_style
       EXCEPTIONS
         cntl_error                  = 1
         cntl_system_error           = 2
@@ -1024,52 +613,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
         lifetime_dynpro_dynpro_link = 5
         OTHERS                      = 6.
     IF sy-subrc NE 0.
-      lx_intern ?= zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CUSTOM_CONTAINER'
-                                        iv_method   = 'CONSTRUCTOR'
-                                        iv_subrc    = sy-subrc )  ##no_text.
-      IF lx_intern IS BOUND.
-        RAISE EXCEPTION lx_intern.
-      ENDIF.
-    ENDIF.
-  ENDMETHOD.                    "create_custom_container
-
-
-  METHOD create_alv_grid_control.
-    "-----------------------------------------------------------------*
-    "   Create ALV grid table control
-    "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern            TYPE REF TO zcx_ca_intern.
-
-    IF ro_alv_grid IS NOT SUPPLIED.
-      "Parameter '&1' ist nicht angegeben
-      RAISE EXCEPTION TYPE zcx_ca_intern
-        EXPORTING
-          textid   = zcx_ca_intern=>param_not_supplied
-          mv_msgty = c_msgty_e
-          mv_msgv1 = 'RO_ALV_GRID' ##no_text.
-    ENDIF.
-
-    "Create custom container control
-    CREATE OBJECT ro_alv_grid
-      EXPORTING
-        i_parent          = io_parent
-        i_applogparent    = io_applog_parent
-      EXCEPTIONS
-        error_cntl_create = 1
-        error_cntl_init   = 2
-        error_cntl_link   = 3
-        error_dp_create   = 4
-        OTHERS            = 5.
-    IF sy-subrc NE 0.
-      lx_intern = zcx_ca_intern=>create_exception(
-                            iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                            iv_class    = 'CL_GUI_ALV_GRID'
-                            iv_method   = 'CONSTRUCTOR'
-                            iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_DOCKING_CONTAINER'
+                                                         iv_method   = 'CONSTRUCTOR'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1077,20 +624,16 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
 
     "Set name explicitly because super constructors don't do it.
     IF iv_cnt_name IS NOT INITIAL.
-      set_name( io_control  = ro_alv_grid
+      set_name( io_control  = ro_dockcont
                 iv_cnt_name = iv_cnt_name ).
     ENDIF.
-  ENDMETHOD.                    "create_alv_grid_control
+  ENDMETHOD.                    "create_docking_container
 
 
   METHOD create_splitter_container.
     "-----------------------------------------------------------------*
     "   Create splitter container
     "-----------------------------------------------------------------*
-    "Local data definitions
-    DATA:
-      lx_intern             TYPE REF TO zcx_ca_intern.
-
     IF ro_splitter IS NOT SUPPLIED.
       "Parameter '&1' is not specified
       RAISE EXCEPTION TYPE zcx_ca_intern
@@ -1122,11 +665,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
         cntl_system_error = 2
         OTHERS            = 3.
     IF sy-subrc NE 0.
-      lx_intern = zcx_ca_intern=>create_exception(
-                                    iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                    iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                    iv_method   = 'CONSTRUCTOR'
-                                    iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'CONSTRUCTOR'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1152,6 +694,123 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
   ENDMETHOD.                    "create_splitter_control
 
 
+  METHOD create_text_edit_control.
+    "-----------------------------------------------------------------*
+    "   Create textedit control
+    "-----------------------------------------------------------------*
+    "Local data definitions
+    DATA:
+      lx_intern TYPE REF TO zcx_ca_intern,
+      lv_mode   TYPE i.
+
+    "Create text edit control
+    CREATE OBJECT ro_text_edit
+      EXPORTING
+        max_number_chars           = iv_max_chars
+        style                      = iv_style
+        wordwrap_mode              = iv_wordwrap_mode
+        wordwrap_position          = iv_wordwrap_position
+        wordwrap_to_linebreak_mode = iv_wordwrap_to_linebreak_mode
+        filedrop_mode              = iv_filedrop_mode
+        parent                     = io_parent
+        lifetime                   = iv_lifetime
+      EXCEPTIONS
+        error_cntl_create          = 1
+        error_cntl_init            = 2
+        error_cntl_link            = 3
+        error_dp_create            = 4
+        gui_type_not_supported     = 5
+        OTHERS                     = 6.
+    IF sy-subrc NE 0.
+      lx_intern ?= zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                    iv_class    = 'CL_GUI_TEXTEDIT'
+                                                    iv_method   = 'CONSTRUCTOR'
+                                                    iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+
+    "Set name explicitly because super constructors don't do it.
+    IF iv_cnt_name IS NOT INITIAL.
+      set_name( io_control  = ro_text_edit
+                iv_cnt_name = iv_cnt_name ).
+    ENDIF.
+
+    "Set to display only
+    CASE iv_display_only.
+      WHEN abap_true.
+        lv_mode = ro_text_edit->true.
+      WHEN OTHERS.
+        lv_mode = ro_text_edit->false.
+    ENDCASE.
+    ro_text_edit->set_readonly_mode(
+                                EXPORTING
+                                  readonly_mode          = lv_mode
+                                EXCEPTIONS
+                                  error_cntl_call_method = 1
+                                  invalid_parameter      = 2
+                                  OTHERS                 = 3 ).
+    IF sy-subrc NE 0.
+      lx_intern ?= zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                    iv_class    = 'CL_GUI_TEXTEDIT'
+                                                    iv_method   = 'SET_READONLY_MODE'
+                                                    iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+
+    "Hide status bar
+    CASE iv_hide_statusbar.
+      WHEN abap_true.
+        lv_mode = ro_text_edit->false.
+      WHEN OTHERS.
+        lv_mode = ro_text_edit->true.
+    ENDCASE.
+    ro_text_edit->set_statusbar_mode(
+                              EXPORTING
+                                statusbar_mode         = lv_mode
+                              EXCEPTIONS
+                                error_cntl_call_method = 1
+                                invalid_parameter      = 2
+                                OTHERS                 = 3 ).
+    IF sy-subrc NE 0.
+      lx_intern ?= zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                    iv_class    = 'CL_GUI_TEXTEDIT'
+                                                    iv_method   = 'SET_STATUSBAR_MODE'
+                                                    iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+
+    "Hide tool bar
+    CASE iv_hide_toolbar.
+      WHEN abap_true.
+        lv_mode = ro_text_edit->false.
+      WHEN OTHERS.
+        lv_mode = ro_text_edit->true.
+    ENDCASE.
+    ro_text_edit->set_toolbar_mode(
+                              EXPORTING
+                                toolbar_mode           = lv_mode
+                              EXCEPTIONS
+                                error_cntl_call_method = 1
+                                invalid_parameter      = 2
+                                OTHERS                 = 3 ).
+    IF sy-subrc NE 0.
+      lx_intern ?= zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                    iv_class    = 'CL_GUI_TEXTEDIT'
+                                                    iv_method   = 'SET_TOOLBAR_MODE'
+                                                    iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "create_text_edit_control
+
+
   METHOD dispatch.
     "-----------------------------------------------------------------*
     "   CFW: Forwarding a GUI events to a proxy object
@@ -1160,11 +819,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                     IMPORTING
                       return_code = DATA(lv_rc) ).
     IF lv_rc NE cl_gui_cfw=>rc_found.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CFW'
-                                        iv_method   = 'DISPATCH'
-                                        iv_subrc    = lv_rc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CFW'
+                                                         iv_method   = 'DISPATCH'
+                                                         iv_subrc    = lv_rc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1182,11 +840,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                     cntl_error        = 2
                     OTHERS            = 3 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CFW'
-                                        iv_method   = 'FLUSH'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CFW'
+                                                         iv_method   = 'FLUSH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1209,11 +866,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                                 cntl_error        = 1
                                 OTHERS            = 2 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTAINER'
-                                        iv_method   = 'GET_INNER_HEIGHT'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTAINER'
+                                                         iv_method   = 'GET_INNER_HEIGHT'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1241,11 +897,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                               cntl_system_error = 2
                               OTHERS            = 3 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
-                                        iv_method   = 'GET_ROW_HEIGHT'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'GET_ROW_HEIGHT'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1270,11 +925,10 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                           cntl_error = 1
                           OTHERS     = 2 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTROL'
-                                        iv_method   = 'GET_VISIBLE'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'GET_VISIBLE'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
@@ -1302,14 +956,379 @@ CLASS ZCL_CA_CFW_UTIL IMPLEMENTATION.
                           lifetime_dynpro_dynpro_link = 3
                           OTHERS                      = 4 ).
     IF sy-subrc NE 0.
-      DATA(lx_intern) = zcx_ca_intern=>create_exception(
-                                        iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                                        iv_class    = 'CL_GUI_CONTAINER'
-                                        iv_method   = 'LINK'
-                                        iv_subrc    = sy-subrc ) ##no_text.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTAINER'
+                                                         iv_method   = 'LINK'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
       IF lx_intern IS BOUND.
         RAISE EXCEPTION lx_intern.
       ENDIF.
     ENDIF.
   ENDMETHOD.                    "link
+
+
+  METHOD register_event_right_click.
+    "-----------------------------------------------------------------*
+    "   Control: (Un-)Register event for right click at control
+    "-----------------------------------------------------------------*
+    io_control->reg_event_right_click(
+                                  EXPORTING
+                                    register                 = iv_register
+                                  EXCEPTIONS
+                                    error_regist_event       = 1
+                                    error_unregist_event     = 2
+                                    cntl_error               = 3
+                                    event_already_registered = 4
+                                    event_not_registered     = 5
+                                    OTHERS                   = 6 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'REG_EVENT_SIZE_CONTROL'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "register_event_right_click
+
+
+  METHOD register_event_size_control.
+    "-----------------------------------------------------------------*
+    "   Control: (Un-)Register event for size control
+    "-----------------------------------------------------------------*
+    io_control->reg_event_size_control(
+                                  EXPORTING
+                                    register                 = iv_register
+                                  EXCEPTIONS
+                                    error_regist_event       = 1
+                                    error_unregist_event     = 2
+                                    cntl_error               = 3
+                                    event_already_registered = 4
+                                    event_not_registered     = 5
+                                    OTHERS                   = 6 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'REG_EVENT_SIZE_CONTROL'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "register_event_size_control
+
+
+  METHOD set_column_mode.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set mode for the columns
+    "-----------------------------------------------------------------*
+    io_splitter->set_column_mode(
+                          EXPORTING
+                            mode              = iv_mode
+                          EXCEPTIONS
+                            cntl_error        = 1
+                            cntl_system_error = 2
+                            OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_COLUMN_MODE'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_column_mode
+
+
+  METHOD set_column_sash_fix.
+    "-----------------------------------------------------------------*
+    "   Splitter: Freeze a column sash
+    "-----------------------------------------------------------------*
+    io_splitter->set_column_sash(
+                            EXPORTING
+                              id                = iv_id
+                              type              = io_splitter->type_movable
+                              value             = iv_value
+                            EXCEPTIONS
+                              cntl_error        = 1
+                              cntl_system_error = 2
+                              OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_COLUMN_SASH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_column_sash_fix
+
+
+  METHOD set_column_sash_visible.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set visibility of a column sash
+    "-----------------------------------------------------------------*
+    io_splitter->set_column_sash(
+                            EXPORTING
+                              id                = iv_id
+                              type              = io_splitter->type_sashvisible
+                              value             = iv_value
+                            EXCEPTIONS
+                              cntl_error        = 1
+                              cntl_system_error = 2
+                              OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_COLUMN_SASH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_column_sash_visible
+
+
+  METHOD set_column_width.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set column width
+    "-----------------------------------------------------------------*
+    io_splitter->set_column_width(
+                            EXPORTING
+                              id                = iv_id
+                              width             = iv_width
+                            EXCEPTIONS
+                              cntl_error        = 1
+                              cntl_system_error = 2
+                              OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_COLUMN_WIDTH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_column_width
+
+
+  METHOD set_focus.
+    "-----------------------------------------------------------------*
+    "   Control: Set focus at passed control
+    "-----------------------------------------------------------------*
+    cl_gui_control=>set_focus(
+                          EXPORTING
+                            control           = io_control
+                          EXCEPTIONS
+                            cntl_error        = 1
+                            cntl_system_error = 2
+                            OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'SET_FOCUS'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_focus
+
+
+  METHOD set_name.
+    "-----------------------------------------------------------------*
+    "   Control: Set name for control/container
+    "-----------------------------------------------------------------*
+    IF iv_cnt_name IS INITIAL.
+      RETURN.
+    ENDIF.
+
+    io_control->set_name(
+                    EXPORTING
+                      name           = CONV string( iv_cnt_name )
+                    EXCEPTIONS
+                      cntl_error     = 1
+                      parent_no_name = 2
+                      illegal_name   = 3
+                      OTHERS         = 4 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'SET_NAME'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_name
+
+
+  METHOD set_new_ok_code.
+    "-----------------------------------------------------------------*
+    "   CFW: Set a new FCode in Eventhandler for PAI
+    "-----------------------------------------------------------------*
+    cl_gui_cfw=>set_new_ok_code(
+                           EXPORTING
+                             new_code = iv_new_fcode
+                           IMPORTING
+                             rc       = DATA(lv_rc) ).
+    IF lv_rc NE cl_gui_cfw=>rc_posted.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CFW'
+                                                         iv_method   = 'SET_NEW_OK_CODE'
+                                                         iv_subrc    = lv_rc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_new_ok_code
+
+
+  METHOD set_registered_events.
+    "-----------------------------------------------------------------*
+    "   Control: Set application events for Control
+    "-----------------------------------------------------------------*
+    io_control->set_registered_events(
+                                EXPORTING
+                                  events                    = it_appl_events
+                                EXCEPTIONS
+                                  cntl_error                = 1
+                                  cntl_system_error         = 2
+                                  illegal_event_combination = 3
+                                  OTHERS                    = 4 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'SET_REGISTERED_EVENTS'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_registered_events
+
+
+  METHOD set_row_height.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set height of a row
+    "-----------------------------------------------------------------*
+    io_splitter->set_row_height(
+                            EXPORTING
+                              id                = iv_id
+                              height            = iv_height
+                            EXCEPTIONS
+                              cntl_error        = 1
+                              cntl_system_error = 2
+                              OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_ROW_HEIGHT'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_row_height
+
+
+  METHOD set_row_mode.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set mode for the rows
+    "-----------------------------------------------------------------*
+    io_splitter->set_row_mode(
+                          EXPORTING
+                            mode              = iv_mode
+                          EXCEPTIONS
+                            cntl_error        = 1
+                            cntl_system_error = 2
+                            OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_ROW_MODE'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_row_mode
+
+
+  METHOD set_row_sash_fix.
+    "-----------------------------------------------------------------*
+    "   Splitter: Freeze a row sash
+    "-----------------------------------------------------------------*
+    io_splitter->set_row_sash(
+                          EXPORTING
+                            id                = iv_id
+                            type              = io_splitter->type_movable
+                            value             = iv_value
+                          EXCEPTIONS
+                            cntl_error        = 1
+                            cntl_system_error = 2
+                            OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_ROW_SASH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_row_sash_fix
+
+
+  METHOD set_row_sash_visible.
+    "-----------------------------------------------------------------*
+    "   Splitter: Set visibility of a row sash
+    "-----------------------------------------------------------------*
+    io_splitter->set_row_sash(
+                          EXPORTING
+                            id                = iv_id
+                            type              = io_splitter->type_sashvisible
+                            value             = iv_value
+                          EXCEPTIONS
+                            cntl_error        = 1
+                            cntl_system_error = 2
+                            OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_SPLITTER_CONTAINER'
+                                                         iv_method   = 'SET_ROW_SASH'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_row_sash_visible
+
+
+  METHOD set_visible.
+    "-----------------------------------------------------------------*
+    "   Control: Hide or display a control/container
+    "-----------------------------------------------------------------*
+    io_control->set_visible(
+                        EXPORTING
+                          visible           = iv_visible
+                        EXCEPTIONS
+                          cntl_error        = 1
+                          cntl_system_error = 2
+                          OTHERS            = 3 ).
+    IF sy-subrc NE 0.
+      DATA(lx_intern) = zcx_ca_intern=>create_exception( iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                         iv_class    = 'CL_GUI_CONTROL'
+                                                         iv_method   = 'SET_VISIBLE'
+                                                         iv_subrc    = sy-subrc ) ##no_text.
+      IF lx_intern IS BOUND.
+        RAISE EXCEPTION lx_intern.
+      ENDIF.
+    ENDIF.
+  ENDMETHOD.                    "set_visible
+
 ENDCLASS.

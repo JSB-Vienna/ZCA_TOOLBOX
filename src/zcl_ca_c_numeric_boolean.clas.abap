@@ -26,13 +26,10 @@ CLASS zcl_ca_c_numeric_boolean DEFINITION PUBLIC
     METHODS:
       "! <p class="shorttext synchronized" lang="en">Is numeric boolean value valid?</p>
       "!
-      "! @parameter num_boolean   | <p class="shorttext synchronized" lang="en">Numeric boolean value</p>
-      "! @raising   zcx_ca_intern | <p class="shorttext synchronized" lang="en">Common exception: Internal exceptions</p>
+      "! @parameter num_boolean | <p class="shorttext synchronized" lang="en">Numeric boolean value</p>
       is_valid
         IMPORTING
-          num_boolean TYPE dml_boolean
-        RAISING
-          zcx_ca_intern.
+          num_boolean TYPE dml_boolean.
 
 
 * P R I V A T E   S E C T I O N
@@ -43,12 +40,10 @@ CLASS zcl_ca_c_numeric_boolean DEFINITION PUBLIC
       "! <p class="shorttext synchronized" lang="en">Instance of the class itself</p>
       singleton_instance     TYPE REF TO zcl_ca_c_numeric_boolean.
 
-ENDCLASS.
+ENDCLASS.                     "zcl_ca_c_numeric_boolean  DEFINITION
 
 
-
-CLASS ZCL_CA_C_NUMERIC_BOOLEAN IMPLEMENTATION.
-
+CLASS zcl_ca_c_numeric_boolean IMPLEMENTATION.
 
   METHOD get_instance.
     "-----------------------------------------------------------------*
@@ -79,4 +74,6 @@ CLASS ZCL_CA_C_NUMERIC_BOOLEAN IMPLEMENTATION.
           mv_msgv2 = CONV #( num_boolean ).
     ENDIF.
   ENDMETHOD.                    "is_valid
-ENDCLASS.
+
+ENDCLASS.                     "zcl_ca_c_numeric_boolean  IMPLEMENTATION
+

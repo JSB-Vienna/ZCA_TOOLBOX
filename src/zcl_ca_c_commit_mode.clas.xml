@@ -56,12 +56,6 @@
      <LANGU>E</LANGU>
      <DESCRIPT>Commit mode</DESCRIPT>
     </SEOSUBCOTX>
-    <SEOSUBCOTX>
-     <CMPNAME>IS_VALID</CMPNAME>
-     <SCONAME>ZCX_CA_INTERN</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Common exception: Internal exceptions</DESCRIPT>
-    </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>

@@ -26,13 +26,10 @@ CLASS zcl_ca_c_popup_answer DEFINITION PUBLIC
     METHODS:
       "! <p class="shorttext synchronized" lang="en">Is it a valid answer after popup call?</p>
       "!
-      "! @parameter popup_answer  | <p class="shorttext synchronized" lang="en">Popup answer</p>
-      "! @raising   zcx_ca_intern | <p class="shorttext synchronized" lang="en">Common exception: Internal exceptions</p>
+      "! @parameter popup_answer | <p class="shorttext synchronized" lang="en">Popup answer</p>
       is_popup_answer_valid
         IMPORTING
-          popup_answer TYPE char1
-        RAISING
-          zcx_ca_intern.
+          popup_answer TYPE char1.
 
 
 * P R I V A T E   S E C T I O N
@@ -43,12 +40,10 @@ CLASS zcl_ca_c_popup_answer DEFINITION PUBLIC
       "! <p class="shorttext synchronized" lang="en">Instance of the class itself</p>
       singleton_instance     TYPE REF TO zcl_ca_c_popup_answer.
 
-ENDCLASS.
+ENDCLASS.                     "zcl_ca_c_commit  DEFINITION
 
 
-
-CLASS ZCL_CA_C_POPUP_ANSWER IMPLEMENTATION.
-
+CLASS zcl_ca_c_popup_answer IMPLEMENTATION.
 
   METHOD get_instance.
     "-----------------------------------------------------------------*
@@ -77,4 +72,6 @@ CLASS ZCL_CA_C_POPUP_ANSWER IMPLEMENTATION.
           mv_msgv2 = CONV #( popup_answer ).
     ENDIF.
   ENDMETHOD.                    "is_popup_answer_valid
-ENDCLASS.
+
+ENDCLASS.                     "zcl_ca_c_commit  IMPLEMENTATION
+
