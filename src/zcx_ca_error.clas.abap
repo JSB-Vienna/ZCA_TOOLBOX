@@ -375,11 +375,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
 
     ELSEIF is_return IS NOT INITIAL.
       "Single BAPI message
-      IF   is_return-type CA c_msgty_eax   OR
-         ( is_return-type IS INITIAL      AND
-           iv_msgty       CA c_msgty_eax ).
-        rs_return = is_return.
-      ENDIF.
+      rs_return = is_return.
 
     ELSEIF is_msg IS NOT INITIAL.
       "Message from SYST
@@ -409,8 +405,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
     "it. Internal calls DON'T provide this value to be able to control
     "if a BAPI returned an error or not.
     IF rs_return      IS NOT INITIAL AND
-       rs_return-type IS     INITIAL AND
-       iv_msgty       IS     SUPPLIED.
+       rs_return-type IS     INITIAL.
       rs_return-type = iv_msgty.
     ENDIF.
 
