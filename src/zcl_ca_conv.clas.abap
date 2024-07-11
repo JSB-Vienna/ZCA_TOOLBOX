@@ -614,110 +614,110 @@ CLASS zcl_ca_conv IMPLEMENTATION.
             SET COUNTRY space.
         ENDCASE.
       ENDIF.
+    ENDIF.
 
-      IF _return_code EQ 0.
-        IF _element_descr_int_value->is_ddic_type( ) EQ _element_descr_int_value->true          AND
-           _field_descr_for_conversion-type          EQ _element_descr_int_value->typekind_char AND
-           _field_descr_for_conversion-lower         EQ abap_false.
-          TRANSLATE internal_value TO UPPER CASE.
-        ENDIF.
-
-        IF currency                               IS NOT INITIAL                               AND
-           _field_descr_for_conversion-type       EQ _element_descr_int_value->typekind_packed AND
-           _field_descr_for_conversion-dddecimals NE 0                                         AND
-           _field_descr_for_conversion-decimals   EQ 0.
-          internal_value = internal_value / ( 10 ** _field_descr_for_conversion-dddecimals ).
-        ENDIF.
+    IF _return_code EQ 0.
+      IF _element_descr_int_value->is_ddic_type( ) EQ _element_descr_int_value->true          AND
+         _field_descr_for_conversion-type          EQ _element_descr_int_value->typekind_char AND
+         _field_descr_for_conversion-lower         EQ abap_false.
+        TRANSLATE internal_value TO UPPER CASE.
       ENDIF.
 
-      IF _return_code NE 0.
-        CASE _return_code.
-          WHEN 1.
-            "Entry is not numeric
-            MESSAGE s738(db) WITH _conversion_error-ill_token INTO _message_text.
-          WHEN 2.
-            "Too many decimal places (maximum &)
-            MESSAGE s739(db) WITH _field_descr_for_conversion-decimals
-                                  _conversion_error-decimals INTO _message_text.
-          WHEN 3.
-            "Specify the sign either at the beginning or at the end
-            MESSAGE s740(db) INTO _message_text.
-          WHEN 4.
-            "Correct the distance (&1) between "&2" and "&2" or "&2" and "&3"
-            MESSAGE s741(db) WITH _conversion_error-dist_1000
-                                  _conversion_error-tdelimiter
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 5.
-            "Entry is too long: Only & digits are allowed in the whole number part
-            MESSAGE s744(db) WITH _conversion_error-digits_max
-                                  _conversion_error-digits_inp INTO _message_text.
-          WHEN 6.
-            "Signs are not allowed here
-            MESSAGE s745(db) INTO _message_text.
-          WHEN 7.
-            "Entered value is too large (maximum &2)
-            MESSAGE s746(db) WITH _conversion_error-input
-                                  _conversion_error-max INTO _message_text.
-          WHEN 8.
-            "Entered value is too small (maximum &2)
-            MESSAGE s747(db) WITH _conversion_error-input
-                                  _conversion_error-min INTO _message_text.
-          WHEN 9.
-            "Invalid date format. Please enter date in the format &1
-            MESSAGE s748(db) WITH _conversion_error-date_mask
-                                  _conversion_error-date_delim INTO _message_text.
-          WHEN 10.
-            "Invalid date: Please enter date in the format &1
-            MESSAGE s749(db) WITH _conversion_error-date_mask
-                                  _conversion_error-date_delim INTO _message_text.
-          WHEN 11 ##number_ok.
-            "Invalid time format. Please enter time in the format &1
-            MESSAGE s751(db) WITH 'HH:MM:SS' ':' INTO _message_text.
-          WHEN 12 ##number_ok.
-            "Invalid time: Please enter time in the format &1
-            MESSAGE s753(db) WITH 'HH:MM:SS' ':' INTO _message_text.
-          WHEN 13 ##number_ok.
-            "Invalid character "&" in hexadecimal field
-            MESSAGE s754(db) WITH _conversion_error-ill_token INTO _message_text.
-          WHEN 14 ##number_ok.
-            "You cannot begin the entry with the exponent
-            MESSAGE s841(db) WITH _conversion_error-tdelimiter
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 15 ##number_ok.
-            "Exponent empty
-            MESSAGE s842(db) WITH _conversion_error-tdelimiter
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 16 ##number_ok.
-            "'&1', but no decimal places
-            MESSAGE s843(db) WITH _conversion_error-ddelimiter INTO _message_text.
-          WHEN 17 ##number_ok.
-            "Invalid exponent
-            MESSAGE s844(db) WITH _conversion_error-tdelimiter
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 18 ##number_ok.
-            "'&2' after 'E'
-            MESSAGE s845(db) WITH _conversion_error-tdelimiter
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 19 ##number_ok.
-            "Exponent too large
-            MESSAGE s846(db) WITH _conversion_error-expomax
-                                  _conversion_error-ddelimiter INTO _message_text.
-          WHEN 20 ##number_ok.
-            "Date is not valid -> send message of function module
-            MESSAGE ID sy-msgid TYPE 'S' NUMBER sy-msgno
-                    WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO _message_text.
-          WHEN OTHERS.
-            "Conversion error
-            MESSAGE s755(db) INTO _message_text.
-        ENDCASE.
+      IF currency                               IS NOT INITIAL                               AND
+         _field_descr_for_conversion-type       EQ _element_descr_int_value->typekind_packed AND
+         _field_descr_for_conversion-dddecimals NE 0                                         AND
+         _field_descr_for_conversion-decimals   EQ 0.
+        internal_value = internal_value / ( 10 ** _field_descr_for_conversion-dddecimals ).
+      ENDIF.
+    ENDIF.
 
-        _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls   = zcx_ca_conv=>c_zcx_ca_conv
-                                                                        iv_function   = 'RSDYNSS0'
-                                                                        iv_subroutine = 'CONVERT_EX_2_IN' ##no_text
-                                                                        iv_subrc      = _return_code ) ).
-        IF _conversion_exception IS BOUND.
-          RAISE EXCEPTION _conversion_exception.
-        ENDIF.
+    IF _return_code NE 0.
+      CASE _return_code.
+        WHEN 1.
+          "Entry is not numeric
+          MESSAGE s738(db) WITH _conversion_error-ill_token INTO _message_text.
+        WHEN 2.
+          "Too many decimal places (maximum &)
+          MESSAGE s739(db) WITH _field_descr_for_conversion-decimals
+                                _conversion_error-decimals INTO _message_text.
+        WHEN 3.
+          "Specify the sign either at the beginning or at the end
+          MESSAGE s740(db) INTO _message_text.
+        WHEN 4.
+          "Correct the distance (&1) between "&2" and "&2" or "&2" and "&3"
+          MESSAGE s741(db) WITH _conversion_error-dist_1000
+                                _conversion_error-tdelimiter
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 5.
+          "Entry is too long: Only & digits are allowed in the whole number part
+          MESSAGE s744(db) WITH _conversion_error-digits_max
+                                _conversion_error-digits_inp INTO _message_text.
+        WHEN 6.
+          "Signs are not allowed here
+          MESSAGE s745(db) INTO _message_text.
+        WHEN 7.
+          "Entered value is too large (maximum &2)
+          MESSAGE s746(db) WITH _conversion_error-input
+                                _conversion_error-max INTO _message_text.
+        WHEN 8.
+          "Entered value is too small (maximum &2)
+          MESSAGE s747(db) WITH _conversion_error-input
+                                _conversion_error-min INTO _message_text.
+        WHEN 9.
+          "Invalid date format. Please enter date in the format &1
+          MESSAGE s748(db) WITH _conversion_error-date_mask
+                                _conversion_error-date_delim INTO _message_text.
+        WHEN 10.
+          "Invalid date: Please enter date in the format &1
+          MESSAGE s749(db) WITH _conversion_error-date_mask
+                                _conversion_error-date_delim INTO _message_text.
+        WHEN 11 ##number_ok.
+          "Invalid time format. Please enter time in the format &1
+          MESSAGE s751(db) WITH 'HH:MM:SS' ':' INTO _message_text.
+        WHEN 12 ##number_ok.
+          "Invalid time: Please enter time in the format &1
+          MESSAGE s753(db) WITH 'HH:MM:SS' ':' INTO _message_text.
+        WHEN 13 ##number_ok.
+          "Invalid character "&" in hexadecimal field
+          MESSAGE s754(db) WITH _conversion_error-ill_token INTO _message_text.
+        WHEN 14 ##number_ok.
+          "You cannot begin the entry with the exponent
+          MESSAGE s841(db) WITH _conversion_error-tdelimiter
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 15 ##number_ok.
+          "Exponent empty
+          MESSAGE s842(db) WITH _conversion_error-tdelimiter
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 16 ##number_ok.
+          "'&1', but no decimal places
+          MESSAGE s843(db) WITH _conversion_error-ddelimiter INTO _message_text.
+        WHEN 17 ##number_ok.
+          "Invalid exponent
+          MESSAGE s844(db) WITH _conversion_error-tdelimiter
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 18 ##number_ok.
+          "'&2' after 'E'
+          MESSAGE s845(db) WITH _conversion_error-tdelimiter
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 19 ##number_ok.
+          "Exponent too large
+          MESSAGE s846(db) WITH _conversion_error-expomax
+                                _conversion_error-ddelimiter INTO _message_text.
+        WHEN 20 ##number_ok.
+          "Date is not valid -> send message of function module
+          MESSAGE ID sy-msgid TYPE 'S' NUMBER sy-msgno
+                  WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO _message_text.
+        WHEN OTHERS.
+          "Conversion error
+          MESSAGE s755(db) INTO _message_text.
+      ENDCASE.
+
+      _conversion_exception = CAST #( zcx_ca_error=>create_exception( iv_excp_cls   = zcx_ca_conv=>c_zcx_ca_conv
+                                                                      iv_function   = 'RSDYNSS0'
+                                                                      iv_subroutine = 'CONVERT_EX_2_IN' ##no_text
+                                                                      iv_subrc      = _return_code ) ).
+      IF _conversion_exception IS BOUND.
+        RAISE EXCEPTION _conversion_exception.
       ENDIF.
     ENDIF.
   ENDMETHOD.                    "external_2_internal
