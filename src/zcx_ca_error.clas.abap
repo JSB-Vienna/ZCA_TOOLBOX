@@ -144,7 +144,7 @@ CLASS zcx_ca_error DEFINITION
         !ix_error       TYPE REF TO cx_root OPTIONAL
       RETURNING
         VALUE(rx_excep) TYPE REF TO zcx_ca_error .
-    "! <p class="shorttext synchronized" lang="en">Extracting error message</p>
+    "! <p class="shorttext synchronized" lang="en">Extracting error message (NO result if type is NOT EAX!!)</p>
     "!
     "! @parameter iv_msgty  | <p class="shorttext synchronized" lang="en">Message type</p>
     "! @parameter iv_subrc  | <p class="shorttext synchronized" lang="en">Return code</p>
@@ -357,7 +357,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
 
   METHOD extract_message.
     "-----------------------------------------------------------------*
-    "   Extract message from passed values.
+    "   Extract message from passed values, but no result if type is not EAX.
     "-----------------------------------------------------------------*
     "Multiple BAPI messages
     IF it_return IS NOT INITIAL.
@@ -367,9 +367,6 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
         IF rs_return-id     IS NOT INITIAL AND
            rs_return-number IS NOT INITIAL.
           EXIT.
-
-        ELSE.
-          CLEAR rs_return.
         ENDIF.
       ENDLOOP.
 
@@ -401,15 +398,22 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
       rs_return-message_v4 = sy-msgv4.
     ENDIF.
 
-    "The message type should only be set if external callers supplies
-    "it. Internal calls DON'T provide this value to be able to control
-    "if a BAPI returned an error or not.
-    IF rs_return      IS NOT INITIAL AND
-       rs_return-type IS     INITIAL.
+    IF rs_return IS INITIAL.             "Can happen if IT_RETURN contains no error message
+      RETURN.
+    ENDIF.
+
+    "The message type should only be set if external callers supplies it. Internal calls DON'T provide this
+    "value to be able to distinguish if a BAPI returned an error or not.
+    IF rs_return-type IS INITIAL AND
+       iv_msgty       IS SUPPLIED.
       rs_return-type = iv_msgty.
     ENDIF.
 
-    "Assemble complete message
+    IF rs_return-type NA c_msgty_eax.
+      CLEAR rs_return.                   "Create no exception instance
+      RETURN.
+    ENDIF.
+
     IF rs_return-id     IS NOT INITIAL AND
        rs_return-number IS NOT INITIAL.
       MESSAGE ID  rs_return-id
