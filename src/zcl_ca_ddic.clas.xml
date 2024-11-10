@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_DDIC</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Check of / informations to data objects</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -25,11 +25,46 @@
      <LENGTH>50</LENGTH>
     </item>
    </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>DRF</KEY>
+       <ENTRY>Data reference</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>ORF</KEY>
+       <ENTRY>Object reference</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX: Check of / informations to data objects</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
    <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Validate value against fixed values of a domain</DESCRIPT>
+    </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Validate value against fixed values of a domain</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constructor for RTTI type description instance</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
@@ -38,8 +73,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_BY_DATA</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get RTTI description by data object</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_BY_DATA</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Get RTTI description by data object</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get RTTI description by data reference</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
@@ -48,8 +93,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_BY_NAME</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get RTTI description by name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_BY_NAME</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Get RTTI description by name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_BY_OBJECT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get RTTI description by an object reference (class/interf.)</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_BY_OBJECT</CMPNAME>
@@ -58,8 +113,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Return a list with type descriptions for a structure/table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Return a list with type descriptions for a structure/table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DESCR_OF_STRUCT_TYPE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get structured RTTI type description</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_DESCR_OF_STRUCT_TYPE</CMPNAME>
@@ -68,8 +133,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Determine field label from DDIC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Determine field label from DDIC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FIELD_LIST</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Return field list for a Structure/(internal) table (DFIES)</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_FIELD_LIST</CMPNAME>
@@ -78,8 +153,28 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_FIXED_VALUES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Determination of fixed values to a table field/data element</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_FIXED_VALUES</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Determination of fixed values to a table field/data element</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_TYPE_DESCR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get type descr</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_TYPE_DESCR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get type descr</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_TYPE_DESC</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>RTTI type description</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MO_TYPE_DESC</CMPNAME>
@@ -88,8 +183,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MV_LANGU</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Language for texts of DDIC objects</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_LANGU</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Language for texts of DDIC objects</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_PARAM_NAME</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of checked parameter for error messages</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MV_PARAM_NAME</CMPNAME>
@@ -98,8 +203,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set technical values of complex types</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Set technical values of complex types</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set technical values of elementary non-DDIC type</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
@@ -111,8 +226,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
      <SCONAME>IV_RAISE_EXCEP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Raise exception when invalid</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
+     <SCONAME>IV_RAISE_EXCEP</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = Raise exception when invalid</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
+     <SCONAME>IV_VALUE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value under test</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
@@ -123,8 +250,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Value is valid</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = Value is valid</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CHECK_FIXED_VALUES</CMPNAME>
@@ -135,14 +274,32 @@
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <SCONAME>IO_OBJECT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Reference of an object (class / interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IO_OBJECT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Reference of an object (class / interface)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <SCONAME>IR_DATA</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Reference of a data object / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IR_DATA</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Reference of a data object / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_DATA</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Data field / value</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
@@ -153,8 +310,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <SCONAME>IV_LANGU</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Language key for DDIC text, e.g. for field labels</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_LANGU</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Language key for DDIC text, e.g. for field labels</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Object name (DDIC or class / interface)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
@@ -165,8 +334,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
      <SCONAME>IV_PARAM_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of field/parameter for output in error message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_PARAM_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of field/parameter for output in error message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
@@ -177,8 +358,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_DATA</CMPNAME>
      <SCONAME>IV_DATA</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Data field / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_DATA</CMPNAME>
+     <SCONAME>IV_DATA</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Data field / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_DATA</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_DATA</CMPNAME>
@@ -189,8 +382,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
      <SCONAME>IR_DATA</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Reference of a data object / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
+     <SCONAME>IR_DATA</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Reference of a data object / value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_DATA_REFERENCE</CMPNAME>
@@ -201,8 +406,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_NAME</CMPNAME>
      <SCONAME>IV_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Object name (DDIC or class / interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_NAME</CMPNAME>
+     <SCONAME>IV_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Object name (DDIC or class / interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_NAME</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_NAME</CMPNAME>
@@ -213,8 +430,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_OBJECT</CMPNAME>
      <SCONAME>IO_OBJECT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Reference of an object (class/interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_OBJECT</CMPNAME>
+     <SCONAME>IO_OBJECT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Reference of an object (class/interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_BY_OBJECT</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_BY_OBJECT</CMPNAME>
@@ -225,8 +454,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
      <SCONAME>IV_LEVEL</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Level of resolution of the struc. (9 = deepest resolution)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
+     <SCONAME>IV_LEVEL</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Level of resolution of the struc. (9 = deepest resolution)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Component list to requested structure or table</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
@@ -237,8 +478,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
      <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMPONENT_LIST</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DESCR_OF_STRUCT_TYPE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>RTTI structure description</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_DESCR_OF_STRUCT_TYPE</CMPNAME>
@@ -249,8 +502,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
      <SCONAME>IV_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Object name (DDIC or class / interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
+     <SCONAME>IV_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Object name (DDIC or class / interface)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Short description and labels of data element</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
@@ -261,8 +526,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
      <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIELD_LABEL_FROM_DDIC</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIELD_LIST</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Field list (DFIES)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_FIELD_LIST</CMPNAME>
@@ -273,8 +550,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_FIELD_LIST</CMPNAME>
      <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIELD_LIST</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIXED_VALUES</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Fixed values</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_FIXED_VALUES</CMPNAME>
@@ -285,8 +574,32 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_FIXED_VALUES</CMPNAME>
      <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_FIXED_VALUES</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TYPE_DESCR</CMPNAME>
+     <SCONAME>RR_TYPE_DESCR</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Runtime Type Services</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TYPE_DESCR</CMPNAME>
+     <SCONAME>RR_TYPE_DESCR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Runtime Type Services</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <SCONAME>FIELD_POS</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Field position in the structure</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
@@ -297,8 +610,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Technical values of current component</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Technical values of current component</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <SCONAME>STRUC_COMP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Single component of structure to be analyzed</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
@@ -309,8 +634,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
      <SCONAME>STRUC_DESCR</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>RTTI type description a structured type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <SCONAME>STRUC_DESCR</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>RTTI type description a structured type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_COMPLEX_TYPES</CMPNAME>
@@ -321,14 +658,32 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Technical values of current component</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Technical values of current component</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
      <SCONAME>STRUC_COMP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Single component of structure to be analyzed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
+     <SCONAME>STRUC_COMP</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Single component of structure to be analyzed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>
+     <SCONAME>STRUC_DESCR</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>RTTI type description a structured type</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TECH_VALS_OF_ELEM_NON_DDIC</CMPNAME>

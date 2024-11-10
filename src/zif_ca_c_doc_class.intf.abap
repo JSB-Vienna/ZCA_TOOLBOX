@@ -1,4 +1,4 @@
-"! <p class="shorttext synchronized" lang="en">CA-TBX: Constants for document classes (mail / text)</p>
+"! <p class="shorttext synchronized" lang="en">CA-TBX: OBSOLETE!! Use ZCL_CA_C_TEXT_PREPARATION instead</p>
 INTERFACE zif_ca_c_doc_class PUBLIC.
 * c o n s t a n t s
   CONSTANTS:

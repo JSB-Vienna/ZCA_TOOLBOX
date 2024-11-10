@@ -36,7 +36,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! @parameter bapi_amount     | <p class="shorttext synchronized" lang="en">Amount in BAPI format</p>
       "! @parameter currency        | <p class="shorttext synchronized" lang="en">Currency key</p>
       "! @parameter amount_internal | <p class="shorttext synchronized" lang="en">Converted amount in SAP internal format</p>
-      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">Common exception: Conversion failed</p>
+      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">CA-TBX exception: Conversion failed</p>
       bapi_amount_2_internal
         IMPORTING
           bapi_amount     TYPE bapicurr_d
@@ -66,7 +66,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! @parameter element_descr        | <p class="shorttext synchronized" lang="en">Element type description of target field</p>
       "! @parameter input_value          | <p class="shorttext synchronized" lang="en">Passed value of elementary type</p>
       "! @parameter converted_value      | <p class="shorttext synchronized" lang="en">Converted value of elementary type</p>
-      "! @raising   zcx_ca_conv          | <p class="shorttext synchronized" lang="en">Common exception: Conversion failed</p>
+      "! @raising   zcx_ca_conv          | <p class="shorttext synchronized" lang="en">CA-TBX exception: Conversion failed</p>
       convert_via_conversion_exit
         IMPORTING
           is_for_output          TYPE abap_bool                DEFAULT abap_true
@@ -84,7 +84,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! @parameter currency        | <p class="shorttext synchronized" lang="en">Currency key</p>
       "! @parameter unit_of_measure | <p class="shorttext synchronized" lang="en">Unit of measure</p>
       "! @parameter internal_value  | <p class="shorttext synchronized" lang="en">Value in SAP internal format depending on target field</p>
-      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">Common exception: Conversion failed</p>
+      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">CA-TBX exception: Conversion failed</p>
       external_2_internal
         IMPORTING
           external_value  TYPE csequence
@@ -115,7 +115,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! @parameter result_is_for_idoc    | <p class="shorttext synchronized" lang="en">X = Receiving field is an IDoc field (has own conv. rules)</p>
       "! @parameter return_in_bapi_format | <p class="shorttext synchronized" lang="en">X = Return amount as BAPI amount (has diff nbr of decimals)</p>
       "! @parameter external_value        | <p class="shorttext synchronized" lang="en">Converted value in external format, e. g. for BSP,BDC,IDoc</p>
-      "! @raising   zcx_ca_conv           | <p class="shorttext synchronized" lang="en">Common exception: Conversion failed</p>
+      "! @raising   zcx_ca_conv           | <p class="shorttext synchronized" lang="en">CA-TBX exception: Conversion failed</p>
       internal_2_external
         IMPORTING
           internal_value        TYPE data
@@ -135,7 +135,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! @parameter internal_amount | <p class="shorttext synchronized" lang="en">SAP internal amount</p>
       "! @parameter currency        | <p class="shorttext synchronized" lang="en">Currency key</p>
       "! @parameter external_amount | <p class="shorttext synchronized" lang="en">Converted amount in external format</p>
-      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">Common exception: Conversion failed</p>
+      "! @raising   zcx_ca_conv     | <p class="shorttext synchronized" lang="en">CA-TBX exception: Conversion failed</p>
       internal_amount_2_external
         IMPORTING
           internal_amount TYPE data
@@ -147,6 +147,7 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
 
 
 * P R I V A T E   S E C T I O N
+protected section.
   PRIVATE SECTION.
 *   a l i a s e s
     ALIASES:
@@ -167,11 +168,12 @@ CLASS zcl_ca_conv DEFINITION PUBLIC
       "! <p class="shorttext synchronized" lang="en">Default settings of user</p>
       user_default_settings TYPE usdefaults.
 
-ENDCLASS.                     "zcl_ca_conv  DEFINITION
+ENDCLASS.
 
 
 
-CLASS zcl_ca_conv IMPLEMENTATION.
+CLASS ZCL_CA_CONV IMPLEMENTATION.
+
 
   METHOD bapi_amount_2_internal.
     "-----------------------------------------------------------------*
@@ -1056,6 +1058,4 @@ CLASS zcl_ca_conv IMPLEMENTATION.
       ENDIF.
     ENDIF.
   ENDMETHOD.                    "internal_amount_2_external
-
-ENDCLASS.                     "zcl_ca_conv  IMPLEMENTATION
-
+ENDCLASS.

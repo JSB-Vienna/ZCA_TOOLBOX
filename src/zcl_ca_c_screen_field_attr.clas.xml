@@ -4,18 +4,34 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_C_SCREEN_FIELD_ATTR</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Screen field attributes (usage with table SCREEN)</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX: Screen field attributes (usage with table SCREEN)</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
    <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ACTIVATE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Activate screen field</DESCRIPT>
+    </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>ACTIVATE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Activate screen field</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BACKUP_N_LOAD_SCREEN_ATTR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Backup of table SCREEN to be able to deactivate/activate</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>BACKUP_N_LOAD_SCREEN_ATTR</CMPNAME>
@@ -24,8 +40,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>BOOLEAN_OPERATOR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Boolean operator for IF statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BOOLEAN_OPERATOR</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Boolean operator for IF statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_VARIANT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Check variants when looping at table SCREEN</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CHECK_VARIANT</CMPNAME>
@@ -34,8 +60,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Create entry for screen field name for adding to RANGE table</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
@@ -44,8 +80,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Create entry for scr. modif group for adding to RANGE table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Create entry for scr. modif group for adding to RANGE table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEACTIVATE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Deactivate screen field</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>DEACTIVATE</CMPNAME>
@@ -54,8 +100,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_ACTUAL_SCREEN</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get actual program Id and dynpro number from system program</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_ACTUAL_SCREEN</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Get actual program Id and dynpro number from system program</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get instance</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_INSTANCE</CMPNAME>
@@ -64,8 +120,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>HIDE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Hide screen field</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>HIDE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Hide screen field</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INPUT_CONTROL</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Screen input control</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>INPUT_CONTROL</CMPNAME>
@@ -74,8 +140,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_ACTIVATE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Screen field should be ACTIVATED</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_ACTIVATE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = Screen field should be ACTIVATED</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAKE_VISIBLE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Display screen field</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MAKE_VISIBLE</CMPNAME>
@@ -84,8 +160,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Modify screen field attributes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Modify screen field attributes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MODIFY_TABLE_SCREEN</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set attribute changes into table SCREEN</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MODIFY_TABLE_SCREEN</CMPNAME>
@@ -94,8 +180,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SCREEN_ATTR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Column names (= attributes) of table SCREEN</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREEN_ATTR</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Column names (= attributes) of table SCREEN</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREEN_BACKUP</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Backup of currently active screen</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SCREEN_BACKUP</CMPNAME>
@@ -104,8 +200,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SCREEN_BACKUPS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Backup of table SCREEN to be able to deactivate/activate</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREEN_BACKUPS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Backup of table SCREEN to be able to deactivate/activate</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREEN_MODIF_GROUP_ID</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Number of screen field modification group</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SCREEN_MODIF_GROUP_ID</CMPNAME>
@@ -114,8 +220,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SCREEN_WA</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Workarea for table SCREEN in actual LOOP at it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SCREEN_WA</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Workarea for table SCREEN in actual LOOP at it</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEL_OPTIONS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constants and value checks for select options / range tables</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SEL_OPTIONS</CMPNAME>
@@ -124,8 +240,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set screen field as obligatory input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Set screen field as obligatory input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set screen field for possible input (= not obligatory)</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
@@ -134,8 +260,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set screen field as required input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Set screen field as required input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set dropdown values for specific selection parameter</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
@@ -144,8 +280,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_FOR_INPUT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Open screen field for input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FOR_INPUT</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Open screen field for input</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Open screen field for output</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
@@ -154,8 +300,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_MODIFICATION_GROUP_ID</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set number of modification group for next call of this class</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_MODIFICATION_GROUP_ID</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Set number of modification group for next call of this class</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set screen field to display only</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
@@ -164,8 +320,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Set screen field to no output</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Set screen field to no output</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SINGLETON_INSTANCE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Instance of the class itself</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SINGLETON_INSTANCE</CMPNAME>
@@ -174,8 +340,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SWITCH</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Screen attribute switches for table SCREEN</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SWITCH</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Screen attribute switches for table SCREEN</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_REQUESTED_SCR_FIELD_NAMES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Range type for screen field names</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TY_REQUESTED_SCR_FIELD_NAMES</CMPNAME>
@@ -184,12 +360,27 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TY_REQUESTED_SCR_MODIF_GROUPS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Range type for screen modification groups</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_REQUESTED_SCR_MODIF_GROUPS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Range type for screen modification groups</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TY_S_REQUESTED_SCR_FIELD_NAME</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Line type to range type for screen field name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_S_REQUESTED_SCR_FIELD_NAME</CMPNAME>
      <LANGU>E</LANGU>
+     <DESCRIPT>Line type to range type for screen field name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_S_REQUESTED_SCR_MODIF_GROUP</CMPNAME>
+     <LANGU>D</LANGU>
      <DESCRIPT>Line type to range type for screen field name</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
@@ -199,8 +390,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TY_S_SCREEN_BACKUUP</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Backup SCREEN settings for deactivation/reactivation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_S_SCREEN_BACKUUP</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Backup SCREEN settings for deactivation/reactivation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_T_SCREEN_BACKUPS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Backups SCREEN settings for deactivation/reactivation</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TY_T_SCREEN_BACKUPS</CMPNAME>
@@ -212,8 +413,20 @@
     <SEOSUBCOTX>
      <CMPNAME>ACTIVATE</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACTIVATE</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ACTIVATE</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>ACTIVATE</CMPNAME>
@@ -224,8 +437,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
      <SCONAME>INCL_OR_EXCL</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Including or excluding passed value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
+     <SCONAME>INCL_OR_EXCL</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Including or excluding passed value</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Entry with screen field name for RANGE table</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
@@ -236,8 +461,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_FNAME</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
+     <SCONAME>INCL_OR_EXCL</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Including or excluding passed value</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
@@ -248,8 +485,20 @@
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Entry with screen modification group for RANGE table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Entry with screen modification group for RANGE table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Screen modification group (generic value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>CREATE_RANGE_ENTRY_FOR_MOD_GRP</CMPNAME>
@@ -260,8 +509,20 @@
     <SEOSUBCOTX>
      <CMPNAME>DEACTIVATE</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEACTIVATE</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DEACTIVATE</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>DEACTIVATE</CMPNAME>
@@ -272,8 +533,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_ACTUAL_SCREEN</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Program name and dynpro number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ACTUAL_SCREEN</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Program name and dynpro number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Class instance</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_INSTANCE</CMPNAME>
@@ -284,8 +557,20 @@
     <SEOSUBCOTX>
      <CMPNAME>HIDE</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HIDE</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HIDE</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>HIDE</CMPNAME>
@@ -296,8 +581,20 @@
     <SEOSUBCOTX>
      <CMPNAME>MAKE_VISIBLE</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAKE_VISIBLE</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAKE_VISIBLE</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>MAKE_VISIBLE</CMPNAME>
@@ -308,8 +605,20 @@
     <SEOSUBCOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
      <SCONAME>ATTRIBUTE_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of a column in structure SCREEN -&gt; use SCREEN_ATTR-*</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <SCONAME>ATTRIBUTE_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of a column in structure SCREEN -&gt; use SCREEN_ATTR-*</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <SCONAME>ATTRIBUTE_VALUE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Switch value -&gt; use SWITCH-*</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
@@ -320,8 +629,20 @@
     <SEOSUBCOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
      <SCONAME>BOOLEAN_OPERATOR</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Boolean operator OR or AND to combine field name and group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <SCONAME>BOOLEAN_OPERATOR</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Boolean operator OR or AND to combine field name and group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <SCONAME>REQ_SCREEN_FIELD_NAMES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Range table for requested screen field (generic) names</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
@@ -332,8 +653,20 @@
     <SEOSUBCOTX>
      <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
      <SCONAME>REQ_SCREEN_MODIF_GROUPS</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Range table for (generic) screen modification group values</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFY_ATTRIBUTES</CMPNAME>
+     <SCONAME>REQ_SCREEN_MODIF_GROUPS</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Range table for (generic) screen modification group values</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
@@ -344,14 +677,32 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
      <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_OBLIGATORY</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_POSSIBLE</CMPNAME>
@@ -362,8 +713,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_AS_RECOMMENDED</CMPNAME>
@@ -374,8 +737,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
      <SCONAME>DROPDOWN_LIST</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value list for dropdown</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
+     <SCONAME>DROPDOWN_LIST</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Value list for dropdown</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
+     <SCONAME>SEL_PARAM_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of selection parameter</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
@@ -386,8 +761,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
      <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>CA-TBX exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DD_LIST_FOR_FIELD</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Common exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+     <DESCRIPT>CA-TBX exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FOR_INPUT</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_FOR_INPUT</CMPNAME>
@@ -398,14 +785,32 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_FOR_INPUT</CMPNAME>
      <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FOR_INPUT</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_FOR_OUTPUT</CMPNAME>
@@ -416,8 +821,20 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_MODIFICATION_GROUP_ID</CMPNAME>
      <SCONAME>SCREEN_MODIF_GROUP_ID</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Id of screen modification group that should be changed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_MODIFICATION_GROUP_ID</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP_ID</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Id of screen modification group that should be changed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
@@ -428,14 +845,32 @@
     <SEOSUBCOTX>
      <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
      <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TO_DISPLAY_ONLY</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>
      <SCONAME>SCREEN_FIELD_NAME</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>
+     <SCONAME>SCREEN_FIELD_NAME</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name of screen field (generic value is possible)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>
+     <SCONAME>SCREEN_MODIF_GROUP</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Value of screen modification group (gen. value is possible)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>SET_TO_NO_OUTPUT</CMPNAME>

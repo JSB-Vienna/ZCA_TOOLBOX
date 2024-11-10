@@ -4,20 +4,33 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_DOC_CLASS</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>SO_OBJ_TP</DOMNAME>
     <HEADLEN>03</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>16</SCRLEN2>
     <SCRLEN3>16</SCRLEN3>
-    <DDTEXT>CA-TBX: Code for doc. class (only HTM (= default) or RAW)</DDTEXT>
-    <REPTEXT>Cl.</REPTEXT>
-    <SCRTEXT_S>Class</SCRTEXT_S>
-    <SCRTEXT_M>Class</SCRTEXT_M>
-    <SCRTEXT_L>Document class</SCRTEXT_L>
+    <DDTEXT>CA-TBX: Code für Dok.typ (nur HTM (= default) oder RAW)</DDTEXT>
+    <REPTEXT>Typ</REPTEXT>
+    <SCRTEXT_S>Dok.typ</SCRTEXT_S>
+    <SCRTEXT_M>Dokumenttyp</SCRTEXT_M>
+    <SCRTEXT_L>Dokumenttyp</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Code for doc. class (only HTM (= default) or RAW)</DDTEXT>
+     <REPTEXT>Cls</REPTEXT>
+     <SCRTEXT_S>Doc. cls.</SCRTEXT_S>
+     <SCRTEXT_M>Document class</SCRTEXT_M>
+     <SCRTEXT_L>Document class</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

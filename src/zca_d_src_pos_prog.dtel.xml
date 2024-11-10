@@ -4,20 +4,33 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_SRC_POS_PROG</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>PROGRAMM</DOMNAME>
     <HEADLEN>30</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>15</SCRLEN2>
     <SCRLEN3>20</SCRLEN3>
-    <DDTEXT>CA-TBX: Program or technical class name</DDTEXT>
-    <REPTEXT>Class / Program</REPTEXT>
-    <SCRTEXT_S>Class/Prog</SCRTEXT_S>
-    <SCRTEXT_M>Class/Program</SCRTEXT_M>
-    <SCRTEXT_L>Class / Program</SCRTEXT_L>
+    <DDTEXT>CA-TBX: Programm oder technischer Klassenname</DDTEXT>
+    <REPTEXT>Klasse/Programm</REPTEXT>
+    <SCRTEXT_S>Kls./Prog.</SCRTEXT_S>
+    <SCRTEXT_M>Klasse/Programm</SCRTEXT_M>
+    <SCRTEXT_L>Klasse/Programm</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Program or technical class name</DDTEXT>
+     <REPTEXT>Class / Program</REPTEXT>
+     <SCRTEXT_S>Class/Prog</SCRTEXT_S>
+     <SCRTEXT_M>Class/Program</SCRTEXT_M>
+     <SCRTEXT_L>Class / Program</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

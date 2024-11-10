@@ -1,4 +1,4 @@
-"! <p class="shorttext synchronized" lang="en">CA-TBX: Constants for Boolean flags</p>
+"! <p class="shorttext synchronized" lang="en">CA-TBX: OBSOLETE!! Use ZCL_CA_NUMERIC_BOOLEAN instead!!</p>
 INTERFACE zif_ca_c_bool PUBLIC.
 *   c o n s t a n t s
   CONSTANTS:

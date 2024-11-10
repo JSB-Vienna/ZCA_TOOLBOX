@@ -4,7 +4,7 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCA_MAP_BO_GUID</TABNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <CLIDEP>X</CLIDEP>
     <LANGDEP>X</LANGDEP>
@@ -36,7 +36,7 @@
      <PRECFIELD>SIBFLPORB</PRECFIELD>
      <NOTNULL>X</NOTNULL>
      <MASK>      S</MASK>
-     <DDTEXT>Local Persistent Object Reference - BOR Compatible</DDTEXT>
+     <DDTEXT>Lokale Persistente Objektreferenz - BOR kompatibel</DDTEXT>
      <COMPTYPE>S</COMPTYPE>
      <GROUPNAME>S_BO_KEY</GROUPNAME>
     </DD03P>
@@ -52,7 +52,7 @@
      <SQLTAB>ZCA_MAP_BO_GUID</SQLTAB>
      <INDEXNAME>UID</INDEXNAME>
      <AS4LOCAL>A</AS4LOCAL>
-     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDLANGUAGE>D</DDLANGUAGE>
      <UNIQUEFLAG>X</UNIQUEFLAG>
      <DDTEXT>via GUID to Business Object</DDTEXT>
     </DD12V>
@@ -73,6 +73,15 @@
      <FIELDNAME>GUID</FIELDNAME>
     </DD17V>
    </DD17V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD02_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Mapping Business Object key &lt;-&gt; GUID</DDTEXT>
+    </item>
+   </DD02_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

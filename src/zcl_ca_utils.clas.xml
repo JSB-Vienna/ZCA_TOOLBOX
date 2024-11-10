@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_UTILS</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Wrapped functions for easier use</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -15,55 +15,55 @@
     <item>
      <ID>I</ID>
      <KEY>PU1</KEY>
-     <ENTRY>There are unsaved changes!</ENTRY>
+     <ENTRY>Es gibt ungesicherte Änderungen!</ENTRY>
      <LENGTH>60</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU2</KEY>
-     <ENTRY>Do you like to save these changes?</ENTRY>
+     <ENTRY>Sollen die Änderungen gespeichert werden?</ENTRY>
      <LENGTH>120</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU3</KEY>
-     <ENTRY>Save</ENTRY>
+     <ENTRY>Speichern</ENTRY>
      <LENGTH>12</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU4</KEY>
-     <ENTRY>Cancel</ENTRY>
+     <ENTRY>Abbrechen</ENTRY>
      <LENGTH>12</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>D</LANGUAGE>
+     <LANGUAGE>E</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
        <KEY>PU1</KEY>
-       <ENTRY>Es gibt ungesicherte Änderungen!</ENTRY>
+       <ENTRY>There are unsaved changes!</ENTRY>
        <LENGTH>60</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU2</KEY>
-       <ENTRY>Sollen die Änderungen gespeichert werden?</ENTRY>
+       <ENTRY>Do you like to save these changes?</ENTRY>
        <LENGTH>120</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU3</KEY>
-       <ENTRY>Sichern</ENTRY>
-       <LENGTH>15</LENGTH>
+       <ENTRY>Save</ENTRY>
+       <LENGTH>12</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU4</KEY>
-       <ENTRY>Abbrechen</ENTRY>
-       <LENGTH>15</LENGTH>
+       <ENTRY>Cancel</ENTRY>
+       <LENGTH>12</LENGTH>
       </item>
      </TEXTPOOL>
     </item>
@@ -126,11 +126,27 @@
      </TEXTPOOL>
     </item>
    </I18N_TPOOL>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX: Wrapped functions for easier use</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
    <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Class constructor</DESCRIPT>
+    </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>CLASS_CONSTRUCTOR</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Class constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Compose name / description and technical id for output</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
@@ -139,8 +155,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>DO_COMMIT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Execute COMMIT WORK</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Execute COMMIT WORK</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Determine base transaction code of a transaction variant</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
@@ -149,8 +175,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Create icon (by corresponding FM)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Create icon (by corresponding FM)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Checks whether the GUI is currently available</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
@@ -159,8 +195,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Check if a  HTML client (Fiori/Business client) is running</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Check if a  HTML client (Fiori/Business client) is running</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Check whether the update task is active</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
@@ -169,8 +215,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MO_BOOLEAN</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constants for boolean flags</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_BOOLEAN</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Constants for boolean flags</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_COMMIT_MODES</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constants for commit mode</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MO_COMMIT_MODES</CMPNAME>
@@ -179,8 +235,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MO_POPUP_ANSWERS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constants for answers after popup usage</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_POPUP_ANSWERS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Constants for answers after popup usage</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_DEFAULT_VALUE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Type conform default values for method parameters</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>MS_DEFAULT_VALUE</CMPNAME>
@@ -189,8 +255,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Standard popup to confirm loss of data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Standard popup to confirm loss of data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ROLLBACK</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Execute ROLLBACK WORK</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>ROLLBACK</CMPNAME>
@@ -202,8 +278,20 @@
     <SEOSUBCOTX>
      <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
      <SCONAME>IV_DESCR</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Name / description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <SCONAME>IV_DESCR</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Name / description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
+     <SCONAME>IV_TECHN_ID</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Technical Id prepared for output (except ALPHA conversion)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>COMPOSE_NAME_N_TECHN_ID</CMPNAME>
@@ -214,8 +302,20 @@
     <SEOSUBCOTX>
      <CMPNAME>DO_COMMIT</CMPNAME>
      <SCONAME>IV_COMMIT_MODE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Type of commit (0=by caller; 1=asynch; 2=synch/wait)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
+     <SCONAME>IV_COMMIT_MODE</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Type of commit (0=by caller; 1=asynch; 2=synch/wait)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_COMMIT</CMPNAME>
+     <SCONAME>IV_FOR_BAPI</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Use BAPI function module (includes buffer refresh)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>DO_COMMIT</CMPNAME>
@@ -226,8 +326,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
      <SCONAME>IV_TA_VARIANT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Current transaction variant</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <SCONAME>IV_TA_VARIANT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Current transaction variant</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
+     <SCONAME>RV_ACTUAL_TA_CODE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Actual base transaction code</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_CALLED_TA_2_TA_VARIANT</CMPNAME>
@@ -238,8 +350,20 @@
     <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
      <SCONAME>IV_ADD_QINFO</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Attach standard quickinfo; 0 = Suppress any quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_ADD_QINFO</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = Attach standard quickinfo; 0 = Suppress any quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_ICON</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Icon name</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
@@ -250,8 +374,20 @@
     <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
      <SCONAME>IV_QUICKINFO</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_QUICKINFO</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Quickinfo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>IV_TEXT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Text (behind icon)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
@@ -262,8 +398,20 @@
     <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
      <SCONAME>RV_ICON</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Carrier field for icons</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ICON_CREATE</CMPNAME>
+     <SCONAME>RV_ICON</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Carrier field for icons</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
+     <SCONAME>RV_IS_GUI_AVAILABLE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = GUI is available</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>IS_GUI_AVAILABLE</CMPNAME>
@@ -274,8 +422,20 @@
     <SEOSUBCOTX>
      <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
      <SCONAME>RV_HTML_CLIENT_IS_RUNNING</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = HTML / Business client / Fiori client</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
+     <SCONAME>RV_HTML_CLIENT_IS_RUNNING</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = HTML / Business client / Fiori client</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
+     <SCONAME>RV_IS_IN_UPDATE_TASK</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Update task is active</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
@@ -286,8 +446,20 @@
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <SCONAME>IV_BUTTON_ICON_1</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Icon for button 1 (default = ICON_SYSTEM_SAVE)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_ICON_1</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Icon for button 1 (default = ICON_SYSTEM_SAVE)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_ICON_2</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Icon for button 2 (default = ICON_CANCEL -&gt; see comment)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
@@ -298,8 +470,20 @@
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <SCONAME>IV_BUTTON_TEXT_1</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Text for button 1 (default = &apos;Save&apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_TEXT_1</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Text for button 1 (default = &apos;Save&apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_BUTTON_TEXT_2</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Text for button 2 (default = &apos;Cancel&apos;)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
@@ -310,8 +494,20 @@
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <SCONAME>IV_DEFULT_BUTTON</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Cursor is positioned on the first (=1) / second (=2) button</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_DEFULT_BUTTON</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Cursor is positioned on the first (=1) / second (=2) button</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_QUESTION</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Question text (default = see in method)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
@@ -322,8 +518,20 @@
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <SCONAME>IV_REQUEST</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Request / theme / what is it about (default = see in method)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_REQUEST</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Request / theme / what is it about (default = see in method)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>IV_USE_CANCEL</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Display cancel button</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
@@ -334,8 +542,20 @@
     <SEOSUBCOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <SCONAME>RV_ANSWER</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>1 = Yes, save; 2 = No, ignore changs; A = Cancel action</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
+     <SCONAME>RV_ANSWER</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>1 = Yes, save; 2 = No, ignore changs; A = Cancel action</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ROLLBACK</CMPNAME>
+     <SCONAME>IV_FOR_BAPI</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>X = Use BAPI function module (includes buffer refresh)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>ROLLBACK</CMPNAME>

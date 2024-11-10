@@ -4,7 +4,7 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_SRC_POS_INCL</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>PROGRAMM</DOMNAME>
     <HEADLEN>30</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
@@ -18,6 +18,19 @@
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Include or technical method name</DDTEXT>
+     <REPTEXT>Include</REPTEXT>
+     <SCRTEXT_S>Include</SCRTEXT_S>
+     <SCRTEXT_M>Include</SCRTEXT_M>
+     <SCRTEXT_L>Include</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

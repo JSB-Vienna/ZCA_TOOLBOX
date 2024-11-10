@@ -4,20 +4,33 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_SRC_POS_LINE</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>INT4</DOMNAME>
     <HEADLEN>06</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>15</SCRLEN2>
     <SCRLEN3>20</SCRLEN3>
-    <DDTEXT>CA-TBX: Line number in source code (editor)</DDTEXT>
-    <REPTEXT>Line</REPTEXT>
-    <SCRTEXT_S>Line</SCRTEXT_S>
-    <SCRTEXT_M>Line</SCRTEXT_M>
-    <SCRTEXT_L>Line</SCRTEXT_L>
+    <DDTEXT>CA-TBX: Zeilennummer im Editor</DDTEXT>
+    <REPTEXT>Zeile</REPTEXT>
+    <SCRTEXT_S>Zeile</SCRTEXT_S>
+    <SCRTEXT_M>Zeile</SCRTEXT_M>
+    <SCRTEXT_L>Zeile</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Line number in source code (editor)</DDTEXT>
+     <REPTEXT>Line</REPTEXT>
+     <SCRTEXT_S>Line</SCRTEXT_S>
+     <SCRTEXT_M>Line</SCRTEXT_M>
+     <SCRTEXT_L>Line</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

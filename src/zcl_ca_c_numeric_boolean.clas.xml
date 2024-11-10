@@ -4,18 +4,34 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_C_NUMERIC_BOOLEAN</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Constants for numeric boolean values</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX: Constants for numeric boolean values</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
    <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>FALSE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Numeric boolean value: False</DESCRIPT>
+    </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FALSE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Numeric boolean value: False</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Get instance</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>GET_INSTANCE</CMPNAME>
@@ -24,8 +40,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_VALID</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Is numeric boolean value valid?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_VALID</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Is numeric boolean value valid?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SINGLETON_INSTANCE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Instance of the class itself</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>SINGLETON_INSTANCE</CMPNAME>
@@ -34,8 +60,18 @@
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>TRUE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Numeric boolean value: True</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TRUE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Numeric boolean value: True</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UNDEFINED</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Numeric boolean value: Undefined</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>UNDEFINED</CMPNAME>
@@ -47,8 +83,20 @@
     <SEOSUBCOTX>
      <CMPNAME>GET_INSTANCE</CMPNAME>
      <SCONAME>RESULT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Class instance</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Class instance</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_VALID</CMPNAME>
+     <SCONAME>NUM_BOOLEAN</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Numeric boolean value</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>IS_VALID</CMPNAME>

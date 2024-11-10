@@ -218,7 +218,7 @@ ENDCLASS.
 
 
 
-CLASS ZCX_CA_ERROR IMPLEMENTATION.
+CLASS zcx_ca_error IMPLEMENTATION.
 
 
   METHOD constructor ##ADT_SUPPRESS_GENERATION.
@@ -312,7 +312,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
 
       IF ix_error IS BOUND.
         DATA(lo_type_desc) = cl_abap_typedescr=>describe_by_object_ref(
-                                                           p_object_ref = ix_error ).
+          p_object_ref = ix_error ).
         ls_return-message_v2 = lo_type_desc->get_relative_name( ).
       ELSE.
         ls_return-message_v2 = condense( CONV symsgv( iv_subrc ) ).
@@ -431,21 +431,21 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
     "-----------------------------------------------------------------*
     "Get raw source position from exception instance
     ix_error->get_source_position(
-                            IMPORTING
-                               program_name = rs_src_pos-prog
-                               include_name = rs_src_pos-incl
-                               source_line  = rs_src_pos-line ).
+      IMPORTING
+        program_name = rs_src_pos-prog
+        include_name = rs_src_pos-incl
+        source_line  = rs_src_pos-line ).
 
     "Resolve technical object name into readable names
     cl_oo_classname_service=>get_method_by_include(
       EXPORTING
-        incname              = rs_src_pos-incl
-       RECEIVING
-         mtdkey              = DATA(ls_meth_key)
-       EXCEPTIONS
-         class_not_existing  = 1
-         method_not_existing = 2
-         OTHERS              = 3 ).
+        incname             = rs_src_pos-incl
+      RECEIVING
+        mtdkey              = DATA(ls_meth_key)
+      EXCEPTIONS
+        class_not_existing  = 1
+        method_not_existing = 2
+        OTHERS              = 3 ).
     CASE sy-subrc.
       WHEN 0.
         rs_src_pos-class = ls_meth_key-clsname.
@@ -459,8 +459,8 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
         "As long as e. g. the name of local class method can not be
         "resolved we provide only the technical names
         rs_src_pos-class =
-              cl_oo_classname_service=>get_clsname_by_include(
-                                                       rs_src_pos-incl ).
+          cl_oo_classname_service=>get_clsname_by_include(
+          rs_src_pos-incl ).
         rs_src_pos-meth  = rs_src_pos-incl.
     ENDCASE.
   ENDMETHOD.                    "get_exception_position
