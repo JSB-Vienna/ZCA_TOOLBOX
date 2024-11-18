@@ -41,7 +41,7 @@ CLASS zcl_ca_map_bo_key_2_guid DEFINITION PUBLIC
       "!
       "! @parameter iv_guid      | <p class="shorttext synchronized" lang="en">GUID</p>
       "! @parameter result       | <p class="shorttext synchronized" lang="en">Business Object key</p>
-      "! @raising   zcx_ca_dbacc | <p class="shorttext synchronized" lang="en">Common exception: Database access</p>
+      "! @raising   zcx_ca_dbacc | <p class="shorttext synchronized" lang="en">CA-TBX exception: Database access</p>
       get_bo_key_by_guid
         IMPORTING
           iv_guid       TYPE sysuuid_c32
@@ -52,6 +52,7 @@ CLASS zcl_ca_map_bo_key_2_guid DEFINITION PUBLIC
 
 
 * P R I V A T E   S E C T I O N
+protected section.
   PRIVATE SECTION.
 *   a l i a s e s
     ALIASES:
@@ -65,7 +66,7 @@ CLASS zcl_ca_map_bo_key_2_guid DEFINITION PUBLIC
 
       "! <p class="shorttext synchronized" lang="en">Get Business Object key by GUID from DB</p>
       "!
-      "! @raising   zcx_ca_dbacc | <p class="shorttext synchronized" lang="en">Common exception: Database access</p>
+      "! @raising   zcx_ca_dbacc | <p class="shorttext synchronized" lang="en">CA-TBX exception: Database access</p>
       get_bo_key
         RAISING
           zcx_ca_dbacc,

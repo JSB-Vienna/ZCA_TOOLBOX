@@ -185,7 +185,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
       "!
       "! @parameter sel_param_name | <p class="shorttext synchronized" lang="en">Name of selection parameter</p>
       "! @parameter dropdown_list  | <p class="shorttext synchronized" lang="en">Value list for dropdown</p>
-      "! @raising   zcx_ca_param   | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+      "! @raising   zcx_ca_param   | <p class="shorttext synchronized" lang="en">CA-TBX exception: Parameter error (INHERIT from this excep!)</p>
       set_dd_list_for_field
         IMPORTING
           sel_param_name TYPE dynfnam
@@ -265,6 +265,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
 
 
 * P R I V A T E   S E C T I O N
+protected section.
   PRIVATE SECTION.
 *   t y p e   d e f i n i t i o n s
     TYPES:
@@ -325,7 +326,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_ca_c_screen_field_attr IMPLEMENTATION.
+CLASS ZCL_CA_C_SCREEN_FIELD_ATTR IMPLEMENTATION.
 
 
   METHOD set_as_recommended.

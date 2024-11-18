@@ -1,100 +1,98 @@
 "! <p class="shorttext synchronized" lang="en">CA-TBX: Check of / informations to data objects</p>
-CLASS zcl_ca_ddic DEFINITION PUBLIC
-                             CREATE PUBLIC.
+CLASS zcl_ca_ddic DEFINITION
+  PUBLIC
+  CREATE PUBLIC .
+
 * P U B L I C   S E C T I O N
   PUBLIC SECTION.
+
 *   i n t e r f a c e s
-    INTERFACES:
-      if_xo_const_message.
+    INTERFACES if_xo_const_message .
 
 *   i n s t a n c e   a t t r i b u t e s
-    DATA:
 *     o b j e c t   r e f e r e n c e s
-      "! <p class="shorttext synchronized" lang="en">RTTI type description</p>
-      mo_type_desc         TYPE REF TO cl_abap_typedescr READ-ONLY.
+    "! <p class="shorttext synchronized" lang="en">RTTI type description</p>
+    DATA mo_type_desc TYPE REF TO cl_abap_typedescr READ-ONLY .
 
 *   i n s t a n c e   m e t h o d s
-    METHODS:
-      "! <p class="shorttext synchronized" lang="en">Constructor for RTTI type description instance</p>
-      "!
-      "! @parameter iv_name       | <p class="shorttext synchronized" lang="en">Object name (DDIC or class / interface)</p>
-      "! @parameter iv_data       | <p class="shorttext synchronized" lang="en">Data field / value</p>
-      "! @parameter ir_data       | <p class="shorttext synchronized" lang="en">Reference of a data object / value</p>
-      "! @parameter io_object     | <p class="shorttext synchronized" lang="en">Reference of an object (class / interface)</p>
-      "! @parameter iv_param_name | <p class="shorttext synchronized" lang="en">Name of field/parameter for output in error message</p>
-      "! @parameter iv_langu      | <p class="shorttext synchronized" lang="en">Language key for DDIC text, e.g. for field labels</p>
-      "! @raising   zcx_ca_param  | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      constructor
-        IMPORTING
-          iv_name       TYPE csequence     OPTIONAL
-          iv_data       TYPE data          OPTIONAL
-          ir_data       TYPE REF TO data   OPTIONAL
-          io_object     TYPE REF TO object OPTIONAL
-          iv_param_name TYPE csequence     OPTIONAL
-          iv_langu      TYPE sylangu       DEFAULT sy-langu
-        RAISING
-          zcx_ca_param,
-
-      "! <p class="shorttext synchronized" lang="en">Validate value against fixed values of a domain</p>
-      "!
-      "! @parameter iv_value       | <p class="shorttext synchronized" lang="en">Value under test</p>
-      "! @parameter iv_raise_excep | <p class="shorttext synchronized" lang="en">X = Raise exception when invalid</p>
-      "! @parameter result         | <p class="shorttext synchronized" lang="en">X = Value is valid</p>
-      "! @raising   zcx_ca_param   | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      check_fixed_values
-        IMPORTING
-          iv_value       TYPE simple
-          iv_raise_excep TYPE abap_bool DEFAULT abap_false
-        RETURNING
-          VALUE(result)  TYPE abap_bool
-        RAISING
-          zcx_ca_param,
-
-      "! <p class="shorttext synchronized" lang="en">Return a list with type descriptions for a structure/table</p>
-      "!
-      "! @parameter iv_level     | <p class="shorttext synchronized" lang="en">Level of resolution of the struc. (9 = deepest resolution)</p>
-      "! @parameter result       | <p class="shorttext synchronized" lang="en">Component list to requested structure or table</p>
-      "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      get_component_list
-        IMPORTING
-          iv_level      TYPE i           DEFAULT 9
-        RETURNING
-          VALUE(result) TYPE abap_component_view_tab
-        RAISING
-          zcx_ca_param,
-
-      "! <p class="shorttext synchronized" lang="en">Determine field label from DDIC</p>
-      "!
-      "! @parameter iv_name      | <p class="shorttext synchronized" lang="en">Object name (DDIC or class / interface)</p>
-      "! @parameter result       | <p class="shorttext synchronized" lang="en">Short description and labels of data element</p>
-      "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      get_field_label_from_ddic
-        IMPORTING
-          iv_name       TYPE csequence OPTIONAL
-        RETURNING
-          VALUE(result) TYPE dd04tv
-        RAISING
-          zcx_ca_param,
-
-      "! <p class="shorttext synchronized" lang="en">Return field list for a Structure/(internal) table (DFIES)</p>
-      "!
-      "! @parameter result       | <p class="shorttext synchronized" lang="en">Field list (DFIES)</p>
-      "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      get_field_list
-        RETURNING
-          VALUE(result) TYPE ddfields
-        RAISING
-          zcx_ca_param,
-
-      "! <p class="shorttext synchronized" lang="en">Determination of fixed values to a table field/data element</p>
-      "!
-      "! @parameter result       | <p class="shorttext synchronized" lang="en">Fixed values</p>
-      "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
-      get_fixed_values
-        RETURNING
-          VALUE(result) TYPE ddfixvalues
-        RAISING
-          zcx_ca_param.
+    "! <p class="shorttext synchronized" lang="en">Constructor for RTTI type description instance</p>
+    "!
+    "! @parameter iv_name       | <p class="shorttext synchronized" lang="en">Object name (DDIC or class / interface)</p>
+    "! @parameter iv_data       | <p class="shorttext synchronized" lang="en">Data field / value</p>
+    "! @parameter ir_data       | <p class="shorttext synchronized" lang="en">Reference of a data object / value</p>
+    "! @parameter io_object     | <p class="shorttext synchronized" lang="en">Reference of an object (class / interface)</p>
+    "! @parameter iv_param_name | <p class="shorttext synchronized" lang="en">Name of field/parameter for output in error message</p>
+    "! @parameter iv_langu      | <p class="shorttext synchronized" lang="en">Language key for DDIC text, e.g. for field labels</p>
+    "! @raising   zcx_ca_param  | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS constructor
+      IMPORTING
+        !iv_name       TYPE csequence OPTIONAL
+        !iv_data       TYPE data OPTIONAL
+        !ir_data       TYPE REF TO data OPTIONAL
+        !io_object     TYPE REF TO object OPTIONAL
+        !iv_param_name TYPE csequence OPTIONAL
+        !iv_langu      TYPE sylangu DEFAULT sy-langu
+      RAISING
+        zcx_ca_param .
+    "! <p class="shorttext synchronized" lang="en">Validate value against fixed values of a domain</p>
+    "!
+    "! @parameter iv_value       | <p class="shorttext synchronized" lang="en">Value under test</p>
+    "! @parameter iv_raise_excep | <p class="shorttext synchronized" lang="en">X = Raise exception when invalid</p>
+    "! @parameter result         | <p class="shorttext synchronized" lang="en">X = Value is valid</p>
+    "! @raising   zcx_ca_param   | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS check_fixed_values
+      IMPORTING
+        !iv_value       TYPE simple
+        !iv_raise_excep TYPE abap_bool DEFAULT abap_false
+      RETURNING
+        VALUE(result)   TYPE abap_bool
+      RAISING
+        zcx_ca_param .
+    "! <p class="shorttext synchronized" lang="en">Return a list with type descriptions for a structure/table</p>
+    "!
+    "! @parameter iv_level     | <p class="shorttext synchronized" lang="en">Level of resolution of the struc. (9 = deepest resolution)</p>
+    "! @parameter result       | <p class="shorttext synchronized" lang="en">Component list to requested structure or table</p>
+    "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS get_component_list
+      IMPORTING
+        !iv_level     TYPE i DEFAULT 9
+      RETURNING
+        VALUE(result) TYPE abap_component_view_tab
+      RAISING
+        zcx_ca_param .
+    "! <p class="shorttext synchronized" lang="en">Determine field label from DDIC</p>
+    "!
+    "! @parameter iv_name      | <p class="shorttext synchronized" lang="en">Object name (DDIC or class / interface)</p>
+    "! @parameter result       | <p class="shorttext synchronized" lang="en">Short description and labels of data element</p>
+    "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS get_field_label_from_ddic
+      IMPORTING
+        !iv_name      TYPE csequence OPTIONAL
+      RETURNING
+        VALUE(result) TYPE dd04tv
+      RAISING
+        zcx_ca_param .
+    "! <p class="shorttext synchronized" lang="en">Return field list for a Structure/(internal) table (DFIES)</p>
+    "!
+    "! @parameter result       | <p class="shorttext synchronized" lang="en">Field list (DFIES)</p>
+    "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS get_field_list
+      RETURNING
+        VALUE(result) TYPE ddfields
+      RAISING
+        zcx_ca_param .
+    "! <p class="shorttext synchronized" lang="en">Determination of fixed values to a table field/data element</p>
+    "!
+    "! @parameter result       | <p class="shorttext synchronized" lang="en">Fixed values</p>
+    "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">Common exception: Parameter error (INHERIT from this excep!)</p>
+    METHODS get_fixed_values
+      RETURNING
+        VALUE(result) TYPE ddfixvalues
+      RAISING
+        zcx_ca_param .
+    METHODS get_type_descr
+      RETURNING
+        VALUE(rr_type_descr) TYPE REF TO cl_abap_typedescr .
 
 
 * P R O T E C T E D   S E C T I O N
@@ -201,8 +199,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_CA_DDIC IMPLEMENTATION.
-
+CLASS zcl_ca_ddic IMPLEMENTATION.
 
   METHOD check_fixed_values.
     "-----------------------------------------------------------------*
@@ -244,6 +241,53 @@ CLASS ZCL_CA_DDIC IMPLEMENTATION.
           mv_msgv2 = sy-msgv2.
     ENDIF.
   ENDMETHOD.                    "check_fixed_values
+
+
+  METHOD constructor.
+    "-----------------------------------------------------------------*
+    "   Constructor for RTTI type description instance
+    "-----------------------------------------------------------------*
+    IF iv_name IS NOT INITIAL.
+      get_by_name( iv_name ).
+
+    ELSEIF iv_data IS SUPPLIED.
+      get_by_data( iv_data ).
+
+    ELSEIF ir_data IS BOUND.
+      get_by_data_reference( ir_data ).
+
+
+    ELSEIF io_object IS BOUND.
+      get_by_object( io_object ).
+
+    ELSE.
+      "At least one of the following parameters must be set: &1 &2 &3 &4
+      RAISE EXCEPTION TYPE zcx_ca_param
+        EXPORTING
+          textid   = zcx_ca_param=>at_least_one
+          mv_msgty = c_msgty_e
+          mv_msgv1 = 'IV_NAME'
+          mv_msgv2 = 'IV_DATA'
+          mv_msgv3 = 'IR_DATA'
+          mv_msgv4 = 'IR_OBJECT' ##no_text.
+    ENDIF.
+
+    "Set parameter name if it is not set by caller
+    IF iv_param_name IS SUPPLIED AND
+       iv_param_name IS NOT INITIAL.
+      mv_param_name = iv_param_name.
+    ELSEIF iv_name IS SUPPLIED.
+      mv_param_name = 'IV_NAME' ##no_text.
+    ELSEIF iv_data IS SUPPLIED.
+      mv_param_name = 'IV_DATA' ##no_text.
+    ELSEIF ir_data IS SUPPLIED.
+      mv_param_name = 'IR_DATA' ##no_text.
+    ELSEIF ir_data IS SUPPLIED.
+      mv_param_name = 'IO_OBJECT' ##no_text.
+    ENDIF.
+
+    mv_langu = iv_langu.
+  ENDMETHOD.                    "constructor
 
 
   METHOD get_by_name.
@@ -368,6 +412,15 @@ CLASS ZCL_CA_DDIC IMPLEMENTATION.
   ENDMETHOD.                    "get_by_data
 
 
+  METHOD get_component_list.
+    "-----------------------------------------------------------------*
+    "   Get components of a structured object, also tables
+    "-----------------------------------------------------------------*
+    "Get components of structure resolving includes down to given level
+    result = get_descr_of_struct_type( )->get_included_view( iv_level ).
+  ENDMETHOD.                    "get_component_list
+
+
   METHOD get_descr_of_struct_type.
     "-----------------------------------------------------------------*
     "   Get structured RTTI type description
@@ -393,46 +446,6 @@ CLASS ZCL_CA_DDIC IMPLEMENTATION.
             mv_msgv1 = mv_param_name.
     ENDCASE.
   ENDMETHOD.                    "get_descr_of_struct_type
-
-
-  METHOD get_component_list.
-    "-----------------------------------------------------------------*
-    "   Get components of a structured object, also tables
-    "-----------------------------------------------------------------*
-    "Get components of structure resolving includes down to given level
-    result = get_descr_of_struct_type( )->get_included_view( iv_level ).
-  ENDMETHOD.                    "get_component_list
-
-
-  METHOD set_tech_vals_of_complex_types.
-    "-----------------------------------------------------------------*
-    "   Set technical values of complex types
-    "-----------------------------------------------------------------*
-    result-tabname   = struc_descr->get_relative_name( ).
-    result-fieldname = struc_comp->name.
-    result-langu     = mv_langu.
-    result-inttype   = struc_comp->type->type_kind.
-    result-intlen    = struc_comp->type->length.
-
-    "Set component type and set ROLLNAME
-    CASE struc_comp->type->kind.
-      WHEN struc_comp->type->kind_ref.
-        result-comptype = 'R' ##no_text.
-        result-genkey   = abap_true.
-
-      WHEN struc_comp->type->kind_table.
-        DATA(table_descr_of_column) = CAST cl_abap_tabledescr( struc_comp->type ).
-        result-comptype = 'L' ##no_text.
-        result-rollname = table_descr_of_column->get_relative_name( ).
-
-      WHEN struc_comp->type->kind_struct.
-        DATA(struc_descr_of_column) = CAST cl_abap_tabledescr( struc_comp->type ).
-        result-comptype   = 'S' ##no_text.
-        result-rollname   = struc_descr_of_column->get_relative_name( ).
-        DATA(struc_comps) = NEW zcl_ca_ddic( iv_name = result-rollname )->get_field_list( ).
-        field_pos         = field_pos + lines( struc_comps ).
-    ENDCASE.
-  ENDMETHOD.                    "set_tech_vals_of_complex_types
 
 
   METHOD get_field_list.
@@ -625,6 +638,37 @@ CLASS ZCL_CA_DDIC IMPLEMENTATION.
   ENDMETHOD.                    "get_field_label_from_ddic
 
 
+  METHOD set_tech_vals_of_complex_types.
+    "-----------------------------------------------------------------*
+    "   Set technical values of complex types
+    "-----------------------------------------------------------------*
+    result-tabname   = struc_descr->get_relative_name( ).
+    result-fieldname = struc_comp->name.
+    result-langu     = mv_langu.
+    result-inttype   = struc_comp->type->type_kind.
+    result-intlen    = struc_comp->type->length.
+
+    "Set component type and set ROLLNAME
+    CASE struc_comp->type->kind.
+      WHEN struc_comp->type->kind_ref.
+        result-comptype = 'R' ##no_text.
+        result-genkey   = abap_true.
+
+      WHEN struc_comp->type->kind_table.
+        DATA(table_descr_of_column) = CAST cl_abap_tabledescr( struc_comp->type ).
+        result-comptype = 'L' ##no_text.
+        result-rollname = table_descr_of_column->get_relative_name( ).
+
+      WHEN struc_comp->type->kind_struct.
+        DATA(struc_descr_of_column) = CAST cl_abap_tabledescr( struc_comp->type ).
+        result-comptype   = 'S' ##no_text.
+        result-rollname   = struc_descr_of_column->get_relative_name( ).
+        DATA(struc_comps) = NEW zcl_ca_ddic( iv_name = result-rollname )->get_field_list( ).
+        field_pos         = field_pos + lines( struc_comps ).
+    ENDCASE.
+  ENDMETHOD.                    "set_tech_vals_of_complex_types
+
+
   METHOD set_tech_vals_of_elem_non_ddic.
     "-----------------------------------------------------------------*
     "   Set technical values of elementary non-DDIC type
@@ -659,49 +703,11 @@ CLASS ZCL_CA_DDIC IMPLEMENTATION.
   ENDMETHOD.                    "set_tech_vals_of_elem_non_ddic
 
 
-  METHOD constructor.
-    "-----------------------------------------------------------------*
-    "   Constructor for RTTI type description instance
-    "-----------------------------------------------------------------*
-    IF iv_name IS NOT INITIAL.
-      get_by_name( iv_name ).
+  METHOD get_type_descr.
 
-    ELSEIF iv_data IS SUPPLIED.
-      get_by_data( iv_data ).
-
-    ELSEIF ir_data IS BOUND.
-      get_by_data_reference( ir_data ).
-
-
-    ELSEIF io_object IS BOUND.
-      get_by_object( io_object ).
-
-    ELSE.
-      "At least one of the following parameters must be set: &1 &2 &3 &4
-      RAISE EXCEPTION TYPE zcx_ca_param
-        EXPORTING
-          textid   = zcx_ca_param=>at_least_one
-          mv_msgty = c_msgty_e
-          mv_msgv1 = 'IV_NAME'
-          mv_msgv2 = 'IV_DATA'
-          mv_msgv3 = 'IR_DATA'
-          mv_msgv4 = 'IR_OBJECT' ##no_text.
+    IF mo_type_desc IS BOUND.
+      rr_type_descr = mo_type_desc.
     ENDIF.
 
-    "Set parameter name if it is not set by caller
-    IF iv_param_name IS SUPPLIED AND
-       iv_param_name IS NOT INITIAL.
-      mv_param_name = iv_param_name.
-    ELSEIF iv_name IS SUPPLIED.
-      mv_param_name = 'IV_NAME' ##no_text.
-    ELSEIF iv_data IS SUPPLIED.
-      mv_param_name = 'IV_DATA' ##no_text.
-    ELSEIF ir_data IS SUPPLIED.
-      mv_param_name = 'IR_DATA' ##no_text.
-    ELSEIF ir_data IS SUPPLIED.
-      mv_param_name = 'IO_OBJECT' ##no_text.
-    ENDIF.
-
-    mv_langu = iv_langu.
-  ENDMETHOD.                    "constructor
+  ENDMETHOD.
 ENDCLASS.

@@ -695,6 +695,12 @@
     <T100>
      <SPRSL>E</SPRSL>
      <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>114</MSGNR>
+     <TEXT>DB table key must be a flat structure or an elementary type</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
      <MSGNR>115</MSGNR>
      <TEXT>Process &amp;1 is in state ERROR. Action is currently not possible.</TEXT>
     </T100>
@@ -740,8 +746,69 @@
      <MSGNR>122</MSGNR>
      <TEXT>Find the detailed logging in TA SLG1 to object &amp;1 / subobject &amp;2</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>123</MSGNR>
+     <TEXT>No or more than one key fields are defined in class &amp;1 - is not supported</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZCA_TOOLBOX113</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0003</VERSION>
+      <TXTLINES>00003</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZCA_TOOLBOX113</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00003</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>No text lines are available.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Execute method USE_TEXT_FROM before calling method</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>REPLACE_AND_TRANSFORM.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
     <item>
      <DOKIL>
       <ID>NA</ID>
@@ -1357,6 +1424,11 @@
     </item>
     <item>
      <SPRSL>D</SPRSL>
+     <MSGNR>109</MSGNR>
+     <TEXT>Daten geändert!</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
      <MSGNR>110</MSGNR>
      <TEXT>DDIC-Ermittlung fehlgeschlagen</TEXT>
     </item>
@@ -1374,6 +1446,11 @@
      <SPRSL>D</SPRSL>
      <MSGNR>113</MSGNR>
      <TEXT>Vor der Preparierung erst das Textmodule oder die Textzeilen versorgen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>114</MSGNR>
+     <TEXT>DB-Tabellenschl. muss eine flache Struktur oder ein elementarer Typ sein</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
@@ -1397,6 +1474,16 @@
     </item>
     <item>
      <SPRSL>D</SPRSL>
+     <MSGNR>119</MSGNR>
+     <TEXT>Fehler während Verarbeitung einer Notiz</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>120</MSGNR>
+     <TEXT>Es ist obligatorisch eine Notiz zu erfassen</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
      <MSGNR>121</MSGNR>
      <TEXT>Die Kombination von &amp;1 und &amp;2 führt zu keiner Ausgabe - Parameter ändern</TEXT>
     </item>
@@ -1404,6 +1491,11 @@
      <SPRSL>D</SPRSL>
      <MSGNR>122</MSGNR>
      <TEXT>In TA SLG1 zu Objekt &amp;1 / Unterobjekt &amp;2 sind weitere Details zu finden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>123</MSGNR>
+     <TEXT>Kein o. mehr als ein Schl.feld definiert in Klasse &amp;1 - nicht unterstützt</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

@@ -144,7 +144,7 @@ CLASS zcx_ca_error DEFINITION
         !ix_error       TYPE REF TO cx_root OPTIONAL
       RETURNING
         VALUE(rx_excep) TYPE REF TO zcx_ca_error .
-    "! <p class="shorttext synchronized" lang="en">Extracting error message</p>
+    "! <p class="shorttext synchronized" lang="en">Extracting error message (NO result if type is NOT EAX!!)</p>
     "!
     "! @parameter iv_msgty  | <p class="shorttext synchronized" lang="en">Message type</p>
     "! @parameter iv_subrc  | <p class="shorttext synchronized" lang="en">Return code</p>
@@ -218,7 +218,7 @@ ENDCLASS.
 
 
 
-CLASS ZCX_CA_ERROR IMPLEMENTATION.
+CLASS zcx_ca_error IMPLEMENTATION.
 
 
   METHOD constructor ##ADT_SUPPRESS_GENERATION.
@@ -312,7 +312,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
 
       IF ix_error IS BOUND.
         DATA(lo_type_desc) = cl_abap_typedescr=>describe_by_object_ref(
-                                                           p_object_ref = ix_error ).
+          p_object_ref = ix_error ).
         ls_return-message_v2 = lo_type_desc->get_relative_name( ).
       ELSE.
         ls_return-message_v2 = condense( CONV symsgv( iv_subrc ) ).
@@ -357,7 +357,7 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
 
   METHOD extract_message.
     "-----------------------------------------------------------------*
-    "   Extract message from passed values.
+    "   Extract message from passed values, but no result if type is not EAX.
     "-----------------------------------------------------------------*
     "Multiple BAPI messages
     IF it_return IS NOT INITIAL.
@@ -367,19 +367,12 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
         IF rs_return-id     IS NOT INITIAL AND
            rs_return-number IS NOT INITIAL.
           EXIT.
-
-        ELSE.
-          CLEAR rs_return.
         ENDIF.
       ENDLOOP.
 
     ELSEIF is_return IS NOT INITIAL.
       "Single BAPI message
-      IF   is_return-type CA c_msgty_eax   OR
-         ( is_return-type IS INITIAL      AND
-           iv_msgty       CA c_msgty_eax ).
-        rs_return = is_return.
-      ENDIF.
+      rs_return = is_return.
 
     ELSEIF is_msg IS NOT INITIAL.
       "Message from SYST
@@ -405,16 +398,22 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
       rs_return-message_v4 = sy-msgv4.
     ENDIF.
 
-    "The message type should only be set if external callers supplies
-    "it. Internal calls DON'T provide this value to be able to control
-    "if a BAPI returned an error or not.
-    IF rs_return      IS NOT INITIAL AND
-       rs_return-type IS     INITIAL AND
-       iv_msgty       IS     SUPPLIED.
+    IF rs_return IS INITIAL.             "Can happen if IT_RETURN contains no error message
+      RETURN.
+    ENDIF.
+
+    "The message type should only be set if external callers supplies it. Internal calls DON'T provide this
+    "value to be able to distinguish if a BAPI returned an error or not.
+    IF rs_return-type IS INITIAL AND
+       iv_msgty       IS SUPPLIED.
       rs_return-type = iv_msgty.
     ENDIF.
 
-    "Assemble complete message
+    IF rs_return-type NA c_msgty_eax.
+      CLEAR rs_return.                   "Create no exception instance
+      RETURN.
+    ENDIF.
+
     IF rs_return-id     IS NOT INITIAL AND
        rs_return-number IS NOT INITIAL.
       MESSAGE ID  rs_return-id
@@ -432,21 +431,21 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
     "-----------------------------------------------------------------*
     "Get raw source position from exception instance
     ix_error->get_source_position(
-                            IMPORTING
-                               program_name = rs_src_pos-prog
-                               include_name = rs_src_pos-incl
-                               source_line  = rs_src_pos-line ).
+      IMPORTING
+        program_name = rs_src_pos-prog
+        include_name = rs_src_pos-incl
+        source_line  = rs_src_pos-line ).
 
     "Resolve technical object name into readable names
     cl_oo_classname_service=>get_method_by_include(
       EXPORTING
-        incname              = rs_src_pos-incl
-       RECEIVING
-         mtdkey              = DATA(ls_meth_key)
-       EXCEPTIONS
-         class_not_existing  = 1
-         method_not_existing = 2
-         OTHERS              = 3 ).
+        incname             = rs_src_pos-incl
+      RECEIVING
+        mtdkey              = DATA(ls_meth_key)
+      EXCEPTIONS
+        class_not_existing  = 1
+        method_not_existing = 2
+        OTHERS              = 3 ).
     CASE sy-subrc.
       WHEN 0.
         rs_src_pos-class = ls_meth_key-clsname.
@@ -460,8 +459,8 @@ CLASS ZCX_CA_ERROR IMPLEMENTATION.
         "As long as e. g. the name of local class method can not be
         "resolved we provide only the technical names
         rs_src_pos-class =
-              cl_oo_classname_service=>get_clsname_by_include(
-                                                       rs_src_pos-incl ).
+          cl_oo_classname_service=>get_clsname_by_include(
+          rs_src_pos-incl ).
         rs_src_pos-meth  = rs_src_pos-incl.
     ENDCASE.
   ENDMETHOD.                    "get_exception_position
