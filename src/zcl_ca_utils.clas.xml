@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_UTILS</CLSNAME>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <DESCRIPT>CA-TBX: Wrapped functions for easier use</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -15,54 +15,54 @@
     <item>
      <ID>I</ID>
      <KEY>PU1</KEY>
-     <ENTRY>Es gibt ungesicherte Änderungen!</ENTRY>
+     <ENTRY>There are unsaved changes!</ENTRY>
      <LENGTH>60</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU2</KEY>
-     <ENTRY>Sollen die Änderungen gespeichert werden?</ENTRY>
+     <ENTRY>Do you like to save these changes?</ENTRY>
      <LENGTH>120</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU3</KEY>
-     <ENTRY>Speichern</ENTRY>
+     <ENTRY>Save</ENTRY>
      <LENGTH>12</LENGTH>
     </item>
     <item>
      <ID>I</ID>
      <KEY>PU4</KEY>
-     <ENTRY>Abbrechen</ENTRY>
+     <ENTRY>Cancel</ENTRY>
      <LENGTH>12</LENGTH>
     </item>
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>E</LANGUAGE>
+     <LANGUAGE>D</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
        <KEY>PU1</KEY>
-       <ENTRY>There are unsaved changes!</ENTRY>
+       <ENTRY>Es gibt ungesicherte Änderungen!</ENTRY>
        <LENGTH>60</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU2</KEY>
-       <ENTRY>Do you like to save these changes?</ENTRY>
+       <ENTRY>Sollen die Änderungen gespeichert werden?</ENTRY>
        <LENGTH>120</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU3</KEY>
-       <ENTRY>Save</ENTRY>
+       <ENTRY>Speichern</ENTRY>
        <LENGTH>12</LENGTH>
       </item>
       <item>
        <ID>I</ID>
        <KEY>PU4</KEY>
-       <ENTRY>Cancel</ENTRY>
+       <ENTRY>Abbrechen</ENTRY>
        <LENGTH>12</LENGTH>
       </item>
      </TEXTPOOL>
@@ -128,7 +128,7 @@
    </I18N_TPOOL>
    <DESCRIPTIONS_CLASS>
     <SEOCLASSTX>
-     <LANGU>E</LANGU>
+     <LANGU>D</LANGU>
      <DESCRIPT>CA-TBX: Wrapped functions for easier use</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>

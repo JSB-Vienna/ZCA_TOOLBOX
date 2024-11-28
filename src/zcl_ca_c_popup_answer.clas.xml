@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_C_POPUP_ANSWER</CLSNAME>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
     <DESCRIPT>CA-TBX: Constants for answers after popup usage</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -13,7 +13,7 @@
    </VSEOCLASS>
    <DESCRIPTIONS_CLASS>
     <SEOCLASSTX>
-     <LANGU>E</LANGU>
+     <LANGU>D</LANGU>
      <DESCRIPT>CA-TBX: Constants for answers after popup usage</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>
