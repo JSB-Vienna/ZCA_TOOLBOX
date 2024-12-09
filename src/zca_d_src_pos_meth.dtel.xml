@@ -4,31 +4,31 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_SRC_POS_METH</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>CHAR61</DOMNAME>
     <HEADLEN>30</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>15</SCRLEN2>
     <SCRLEN3>20</SCRLEN3>
-    <DDTEXT>CA-TBX: Name of method or include</DDTEXT>
-    <REPTEXT>Method / Include</REPTEXT>
+    <DDTEXT>CA-TBX: Name der Methode / des Includes</DDTEXT>
+    <REPTEXT>Methode/Include</REPTEXT>
     <SCRTEXT_S>Meth/Incl</SCRTEXT_S>
-    <SCRTEXT_M>Method/Include</SCRTEXT_M>
-    <SCRTEXT_L>Method / Include</SCRTEXT_L>
+    <SCRTEXT_M>Methode/Incl.</SCRTEXT_M>
+    <SCRTEXT_L>Methode/Include</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>D</DDLANGUAGE>
-     <DDTEXT>CA-TBX: Name der Methode / des Includes</DDTEXT>
-     <REPTEXT>Methode/Include</REPTEXT>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: Name of method or include</DDTEXT>
+     <REPTEXT>Method / Include</REPTEXT>
      <SCRTEXT_S>Meth/Incl</SCRTEXT_S>
-     <SCRTEXT_M>Methode/Incl.</SCRTEXT_M>
-     <SCRTEXT_L>Methode/Include</SCRTEXT_L>
+     <SCRTEXT_M>Method/Include</SCRTEXT_M>
+     <SCRTEXT_L>Method / Include</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>

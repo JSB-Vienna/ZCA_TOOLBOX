@@ -4,7 +4,7 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCA_S_CRE_INFO_N_NAME</TABNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
     <LANGDEP>X</LANGDEP>
     <DDTEXT>CA-TBX: Creation informations including full name</DDTEXT>
@@ -29,11 +29,11 @@
     </DD03P>
    </DD03P_TABLE>
    <I18N_LANGS>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDLANGUAGE>E</DDLANGUAGE>
      <DDTEXT>CA-TBX: Creation informations including full name</DDTEXT>
     </item>
    </DD02_TEXTS>

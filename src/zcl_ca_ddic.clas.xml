@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_DDIC</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Check of / informations to data objects</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -27,7 +27,7 @@
    </TPOOL>
    <I18N_TPOOL>
     <item>
-     <LANGUAGE>D</LANGUAGE>
+     <LANGUAGE>E</LANGUAGE>
      <TEXTPOOL>
       <item>
        <ID>I</ID>
@@ -46,7 +46,7 @@
    </I18N_TPOOL>
    <DESCRIPTIONS_CLASS>
     <SEOCLASSTX>
-     <LANGU>D</LANGU>
+     <LANGU>E</LANGU>
      <DESCRIPT>CA-TBX: Check of / informations to data objects</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>

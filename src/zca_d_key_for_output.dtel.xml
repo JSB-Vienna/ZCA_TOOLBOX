@@ -4,7 +4,7 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_KEY_FOR_OUTPUT</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>TEXT100</DOMNAME>
     <LOGFLAG>X</LOGFLAG>
     <HEADLEN>20</HEADLEN>
@@ -20,11 +20,11 @@
     <REFKIND>D</REFKIND>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDLANGUAGE>E</DDLANGUAGE>
      <DDTEXT>CA-TBX: Object key prepared for output</DDTEXT>
      <REPTEXT>Object key output</REPTEXT>
      <SCRTEXT_S>Obj. key</SCRTEXT_S>

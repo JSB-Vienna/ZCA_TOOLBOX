@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCL_CA_C_COMMIT_MODE</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX: Constants for commit mode</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
@@ -13,7 +13,7 @@
    </VSEOCLASS>
    <DESCRIPTIONS_CLASS>
     <SEOCLASSTX>
-     <LANGU>D</LANGU>
+     <LANGU>E</LANGU>
      <DESCRIPT>CA-TBX: Constants for commit mode</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>

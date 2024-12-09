@@ -4,7 +4,7 @@
   <asx:values>
    <VSEOCLASS>
     <CLSNAME>ZCX_CA_DDIC</CLSNAME>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
     <DESCRIPT>CA-TBX exception: DDIC determination failed</DESCRIPT>
     <CATEGORY>40</CATEGORY>
     <STATE>1</STATE>
@@ -14,7 +14,7 @@
    </VSEOCLASS>
    <DESCRIPTIONS_CLASS>
     <SEOCLASSTX>
-     <LANGU>D</LANGU>
+     <LANGU>E</LANGU>
      <DESCRIPT>CA-TBX exception: DDIC determination failed</DESCRIPT>
     </SEOCLASSTX>
    </DESCRIPTIONS_CLASS>

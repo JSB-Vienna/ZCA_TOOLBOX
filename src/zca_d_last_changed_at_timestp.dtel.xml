@@ -4,32 +4,32 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_D_LAST_CHANGED_AT_TIMESTP</ROLLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>TZNTSTMPL</DOMNAME>
     <HEADLEN>15</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>CA-TBX: &apos;Last changed at&apos; as timestamp</DDTEXT>
-    <REPTEXT>Changed at</REPTEXT>
-    <SCRTEXT_S>Changed at</SCRTEXT_S>
-    <SCRTEXT_M>Last changed at</SCRTEXT_M>
-    <SCRTEXT_L>Last changed at</SCRTEXT_L>
+    <DDTEXT>CA-TBX: &apos;Zuletzt geändert am&apos; als Zeitstempel</DDTEXT>
+    <REPTEXT>geändert am</REPTEXT>
+    <SCRTEXT_S>geändrt am</SCRTEXT_S>
+    <SCRTEXT_M>Zuletzt geändert am</SCRTEXT_M>
+    <SCRTEXT_L>Zuletzt geändert am</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
     <NOHISTORY>X</NOHISTORY>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>D</DDLANGUAGE>
-     <DDTEXT>CA-TBX: &apos;Zuletzt geändert am&apos; als Zeitstempel</DDTEXT>
-     <REPTEXT>geändert am</REPTEXT>
-     <SCRTEXT_S>geändrt am</SCRTEXT_S>
-     <SCRTEXT_M>Zuletzt geändert am</SCRTEXT_M>
-     <SCRTEXT_L>Zuletzt geändert am</SCRTEXT_L>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>CA-TBX: &apos;Last changed at&apos; as timestamp</DDTEXT>
+     <REPTEXT>Changed at</REPTEXT>
+     <SCRTEXT_S>Changed at</SCRTEXT_S>
+     <SCRTEXT_M>Last changed at</SCRTEXT_M>
+     <SCRTEXT_L>Last changed at</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>
