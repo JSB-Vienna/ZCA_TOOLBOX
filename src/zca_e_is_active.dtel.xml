@@ -4,33 +4,33 @@
   <asx:values>
    <DD04V>
     <ROLLNAME>ZCA_E_IS_ACTIVE</ROLLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <DOMNAME>ABAP_BOOLEAN</DOMNAME>
     <LOGFLAG>X</LOGFLAG>
     <HEADLEN>10</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>CA-TBX: X = Objekt / Funktion etc. ist aktiv</DDTEXT>
-    <REPTEXT>Aktiv</REPTEXT>
-    <SCRTEXT_S>Aktiv</SCRTEXT_S>
-    <SCRTEXT_M>Ist aktiv</SCRTEXT_M>
-    <SCRTEXT_L>Ist aktiv</SCRTEXT_L>
+    <DDTEXT>CA-TBX: X = Object / function etc. is active</DDTEXT>
+    <REPTEXT>Active</REPTEXT>
+    <SCRTEXT_S>Active</SCRTEXT_S>
+    <SCRTEXT_M>Is active</SCRTEXT_M>
+    <SCRTEXT_L>Is active</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
     <NOHISTORY>X</NOHISTORY>
    </DD04V>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD04_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
-     <DDTEXT>CA-TBX: X = Object / function etc. is active</DDTEXT>
-     <REPTEXT>Active</REPTEXT>
-     <SCRTEXT_S>Active</SCRTEXT_S>
-     <SCRTEXT_M>Is active</SCRTEXT_M>
-     <SCRTEXT_L>Is active</SCRTEXT_L>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>CA-TBX: X = Objekt / Funktion etc. ist aktiv</DDTEXT>
+     <REPTEXT>Aktiv</REPTEXT>
+     <SCRTEXT_S>Aktiv</SCRTEXT_S>
+     <SCRTEXT_M>Ist aktiv</SCRTEXT_M>
+     <SCRTEXT_L>Ist aktiv</SCRTEXT_L>
     </item>
    </DD04_TEXTS>
   </asx:values>

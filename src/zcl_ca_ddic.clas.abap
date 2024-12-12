@@ -256,7 +256,6 @@ CLASS zcl_ca_ddic IMPLEMENTATION.
     ELSEIF ir_data IS BOUND.
       get_by_data_reference( ir_data ).
 
-
     ELSEIF io_object IS BOUND.
       get_by_object( io_object ).
 
@@ -269,7 +268,7 @@ CLASS zcl_ca_ddic IMPLEMENTATION.
           mv_msgv1 = 'IV_NAME'
           mv_msgv2 = 'IV_DATA'
           mv_msgv3 = 'IR_DATA'
-          mv_msgv4 = 'IR_OBJECT' ##no_text.
+          mv_msgv4 = 'IO_OBJECT' ##no_text.
     ENDIF.
 
     "Set parameter name if it is not set by caller
@@ -282,7 +281,7 @@ CLASS zcl_ca_ddic IMPLEMENTATION.
       mv_param_name = 'IV_DATA' ##no_text.
     ELSEIF ir_data IS SUPPLIED.
       mv_param_name = 'IR_DATA' ##no_text.
-    ELSEIF ir_data IS SUPPLIED.
+    ELSEIF io_object IS SUPPLIED.
       mv_param_name = 'IO_OBJECT' ##no_text.
     ENDIF.
 

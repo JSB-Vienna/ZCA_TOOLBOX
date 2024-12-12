@@ -35,8 +35,8 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
       "! @parameter iv_techn_id | <p class="shorttext synchronized" lang="en">Technical Id prepared for output (except ALPHA conversion)</p>
       compose_name_n_techn_id
         IMPORTING
-          iv_descr      TYPE csequence
-          iv_techn_id   TYPE csequence
+          iv_descr      TYPE clike
+          iv_techn_id   TYPE clike
         RETURNING
           VALUE(result) TYPE string,
 
