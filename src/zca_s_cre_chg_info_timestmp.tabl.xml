@@ -4,7 +4,7 @@
   <asx:values>
    <DD02V>
     <TABNAME>ZCA_S_CRE_CHG_INFO_TIMESTMP</TABNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>INTTAB</TABCLASS>
     <DDTEXT>CA-TBX: Creation and changing informations with timestamps</DDTEXT>
     <MASTERLANG>E</MASTERLANG>
@@ -123,11 +123,11 @@
     </DD08V>
    </DD08V_TABLE>
    <I18N_LANGS>
-    <LANGU>E</LANGU>
+    <LANGU>D</LANGU>
    </I18N_LANGS>
    <DD02_TEXTS>
     <item>
-     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDLANGUAGE>D</DDLANGUAGE>
      <DDTEXT>CA-TBX: Creation and changing informations with timestamps</DDTEXT>
     </item>
    </DD02_TEXTS>
