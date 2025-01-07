@@ -216,7 +216,7 @@
      <SPRSL>E</SPRSL>
      <ARBGB>ZCA_TOOLBOX</ARBGB>
      <MSGNR>034</MSGNR>
-     <TEXT>Object (in parameter) &amp;1 is neither a structure nor a table</TEXT>
+     <TEXT>Object (in parameter) &amp;1 is neither a structure nor a DB table or view</TEXT>
     </T100>
     <T100>
      <SPRSL>E</SPRSL>
@@ -1050,7 +1050,7 @@
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>034</MSGNR>
-     <TEXT>Objekt (in Parameter) &amp;1 ist weder eine Struktur noch eine Tabelle</TEXT>
+     <TEXT>Objekt (in Parameter) &amp;1 ist weder eine Struktur noch eine DB-Tab./View</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
