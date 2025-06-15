@@ -51,8 +51,11 @@ CLASS zcl_ca_map_bo_key_2_guid DEFINITION PUBLIC
           zcx_ca_dbacc.
 
 
+* P R O T E C T E D   S E C T I O N
+  PROTECTED SECTION.
+
+
 * P R I V A T E   S E C T I O N
-protected section.
   PRIVATE SECTION.
 *   a l i a s e s
     ALIASES:
@@ -78,17 +81,16 @@ ENDCLASS.
 
 
 
-CLASS ZCL_CA_MAP_BO_KEY_2_GUID IMPLEMENTATION.
-
+CLASS zcl_ca_map_bo_key_2_guid IMPLEMENTATION.
 
   METHOD get_bo_key.
     "-----------------------------------------------------------------*
     "   Get Business Object key by GUID from DB
     "-----------------------------------------------------------------*
-    SELECT SINGLE instid,  typeid,  catid
-                           INTO  CORRESPONDING FIELDS OF @ms_bo_key
-                           FROM  zca_map_bo_guid
-                           WHERE guid EQ @mv_guid.
+    SELECT SINGLE FROM zca_map_bo_guid
+                FIELDS instid,  typeid,  catid
+                 WHERE guid EQ @mv_guid
+                  INTO CORRESPONDING FIELDS OF @ms_bo_key.
     IF sy-subrc NE 0.
       "No entry exists for & in Table &
       RAISE EXCEPTION TYPE zcx_ca_dbacc
@@ -134,13 +136,11 @@ CLASS ZCL_CA_MAP_BO_KEY_2_GUID IMPLEMENTATION.
         ENDIF.
 
       CATCH cx_uuid_error INTO DATA(lx_catched).
-        DATA(lx_error) =
-             CAST zcx_ca_intern(
-                    zcx_ca_intern=>create_exception(
-                             iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
-                             iv_class    = 'CL_SYSTEM_UUID'
-                             iv_method   = 'CREATE_UUID_C32_STATIC'
-                             ix_error    = lx_catched ) ) ##no_text.
+        DATA(lx_error) = CAST zcx_ca_intern( zcx_ca_intern=>create_exception(
+                                                           iv_excp_cls = zcx_ca_intern=>c_zcx_ca_intern
+                                                           iv_class    = 'CL_SYSTEM_UUID'
+                                                           iv_method   = 'CREATE_UUID_C32_STATIC'
+                                                           ix_error    = lx_catched ) ) ##no_text.
         IF lx_error IS BOUND.
           RAISE EXCEPTION lx_error.
         ENDIF.
@@ -152,11 +152,12 @@ CLASS ZCL_CA_MAP_BO_KEY_2_GUID IMPLEMENTATION.
     "-----------------------------------------------------------------*
     "   Get GUID by Business Object key from DB
     "-----------------------------------------------------------------*
-    SELECT SINGLE guid INTO  @mv_guid
-                       FROM  zca_map_bo_guid
-                       WHERE instid EQ @ms_bo_key-instid
-                         AND typeid EQ @ms_bo_key-typeid
-                         AND catid  EQ @ms_bo_key-catid.
+    SELECT SINGLE FROM zca_map_bo_guid
+                FIELDS guid
+                 WHERE instid EQ @ms_bo_key-instid
+                   AND typeid EQ @ms_bo_key-typeid
+                   AND catid  EQ @ms_bo_key-catid
+                  INTO @mv_guid.
     IF sy-subrc NE 0.
       create_guid( ).
     ENDIF.
@@ -176,4 +177,5 @@ CLASS ZCL_CA_MAP_BO_KEY_2_GUID IMPLEMENTATION.
 
     result = mv_guid.
   ENDMETHOD.                    "get_guid_by_bo_key
+
 ENDCLASS.

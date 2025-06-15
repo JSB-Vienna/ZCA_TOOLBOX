@@ -146,7 +146,7 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
       "! @parameter result | <p class="shorttext synchronized" lang="en">Program name and dynpro number</p>
       get_actual_screen
         RETURNING
-          VALUE(result) TYPE /aif/extdynpro,
+          VALUE(result) TYPE zca_s_dynpro_key,
 
       "! <p class="shorttext synchronized" lang="en">Hide screen field</p>
       "!
@@ -264,16 +264,19 @@ CLASS zcl_ca_c_screen_field_attr DEFINITION PUBLIC
           screen_modif_group TYPE char3   OPTIONAL.
 
 
+* P R O T E C T E D   S E C T I O N
+  PROTECTED SECTION.
+
+
 * P R I V A T E   S E C T I O N
-protected section.
   PRIVATE SECTION.
 *   t y p e   d e f i n i t i o n s
     TYPES:
       "! <p class="shorttext synchronized" lang="en">Backup SCREEN settings for deactivation/reactivation</p>
       BEGIN OF ty_s_screen_backuup.
-        INCLUDE TYPE /aif/extdynpro AS s_screen_id.
+        INCLUDE TYPE zca_s_dynpro_key AS s_screen_id.
     TYPES:
-        t_screen TYPE /scf/dynpro_screen_tab,
+        t_screen TYPE t_screen_group,
       END   OF ty_s_screen_backuup,
       "! <p class="shorttext synchronized" lang="en">Backups SCREEN settings for deactivation/reactivation</p>
       ty_t_screen_backups TYPE SORTED TABLE OF ty_s_screen_backuup

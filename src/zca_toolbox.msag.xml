@@ -752,6 +752,36 @@
      <MSGNR>123</MSGNR>
      <TEXT>No or more than one key fields are defined in class &amp;1 - is not supported</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>124</MSGNR>
+     <TEXT>Key is too long for the usage in a workflow class (max. 32 characters)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>125</MSGNR>
+     <TEXT>Approval level (&amp;1) is not numeric, increasing it is not possible</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>126</MSGNR>
+     <TEXT>Cancel workflow due to user action or programmed result</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>127</MSGNR>
+     <TEXT>Increase level before adding new approvers or provide a level</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>128</MSGNR>
+     <TEXT>Workflow to object &amp;1 (&amp;2) was cancelled by user &amp;3</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>
@@ -1370,7 +1400,7 @@
     <item>
      <SPRSL>D</SPRSL>
      <MSGNR>098</MSGNR>
-     <TEXT>Workflow beenden aufgrund Benutzeraktion oder programmiertem Ergebnis</TEXT>
+     <TEXT>Workflow beenden wegen Benutzeraktion oder programmiertem Ergebnis</TEXT>
     </item>
     <item>
      <SPRSL>D</SPRSL>
@@ -1496,6 +1526,26 @@
      <SPRSL>D</SPRSL>
      <MSGNR>123</MSGNR>
      <TEXT>Kein o. mehr als ein Schl.feld definiert in Klasse &amp;1 - nicht unterstützt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>124</MSGNR>
+     <TEXT>Schlüssel für Nutzung in einer Workflowklasse zu lang (max. 32 Zeichen)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>125</MSGNR>
+     <TEXT>Genehmigungsstufe (&amp;1) nicht numerisch, Erhöhung nicht möglich</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>126</MSGNR>
+     <TEXT>Workflow abbrechen wegen Benutzeraktion oder programmiertem Ergebnis</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>127</MSGNR>
+     <TEXT>Stufe erhöhen bevor neue Genehmiger hinzukommen oder Stufe übergeben</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

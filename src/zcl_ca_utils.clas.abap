@@ -113,7 +113,7 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
       popup_to_confirm_loss_of_data
         IMPORTING
           iv_request       TYPE text60 OPTIONAL
-          iv_question      TYPE cbo_text400 OPTIONAL
+          iv_question      TYPE flt_text  OPTIONAL
           iv_button_icon_1 TYPE iconname  DEFAULT 'ICON_SYSTEM_SAVE'
           iv_button_text_1 TYPE text12    DEFAULT ms_default_value-button_text_1
           iv_button_icon_2 TYPE iconname  DEFAULT 'ICON_CANCEL'
