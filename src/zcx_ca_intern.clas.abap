@@ -268,10 +268,10 @@ public section.
       "! <p class="shorttext synchronized" lang="en">Set catched exception instance later</p>
       "!
       "! @parameter ix_error | <p class="shorttext synchronized" lang="en">Catched exception</p>
-* P R O T E C T E D   S E C T I O N
   methods SET_PREVIOUS_LATE
     importing
       !IX_ERROR type ref to CX_ROOT .
+* P R O T E C T E D   S E C T I O N
   PROTECTED SECTION.
 
 
@@ -324,9 +324,10 @@ endif.
                                                      it_return = it_return
                                                      ix_error  = ix_error ).
 
-    "If no error message was found, e. g. in BAPI messages, leave
-    IF ls_return IS INITIAL AND
-       iv_subrc  EQ 0.
+    "If it is no error message, e. g. BAPI messages that returns no return code, leave
+    IF ls_return-type NA c_msgty_eax OR
+       ( iv_subrc     IS SUPPLIED AND
+         iv_subrc     EQ 0 ).
       RETURN.
     ENDIF.
 

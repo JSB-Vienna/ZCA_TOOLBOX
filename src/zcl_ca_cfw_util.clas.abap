@@ -192,15 +192,19 @@ CLASS zcl_ca_cfw_util DEFINITION PUBLIC
 
       "! <p class="shorttext synchronized" lang="en">Containter + inheritors: Get inner height of container</p>
       "!
+      "! <p>Method executes a <strong>{@link .METH:flush}</strong> to retrieve the value from the frontend (= GUI).</p>
+      "!
       "! @parameter io_container    | <p class="shorttext synchronized" lang="en">Instance of control / container</p>
       "! @parameter rv_inner_height | <p class="shorttext synchronized" lang="en">Inner height of control / container</p>
       get_inner_height
         IMPORTING
-          io_container    TYPE REF TO cl_gui_container
-        CHANGING
-          rv_inner_height TYPE i,
+          io_container           TYPE REF TO cl_gui_container
+        RETURNING
+          VALUE(rv_inner_height) TYPE i,
 
       "! <p class="shorttext synchronized" lang="en">Splitter: Determine actual height of a row</p>
+      "!
+      "! <p>Method executes a <strong>{@link .METH:flush}</strong> to retrieve the value from the frontend (= GUI).</p>
       "!
       "! @parameter io_splitter | <p class="shorttext synchronized" lang="en">Instance of splitter control / container</p>
       "! @parameter iv_id       | <p class="shorttext synchronized" lang="en">Row Id</p>
@@ -212,7 +216,9 @@ CLASS zcl_ca_cfw_util DEFINITION PUBLIC
         RETURNING
           VALUE(rv_height) TYPE i,
 
-      "! <p class="shorttext synchronized" lang="en">Containter + inheritors: Get inner height of container</p>
+      "! <p class="shorttext synchronized" lang="en">Container + inheritors: Get visibility</p>
+      "!
+      "! <p>Method executes a <strong>{@link .METH:flush}</strong> to retrieve the value from the frontend (= GUI).</p>
       "!
       "! @parameter io_control | <p class="shorttext synchronized" lang="en">Instance of control / container</p>
       "! @parameter rv_visible | <p class="shorttext synchronized" lang="en">X = Control / container is visible</p>
@@ -875,6 +881,7 @@ CLASS zcl_ca_cfw_util IMPLEMENTATION.
       ENDIF.
     ENDIF.
 
+    zcl_ca_cfw_util=>flush( ).     "Is needed to get the value from frontend (= GUI)
     rv_inner_height = mv_inner_height.
   ENDMETHOD.                    "get_inner_height
 
@@ -906,6 +913,7 @@ CLASS zcl_ca_cfw_util IMPLEMENTATION.
       ENDIF.
     ENDIF.
 
+    zcl_ca_cfw_util=>flush( ).     "Is needed to get the value from frontend (= GUI)
     rv_height = mv_height.
   ENDMETHOD.                    "get_row_height
 
@@ -934,10 +942,8 @@ CLASS zcl_ca_cfw_util IMPLEMENTATION.
       ENDIF.
     ENDIF.
 
-    rv_visible = abap_false.
-    IF mv_is_visible EQ abap_true.
-      rv_visible = abap_true.
-    ENDIF.
+    zcl_ca_cfw_util=>flush( ).     "Is needed to get the value from frontend (= GUI)
+    rv_visible = xsdbool( mv_is_visible EQ cl_gui_control=>visible_true ).
   ENDMETHOD.                    "get_visible
 
 

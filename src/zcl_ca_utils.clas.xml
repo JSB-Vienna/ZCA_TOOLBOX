@@ -174,6 +174,11 @@
      <DESCRIPT>Determine base transaction code of a transaction variant</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>GET_DETAILS_2_DATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get details to a date (weekday + holiday name in logon lang)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
      <LANGU>D</LANGU>
      <DESCRIPT>Create icon (by corresponding FM)</DESCRIPT>
@@ -202,6 +207,11 @@
      <CMPNAME>IS_HTML_CLIENT_RUNNING</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Check if a  HTML client (Fiori/Business client) is running</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IS_SAVE_PHASE_OF_RAP_ACTIVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Is save phase of a RAP application active?</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>
@@ -234,6 +244,16 @@
      <DESCRIPT>Constants for commit mode</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>MO_FACTORY_CALENDAR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Factory calendar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_HOLIDAY_CALENDAR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Holiday calendar assigned to factory calendar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>MO_POPUP_ANSWERS</CMPNAME>
      <LANGU>D</LANGU>
      <DESCRIPT>Constants for answers after popup usage</DESCRIPT>
@@ -254,6 +274,11 @@
      <DESCRIPT>Type conform default values for method parameters</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>MT_WEEKDAY_NAMES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Weekday names</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>POPUP_TO_CONFIRM_LOSS_OF_DATA</CMPNAME>
      <LANGU>D</LANGU>
      <DESCRIPT>Standard popup to confirm loss of data</DESCRIPT>
@@ -272,6 +297,11 @@
      <CMPNAME>ROLLBACK</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Execute ROLLBACK WORK</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_S_DATE_DETAILS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Details to a date</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
@@ -348,6 +378,30 @@
      <DESCRIPT>Actual base transaction code</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS_2_DATE</CMPNAME>
+     <SCONAME>IV_CALENDAR_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>(Legacy) Id of the factory calendar</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS_2_DATE</CMPNAME>
+     <SCONAME>IV_DATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Date to analyze</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS_2_DATE</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Details to the date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS_2_DATE</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
      <CMPNAME>ICON_CREATE</CMPNAME>
      <SCONAME>IV_ADD_QINFO</SCONAME>
      <LANGU>D</LANGU>
@@ -430,6 +484,18 @@
      <SCONAME>RV_HTML_CLIENT_IS_RUNNING</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>X = HTML / Business client / Fiori client</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_SAVE_PHASE_OF_RAP_ACTIVE</CMPNAME>
+     <SCONAME>RV_IS_ACTIVE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>X = Save phase is active</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_SAVE_PHASE_OF_RAP_ACTIVE</CMPNAME>
+     <SCONAME>ZCX_CA_PARAM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CA-TBX exception: Parameter error (INHERIT from this excep!)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>IS_UPDATE_TASK_ACTIVE</CMPNAME>

@@ -782,6 +782,30 @@
      <MSGNR>128</MSGNR>
      <TEXT>Workflow to object &amp;1 (&amp;2) was cancelled by user &amp;3</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>129</MSGNR>
+     <TEXT>Cycle &amp;1 not found to &amp;2 &amp;3 in approval history</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>130</MSGNR>
+     <TEXT>Stucture type is not appropriate! &amp;1 must not contain objects/strings!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>131</MSGNR>
+     <TEXT>No system alias found to software version &amp;1 SID &apos;&amp;2&apos; client &apos;&amp;3&apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCA_TOOLBOX</ARBGB>
+     <MSGNR>500</MSGNR>
+     <TEXT>Log Details: &amp;1 (&amp;2:&amp;3:&amp;4)</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>
@@ -1546,6 +1570,26 @@
      <SPRSL>D</SPRSL>
      <MSGNR>127</MSGNR>
      <TEXT>Stufe erhöhen bevor neue Genehmiger hinzukommen oder Stufe übergeben</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>128</MSGNR>
+     <TEXT>Workflow zu Objekt &amp;1 (&amp;2) wurde abgebrochen durch Benutzer &amp;3</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>129</MSGNR>
+     <TEXT>Zyklus &amp;1 nicht zu &amp;2 &amp;3 in der Genehmigungshistorie gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>130</MSGNR>
+     <TEXT>Stuktur &amp;1 ist kein DDIC-Obj. o enthält tiefe Elemente (Ref./Strings)!</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>500</MSGNR>
+     <TEXT>Log Details: &amp;1</TEXT>
     </item>
    </T100_TEXTS>
   </asx:values>

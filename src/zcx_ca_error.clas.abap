@@ -276,10 +276,10 @@ CLASS zcx_ca_error IMPLEMENTATION.
                                        it_return = it_return
                                        ix_error  = ix_error ).
 
-    "If no error message was found, e. g. in BAPI messages which returns
-    "no returncode, leave
-    IF ls_return IS INITIAL AND
-       iv_subrc  EQ 0.
+    "If it is no error message, e. g. BAPI messages that returns no return code, leave
+    IF ls_return-type NA c_msgty_eax OR
+       ( iv_subrc     IS SUPPLIED AND
+         iv_subrc     EQ 0 ).
       RETURN.
     ENDIF.
 
@@ -407,11 +407,6 @@ CLASS zcx_ca_error IMPLEMENTATION.
     IF rs_return-type IS INITIAL AND
        iv_msgty       IS SUPPLIED.
       rs_return-type = iv_msgty.
-    ENDIF.
-
-    IF rs_return-type NA c_msgty_eax.
-      CLEAR rs_return.                   "Create no exception instance
-      RETURN.
     ENDIF.
 
     IF rs_return-id     IS NOT INITIAL AND

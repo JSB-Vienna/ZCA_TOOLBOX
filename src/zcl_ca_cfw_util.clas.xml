@@ -146,7 +146,7 @@
     <SEOCOMPOTX>
      <CMPNAME>GET_VISIBLE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Containter + inheritors: Get inner height of container</DESCRIPT>
+     <DESCRIPT>Container + inheritors: Get visibility</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>LINK</CMPNAME>

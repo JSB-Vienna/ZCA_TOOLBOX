@@ -5,6 +5,18 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
 
 * P U B L I C   S E C T I O N
   PUBLIC SECTION.
+*   t y p e   d e f i n i t i o n s
+    TYPES:
+      "! <p class="shorttext synchronized" lang="de">Details to a date</p>
+      BEGIN OF ty_s_date_details,
+        weekday_id         TYPE fhc_weekday,
+        weekday_name_short TYPE kurzt,
+        weekday_name_long  TYPE langt,
+        is_a_holiday       TYPE abap_boolean,
+        holiday_name_short TYPE textk,
+        holiday_name_long  TYPE textl_d,
+      END   OF ty_s_date_details.
+
 *   s t a t i c   a t t r i b u t e s
     CLASS-DATA:
 *     o b j e c t   r e f e r e n c e s
@@ -59,6 +71,21 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
         RETURNING
           VALUE(rv_actual_ta_code) TYPE syst_tcode,
 
+      "! <p class="shorttext synchronized" lang="en">Get details to a date (weekday + holiday name in logon lang)</p>
+      "!
+      "! @parameter iv_calendar_id | <p class="shorttext synchronized" lang="en">(Legacy) Id of the factory calendar</p>
+      "! @parameter iv_date        | <p class="shorttext synchronized" lang="en">Date to analyze</p>
+      "! @parameter result         | <p class="shorttext synchronized" lang="en">Details to the date</p>
+      "! @raising   zcx_ca_param   | <p class="shorttext synchronized" lang="en">CA-TBX exception: Parameter error (INHERIT from this excep!)</p>
+      get_details_2_date
+        IMPORTING
+          iv_calendar_id TYPE wfcid DEFAULT 'AT'
+          iv_date        TYPE fhc_date
+        RETURNING
+          VALUE(result)  TYPE ty_s_date_details
+        RAISING
+          zcx_ca_param,
+
       "! <p class="shorttext synchronized" lang="en">Create icon (by corresponding FM)</p>
       "!
       "! @parameter iv_icon      | <p class="shorttext synchronized" lang="en">Icon name</p>
@@ -88,6 +115,16 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
       is_html_client_running
         RETURNING
           VALUE(rv_html_client_is_running) TYPE abap_boolean,
+
+      "! <p class="shorttext synchronized" lang="en">Is save phase of a RAP application active?</p>
+      "!
+      "! @parameter rv_is_active | <p class="shorttext synchronized" lang="en">X = Save phase is active</p>
+      "! @raising   zcx_ca_param | <p class="shorttext synchronized" lang="en">CA-TBX exception: Parameter error (INHERIT from this excep!)</p>
+      is_save_phase_of_rap_active
+        RETURNING
+          VALUE(rv_is_active) TYPE abap_boolean
+        RAISING
+          zcx_ca_param,
 
       "! <p class="shorttext synchronized" lang="en">Check whether the update task is active</p>
       "!
@@ -141,7 +178,15 @@ CLASS zcl_ca_utils DEFINITION PUBLIC
     CLASS-DATA:
 *     o b j e c t   r e f e r e n c e s
       "! <p class="shorttext synchronized" lang="en">Constants for boolean flags</p>
-      mo_boolean      TYPE REF TO zcl_ca_c_boolean.
+      mo_boolean          TYPE REF TO zcl_ca_c_boolean,
+      "! <p class="shorttext synchronized" lang="en">Factory calendar</p>
+      mo_factory_calendar TYPE REF TO if_fhc_fcal_runtime,  "cl_scal_factorycalendar,
+      "! <p class="shorttext synchronized" lang="en">Holiday calendar assigned to factory calendar</p>
+      mo_holiday_calendar TYPE REF TO if_fhc_hcal_runtime,
+
+*     t a b l e s
+      "! <p class="shorttext synchronized" lang="en">Weekday names</p>
+      mt_weekday_names    TYPE cl_fhc_weekday_utilities=>tt_fhc_weekdaynames.
 
 ENDCLASS.
 
@@ -159,6 +204,17 @@ CLASS zcl_ca_utils IMPLEMENTATION.
 
     ms_default_value-button_text_1 = 'Save'(pu3).
     ms_default_value-button_text_2 = 'Cancel'(pu4).
+
+    TRY.
+        cl_fhc_weekday_utilities=>get_weekday_names(
+                                                EXPORTING
+                                                  iv_language = cl_abap_syst=>get_logon_language( )
+                                                IMPORTING
+                                                  et_weekdays = mt_weekday_names ).
+
+      CATCH cx_fhc_runtime INTO DATA(lx_caught).
+        MESSAGE lx_caught TYPE zcx_ca_error=>c_msgty_e.
+    ENDTRY.
   ENDMETHOD.                    "class_constructor
 
 
@@ -169,9 +225,12 @@ CLASS zcl_ca_utils IMPLEMENTATION.
     IF iv_techn_id IS INITIAL.
       result = iv_descr.
 
+    ELSEIF iv_descr IS INITIAL.
+      result = |{ iv_techn_id ALPHA = OUT }|.
+
     ELSE.
       result = |{ iv_descr } | &
-               |({ condense( COND string( WHEN iv_techn_id CO '0123456789'
+               |({ condense( COND string( WHEN iv_techn_id CO '0123456789 '
                                             THEN |{ iv_techn_id ALPHA = OUT }|
                                             ELSE iv_techn_id ) ) })| ##no_text.
     ENDIF.
@@ -189,7 +248,7 @@ CLASS zcl_ca_utils IMPLEMENTATION.
     mo_commit_modes->is_valid( iv_commit_mode ).
     mo_boolean->is_valid( iv_for_bapi ).
 
-    IF iv_commit_mode EQ mo_commit_modes->by_caller or     "Is in responsibility of the consumer OR
+    IF iv_commit_mode EQ mo_commit_modes->by_caller OR     "Is in responsibility of the consumer OR
        is_update_task_active( ).                           "is not allowed at this point in time
       RETURN.
     ENDIF.
@@ -207,7 +266,7 @@ CLASS zcl_ca_utils IMPLEMENTATION.
       WHEN abap_true.
         CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
           EXPORTING
-            wait   = iv_commit_mode
+            wait   = CONV bapiwait( xsdbool( iv_commit_mode EQ mo_commit_modes->synchron ) )
           IMPORTING
             return = ls_return.
 
@@ -250,6 +309,44 @@ CLASS zcl_ca_utils IMPLEMENTATION.
     SPLIT lv_ta_param AT space INTO rv_actual_ta_code
                                     lv_ta_variant.
   ENDMETHOD.                    "get_called_ta_2_ta_variant
+
+
+  METHOD get_details_2_date.
+    "-----------------------------------------------------------------*
+    "   Get details to a date (weekday + holiday name in logon lang)
+    "-----------------------------------------------------------------*
+    TRY.
+        IF mo_factory_calendar IS NOT BOUND OR
+           mo_factory_calendar->get_id( ) NE iv_calendar_id.
+          mo_factory_calendar = cl_scal_factorycalendar=>create_instance(
+                                             iv_factorycalendar_id = iv_calendar_id
+                                             iv_language           = cl_abap_syst=>get_logon_language( ) ).
+          mo_holiday_calendar = mo_factory_calendar->get_hcal_assignment( ).
+        ENDIF.
+
+        result = CORRESPONDING #( mt_weekday_names[
+                        weekday = cl_fhc_weekday_utilities=>get_weekday_from_date( iv_date ) ]
+                                                    MAPPING weekday_id         = weekday
+                                                            weekday_name_short = weekday_name_short
+                                                            weekday_name_long  = weekday_name ).
+
+        result-is_a_holiday = abap_false.
+        IF mo_holiday_calendar->is_holiday( iv_date ).
+          result-is_a_holiday = abap_true.
+          DATA(ls_holiday_names) = mo_holiday_calendar->get_holiday( iv_date )->get_text( ).
+          result-holiday_name_short = ls_holiday_names-title.
+          result-holiday_name_long  = ls_holiday_names-description.
+        ENDIF.
+
+      CATCH cx_fhc_runtime INTO DATA(lx_caught).
+        DATA(lx_error) = CAST zcx_ca_param( zcx_ca_error=>create_exception(
+                                                           iv_excp_cls = zcx_ca_param=>c_zcx_ca_param
+                                                           ix_error    = lx_caught ) ) ##no_text.
+        IF lx_error IS BOUND.
+          RAISE EXCEPTION lx_error.
+        ENDIF.
+    ENDTRY.
+  ENDMETHOD.                    "get_details_2_date
 
 
   METHOD icon_create.
@@ -324,6 +421,56 @@ CLASS zcl_ca_utils IMPLEMENTATION.
     "-----------------------------------------------------------------*
     rv_html_client_is_running = cl_gui_object=>www_active.
   ENDMETHOD.                    "is_html_client_running
+
+
+  METHOD is_save_phase_of_rap_active.
+    "-----------------------------------------------------------------*
+    "   Is save phase of a RAP application active?
+    "-----------------------------------------------------------------*
+    "Local data definitions
+    DATA:
+      lt_parameters TYPE abap_parmbind_tab,
+      lr_phase      TYPE REF TO data.
+
+    TRY.
+        "It is programmed this way as the class couldn't exist in an older release
+        DATA(lo_class_descr) = CAST cl_abap_objectdescr(
+                                      NEW zcl_ca_ddic( iv_name = 'CL_ABAP_BEHV_AUX' )->mo_type_desc ) ##no_text.
+        DATA(lr_method) = REF #( lo_class_descr->methods[ name = 'GET_CURRENT_PHASE' ] ) ##no_text. "doesn't exist in 7.57 SP05 / HANA 2022/05
+
+        CREATE DATA lr_phase TYPE ('CL_ABAP_BEHV_AUX=>T_PHASE') ##no_text.
+        INSERT VALUE #( name  = 'PHASE'
+                        kind  = cl_abap_objectdescr=>receiving
+                        value = lr_phase ) INTO TABLE lt_parameters.
+        CALL METHOD ('CL_ABAP_BEHV_AUX')=>('GET_CURRENT_PHASE')
+          PARAMETER-TABLE lt_parameters ##no_text.
+
+        ASSIGN ('CL_ABAP_BEHV_AUX=>INTERACTION') TO FIELD-SYMBOL(<lv_interaction>) ##no_text.
+        ASSERT sy-subrc EQ 0.
+        ASSIGN ('CL_ABAP_BEHV_AUX=>EARLY_SAVE') TO FIELD-SYMBOL(<lv_early_save>) ##no_text.
+        ASSERT sy-subrc EQ 0.
+        ASSIGN ('CL_ABAP_BEHV_AUX=>LATE_SAVE') TO FIELD-SYMBOL(<lv_late_save>) ##no_text.
+        ASSERT sy-subrc EQ 0.
+        lr_phase = lt_parameters[ name = 'PHASE' ]-value ##no_text.
+
+        rv_is_active = xsdbool( lr_phase->* EQ <lv_interaction>  OR
+                                lr_phase->* EQ <lv_early_save>   OR
+                                lr_phase->* EQ <lv_late_save> ).
+
+      CATCH cx_sy_dyn_call_error
+            cx_sy_ref_is_initial INTO DATA(lx_dyn_call_error).
+        DATA(lx_error) = CAST zcx_ca_param( zcx_ca_error=>create_exception(
+                                                             iv_excp_cls = zcx_ca_param=>c_zcx_ca_param
+                                                             ix_error    = lx_dyn_call_error ) ) ##no_text.
+        IF lx_error IS BOUND.
+          RAISE EXCEPTION lx_error.
+        ENDIF.
+
+      CATCH zcx_ca_error
+            cx_sy_itab_line_not_found INTO DATA(lx_catched).   "This is wrong, but currently no better solution available
+        rv_is_active = abap_false.
+    ENDTRY.
+  ENDMETHOD.                    "is_save_phase_of_rap_active
 
 
   METHOD is_update_task_active.
