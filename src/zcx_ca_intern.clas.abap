@@ -325,7 +325,7 @@ endif.
                                                      ix_error  = ix_error ).
 
     "If it is no error message, e. g. BAPI messages that returns no return code, leave
-    IF ls_return-type NA c_msgty_eax OR
+    IF ls_return-type NA zcx_ca_error=>c_msgty_eax OR
        ( iv_subrc     IS SUPPLIED AND
          iv_subrc     EQ 0 ).
       RETURN.
